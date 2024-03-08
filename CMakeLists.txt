@@ -8,6 +8,7 @@ include ("libs/CMakeLists.txt")
 set (files
         "main.c"
         ${libraries}
+
 )
 
 add_executable (BasicsOfProgrammingCourse ${files})
