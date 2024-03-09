@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "libs/data_structures/vector/vector.h"
 #include <assert.h>
-
+#include "libs/data_structures/vectorVoid/vectorVoid.h"
 void test_pushBack_emptyVector(){
     vector v1 = createVector(0);
     pushBack(&v1,7);
@@ -53,12 +53,12 @@ void test_back_oneElementInVector(){
     pushBack(&v,6);
     assert(*back(&v) == 6);
 }
-
 void test_front_oneElementInVector(){
     vector v = createVector(1);
     pushBack(&v,6);
     assert(*front(&v) == 6);
 }
+
 
 void test_vector_all(){
     test_pushBack_emptyVector();
@@ -70,7 +70,9 @@ void test_vector_all(){
     test_front_oneElementInVector();
 }
 
+
 int main(){
+    vectorVoid v;
     test_vector_all();
     return 0;
 }
