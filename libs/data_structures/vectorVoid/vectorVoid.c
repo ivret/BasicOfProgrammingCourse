@@ -64,4 +64,46 @@ void deleteVectorV(vectorVoid *v){
     v->baseTypeSize = 0;
 }
 
+bool isEmptyV(vectorVoid *v){
+    return v->size == 0;
+}
 
+bool isFullV(vectorVoid *v){
+    return v->size == v->capacity;
+}
+
+void* atVectorV(vectorVoid *v, size_t index){
+    if(v->size <= index){
+        fprintf(stderr, "IndexError: a[%zu] is not exists",index);
+        exit(1);
+    }
+    return (char *) v->data + index * v->baseTypeSize;
+}
+
+void getVectorValueV(vectorVoid *v, size_t index, void *destination){
+    memcpy(destination, atVectorV(v, index), v->baseTypeSize);
+}
+//записывает на index-ый элемент вектора v значение, расположенное по
+//адресу source;
+void setVectorValueV(vectorVoid *v, size_t index, void *source){
+    memcpy(atVectorV(v,index),source,v->baseTypeSize);
+}
+
+void popBackV(vectorVoid *v){
+    if(v->size == 0) {
+        fprintf(stderr, "1");
+        exit(1);
+    }else{
+        --v->size;
+    }
+}
+
+void pushBackV(vectorVoid *v, void *source){
+    if(isFullV(v)) {
+        if (v->capacity == 0) {
+            reserveV(v, 1);
+        } else
+            reserveV(v, 2 * v->capacity);
+    }
+    setVectorValueV(v,v->size++,source);
+}
