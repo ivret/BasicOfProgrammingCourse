@@ -1,4 +1,3 @@
-
 #include "test_matrix.h"
 #include "data_structures/matrix/matrix.h"
 #include <assert.h>

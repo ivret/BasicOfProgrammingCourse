@@ -212,7 +212,6 @@ void transposeMatrix(matrix *m){
         *m = new_matrix;
     }
 }
-
 //возвращает позицию минимального элемента матрицы m.
 position getMinValuePos(matrix m){
     position mini = {0, 0};
