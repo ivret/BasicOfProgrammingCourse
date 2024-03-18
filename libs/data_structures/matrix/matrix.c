@@ -1,7 +1,3 @@
-//
-// Created by Иван on 08.03.2024.
-//
-
 #include "matrix.h"
 #include <malloc.h>
 #include <stdio.h>
@@ -81,7 +77,7 @@ void outputMatrices(matrix *ms, int nMatrices){
 //обмен строк с порядковыми номерами i1 и i2 в матрице m
 void swapRows(matrix m, int i1, int i2){
     assert(i1 < m.nRows && i2 < m.nRows);
-    swap_pointers(&m.values[i1],&m.values[i2]);
+    swap_pointers((void **) &m.values[i1], (void **) &m.values[i2]);
 }
 
 void swapColumns(matrix m, int j1, int j2){
@@ -212,6 +208,7 @@ void transposeMatrix(matrix *m){
         *m = new_matrix;
     }
 }
+
 //возвращает позицию минимального элемента матрицы m.
 position getMinValuePos(matrix m){
     position mini = {0, 0};
@@ -219,7 +216,7 @@ position getMinValuePos(matrix m){
     for (int row_index = 0; row_index < m.nRows; ++row_index) {
         for (int col_index = 0; col_index < m.nCols; ++col_index) {
             if(m.values[row_index][col_index] < min_value){
-                m.values[row_index][col_index] = min_value;
+                min_value = m.values[row_index][col_index] ;
                 mini.rowIndex = row_index;
                 mini.colIndex = col_index;
             }
@@ -229,15 +226,16 @@ position getMinValuePos(matrix m){
     return mini;
 }
 
+// возращает позицию  максимального элемента матрицы m.
 position getMaxValuePos(matrix m){
     position max_v = {0,0};
     int max_value = m.values[max_v.rowIndex][max_v.colIndex];
-    for (int i = 0; i < m.nRows; ++i) {
-        for (int j = 0; j < m.nCols; ++j) {
-            if(max_value < m.values[i][j]){
-                m.values[i][j] = max_value;
-                max_v.rowIndex = i;
-                max_v.colIndex = j;
+    for (int row_index = 0; row_index < m.nRows; ++row_index) {
+        for (int col_index = 0; col_index < m.nCols; ++col_index) {
+            if(max_value < m.values[row_index][col_index]){
+                max_value = m.values[row_index][col_index];
+                max_v.rowIndex = row_index;
+                max_v.colIndex = col_index;
             }
         }
     }
@@ -272,4 +270,19 @@ int countZeroRows(matrix m){
         zero_rows_amount += isZero(m.values[row_index], m.nCols);
 
     return zero_rows_amount;
+}
+
+//lab 16
+void swapMinMaxstring(matrix m){
+    position min_v_p = getMinValuePos(m);
+    position max_v_p = getMaxValuePos(m);
+    swapRows(m,min_v_p.rowIndex,max_v_p.rowIndex);
+}
+
+int getMax(int *a, int n){
+
+}
+
+void sortRowsByMinElement(matrix m){
+
 }

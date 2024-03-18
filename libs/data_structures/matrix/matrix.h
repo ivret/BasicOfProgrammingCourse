@@ -57,8 +57,15 @@ void transposeMatrix(matrix *m);
 position getMinValuePos(matrix m);
 
 position getMaxValuePos(matrix m);
+
 matrix createMatrixFromArray(const int *a, size_t nRows,
                              size_t nCols);
 
 int countZeroRows(matrix m);
+
+void swapMinMaxstring(matrix m);
+
+int getMax(int *a, int n);
+
+void sortRowsByMinElement(matrix m);
 #endif //BASICSOFPROGRAMMINGCOURSE_MATRIX_H
