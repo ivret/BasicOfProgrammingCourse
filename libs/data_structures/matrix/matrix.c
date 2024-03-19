@@ -279,10 +279,13 @@ void swapMinMaxstring(matrix m){
     swapRows(m,min_v_p.rowIndex,max_v_p.rowIndex);
 }
 
-int getMax(int *a, int n){
+void sortRowsByMinElement(matrix m) {
+    for (int i = 0; i < m.nRows; ++i) {
+        for (int row_index = 0; row_index < m.nRows - 1; ++row_index) {
+            if (getMax(m.values[row_index], m.nCols) >
+                getMax(m.values[row_index + 1], m.nCols))
+                swapRows(m, row_index, row_index + 1);
+        }
 
-}
-
-void sortRowsByMinElement(matrix m){
-
+    }
 }

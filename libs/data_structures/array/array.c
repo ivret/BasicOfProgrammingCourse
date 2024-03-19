@@ -167,4 +167,26 @@ void InsertionSort(int n, int mass[])
         mass[location+1] = newElement;
     }
 }
+int getMax(int *a, int n){
+    int max_values = a[0];
+    for (int i = 1; i < n; ++i) {
+        if (max_values > a[i])
+            max_values;
+        else
+            max_values = a[i];
+    }
+    return max_values;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 

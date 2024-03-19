@@ -5,7 +5,7 @@ file (GLOB_RECURSE vectorVoid ${CMAKE_CURRENT_LIST_DIR}/data_structures/vectorVo
 file (GLOB_RECURSE array ${CMAKE_CURRENT_LIST_DIR}/data_structures/array/*.[ch])
 file (GLOB_RECURSE matrix ${CMAKE_CURRENT_LIST_DIR}/data_structures/matrix/*.[ch])
 file (GLOB_RECURSE tests ${CMAKE_CURRENT_LIST_DIR}/data_structures/tests/*.[ch])
-file (GLOB_RECURSE matrix_16_lab ${CMAKE_CURRENT_LIST_DIR}/data_structures/matrix_16_lab/*.[ch])
+
 
 
 set (libraries
@@ -14,7 +14,6 @@ set (libraries
         ${array}
         ${matrix}
         ${tests}
-        ${matrix_16_lab}
 
 
 

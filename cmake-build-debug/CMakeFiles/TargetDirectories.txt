@@ -1,0 +1,3 @@
+D:/study/op/work/BasicOfProgrammingCourse/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir
+D:/study/op/work/BasicOfProgrammingCourse/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/study/op/work/BasicOfProgrammingCourse/cmake-build-debug/CMakeFiles/rebuild_cache.dir

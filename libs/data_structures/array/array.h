@@ -65,4 +65,6 @@ bool isZero(const int a[], const size_t size);
 
 void InsertionSort(int n, int mass[]);
 
+int getMax(int *a, int n);
+
 # endif

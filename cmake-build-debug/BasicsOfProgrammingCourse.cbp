@@ -8,95 +8,119 @@
 		<Option virtualFolders="CMake Files\;CMake Files\libs\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="D:/study/op/BasicOfProgrammingCourse/cmake-build-debug"/>
+				<Option working_dir="D:/study/op/work/BasicOfProgrammingCourse/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/study/op/BasicOfProgrammingCourse/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/study/op/BasicOfProgrammingCourse/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/study/op/BasicOfProgrammingCourse/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/study/op/BasicOfProgrammingCourse/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;D:/study/op/work/BasicOfProgrammingCourse/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;D:/study/op/work/BasicOfProgrammingCourse/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;D:/study/op/work/BasicOfProgrammingCourse/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;D:/study/op/work/BasicOfProgrammingCourse/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="BasicsOfProgrammingCourse">
-				<Option output="D:/study/op/BasicOfProgrammingCourse/cmake-build-debug/BasicsOfProgrammingCourse.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/study/op/BasicOfProgrammingCourse/cmake-build-debug"/>
+				<Option output="D:/study/op/work/BasicOfProgrammingCourse/cmake-build-debug/BasicsOfProgrammingCourse.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/study/op/work/BasicOfProgrammingCourse/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="D:/study/op/BasicOfProgrammingCourse/libs"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="D:/study/op/work/BasicOfProgrammingCourse/libs"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2023.3.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2023.3.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2023.3.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2023.3.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/study/op/BasicOfProgrammingCourse/cmake-build-debug/Makefile&quot;  VERBOSE=1 BasicsOfProgrammingCourse"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/study/op/BasicOfProgrammingCourse/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/study/op/BasicOfProgrammingCourse/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/study/op/BasicOfProgrammingCourse/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;D:/study/op/work/BasicOfProgrammingCourse/cmake-build-debug/Makefile&quot;  VERBOSE=1 BasicsOfProgrammingCourse"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;D:/study/op/work/BasicOfProgrammingCourse/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;D:/study/op/work/BasicOfProgrammingCourse/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;D:/study/op/work/BasicOfProgrammingCourse/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="BasicsOfProgrammingCourse/fast">
-				<Option output="D:/study/op/BasicOfProgrammingCourse/cmake-build-debug/BasicsOfProgrammingCourse.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/study/op/BasicOfProgrammingCourse/cmake-build-debug"/>
+				<Option output="D:/study/op/work/BasicOfProgrammingCourse/cmake-build-debug/BasicsOfProgrammingCourse.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/study/op/work/BasicOfProgrammingCourse/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="D:/study/op/BasicOfProgrammingCourse/libs"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.3.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="D:/study/op/work/BasicOfProgrammingCourse/libs"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2023.3.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2023.3.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2023.3.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2023.3.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/study/op/BasicOfProgrammingCourse/cmake-build-debug/Makefile&quot;  VERBOSE=1 BasicsOfProgrammingCourse/fast"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/study/op/BasicOfProgrammingCourse/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/study/op/BasicOfProgrammingCourse/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/study/op/BasicOfProgrammingCourse/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;D:/study/op/work/BasicOfProgrammingCourse/cmake-build-debug/Makefile&quot;  VERBOSE=1 BasicsOfProgrammingCourse/fast"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;D:/study/op/work/BasicOfProgrammingCourse/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;D:/study/op/work/BasicOfProgrammingCourse/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;D:/study/op/work/BasicOfProgrammingCourse/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="D:/study/op/BasicOfProgrammingCourse/cmake-build-debug"/>
+				<Option working_dir="D:/study/op/work/BasicOfProgrammingCourse/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/study/op/BasicOfProgrammingCourse/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/study/op/BasicOfProgrammingCourse/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/study/op/BasicOfProgrammingCourse/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/study/op/BasicOfProgrammingCourse/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;D:/study/op/work/BasicOfProgrammingCourse/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;D:/study/op/work/BasicOfProgrammingCourse/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;D:/study/op/work/BasicOfProgrammingCourse/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;D:/study/op/work/BasicOfProgrammingCourse/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="D:/study/op/BasicOfProgrammingCourse/cmake-build-debug"/>
+				<Option working_dir="D:/study/op/work/BasicOfProgrammingCourse/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/study/op/BasicOfProgrammingCourse/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/study/op/BasicOfProgrammingCourse/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/study/op/BasicOfProgrammingCourse/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/study/op/BasicOfProgrammingCourse/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;D:/study/op/work/BasicOfProgrammingCourse/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;D:/study/op/work/BasicOfProgrammingCourse/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;D:/study/op/work/BasicOfProgrammingCourse/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;D:/study/op/work/BasicOfProgrammingCourse/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="D:/study/op/BasicOfProgrammingCourse/libs/data_structures/vector/vector.c">
+		<Unit filename="D:/study/op/work/BasicOfProgrammingCourse/libs/data_structures/array/array.c">
 			<Option target="BasicsOfProgrammingCourse"/>
 		</Unit>
-		<Unit filename="D:/study/op/BasicOfProgrammingCourse/libs/data_structures/vector/vector.h">
+		<Unit filename="D:/study/op/work/BasicOfProgrammingCourse/libs/data_structures/array/array.h">
 			<Option target="BasicsOfProgrammingCourse"/>
 		</Unit>
-		<Unit filename="D:/study/op/BasicOfProgrammingCourse/libs/data_structures/vectorVoid/vectorVoid.c">
+		<Unit filename="D:/study/op/work/BasicOfProgrammingCourse/libs/data_structures/matrix/matrix.c">
 			<Option target="BasicsOfProgrammingCourse"/>
 		</Unit>
-		<Unit filename="D:/study/op/BasicOfProgrammingCourse/libs/data_structures/vectorVoid/vectorVoid.h">
+		<Unit filename="D:/study/op/work/BasicOfProgrammingCourse/libs/data_structures/matrix/matrix.h">
 			<Option target="BasicsOfProgrammingCourse"/>
 		</Unit>
-		<Unit filename="D:/study/op/BasicOfProgrammingCourse/main.c">
+		<Unit filename="D:/study/op/work/BasicOfProgrammingCourse/libs/data_structures/tests/test_matrix.c">
 			<Option target="BasicsOfProgrammingCourse"/>
 		</Unit>
-		<Unit filename="D:/study/op/BasicOfProgrammingCourse/CMakeLists.txt">
+		<Unit filename="D:/study/op/work/BasicOfProgrammingCourse/libs/data_structures/tests/test_matrix.h">
+			<Option target="BasicsOfProgrammingCourse"/>
+		</Unit>
+		<Unit filename="D:/study/op/work/BasicOfProgrammingCourse/libs/data_structures/vector/vector.c">
+			<Option target="BasicsOfProgrammingCourse"/>
+		</Unit>
+		<Unit filename="D:/study/op/work/BasicOfProgrammingCourse/libs/data_structures/vector/vector.h">
+			<Option target="BasicsOfProgrammingCourse"/>
+		</Unit>
+		<Unit filename="D:/study/op/work/BasicOfProgrammingCourse/libs/data_structures/vectorVoid/vectorVoid.c">
+			<Option target="BasicsOfProgrammingCourse"/>
+		</Unit>
+		<Unit filename="D:/study/op/work/BasicOfProgrammingCourse/libs/data_structures/vectorVoid/vectorVoid.h">
+			<Option target="BasicsOfProgrammingCourse"/>
+		</Unit>
+		<Unit filename="D:/study/op/work/BasicOfProgrammingCourse/main.c">
+			<Option target="BasicsOfProgrammingCourse"/>
+		</Unit>
+		<Unit filename="D:/study/op/work/BasicOfProgrammingCourse/olds_main/lab14.c">
+			<Option target="BasicsOfProgrammingCourse"/>
+		</Unit>
+		<Unit filename="D:/study/op/work/BasicOfProgrammingCourse/olds_main/lab15.c">
+			<Option target="BasicsOfProgrammingCourse"/>
+		</Unit>
+		<Unit filename="D:/study/op/work/BasicOfProgrammingCourse/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="D:/study/op/BasicOfProgrammingCourse/libs/CMakeLists.txt">
+		<Unit filename="D:/study/op/work/BasicOfProgrammingCourse/libs/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\libs\"/>
 		</Unit>
 	</Project>

@@ -8,9 +8,14 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "D:/study/op/BasicOfProgrammingCourse/libs/data_structures/vector/vector.c" "CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/vector/vector.c.obj" "gcc" "CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/vector/vector.c.obj.d"
-  "D:/study/op/BasicOfProgrammingCourse/libs/data_structures/vectorVoid/vectorVoid.c" "CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/vectorVoid/vectorVoid.c.obj" "gcc" "CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/vectorVoid/vectorVoid.c.obj.d"
-  "D:/study/op/BasicOfProgrammingCourse/main.c" "CMakeFiles/BasicsOfProgrammingCourse.dir/main.c.obj" "gcc" "CMakeFiles/BasicsOfProgrammingCourse.dir/main.c.obj.d"
+  "D:/study/op/work/BasicOfProgrammingCourse/libs/data_structures/array/array.c" "CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/array/array.c.obj" "gcc" "CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/array/array.c.obj.d"
+  "D:/study/op/work/BasicOfProgrammingCourse/libs/data_structures/matrix/matrix.c" "CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/matrix/matrix.c.obj" "gcc" "CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/matrix/matrix.c.obj.d"
+  "D:/study/op/work/BasicOfProgrammingCourse/libs/data_structures/tests/test_matrix.c" "CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/tests/test_matrix.c.obj" "gcc" "CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/tests/test_matrix.c.obj.d"
+  "D:/study/op/work/BasicOfProgrammingCourse/libs/data_structures/vector/vector.c" "CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/vector/vector.c.obj" "gcc" "CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/vector/vector.c.obj.d"
+  "D:/study/op/work/BasicOfProgrammingCourse/libs/data_structures/vectorVoid/vectorVoid.c" "CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/vectorVoid/vectorVoid.c.obj" "gcc" "CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/vectorVoid/vectorVoid.c.obj.d"
+  "D:/study/op/work/BasicOfProgrammingCourse/main.c" "CMakeFiles/BasicsOfProgrammingCourse.dir/main.c.obj" "gcc" "CMakeFiles/BasicsOfProgrammingCourse.dir/main.c.obj.d"
+  "D:/study/op/work/BasicOfProgrammingCourse/olds_main/lab14.c" "CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab14.c.obj" "gcc" "CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab14.c.obj.d"
+  "D:/study/op/work/BasicOfProgrammingCourse/olds_main/lab15.c" "CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab15.c.obj" "gcc" "CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab15.c.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.
