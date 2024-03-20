@@ -289,3 +289,68 @@ void sortRowsByMinElement(matrix m) {
 
     }
 }
+int getMin(int *a, int n){
+    int result = a[0];
+    for (int i = 1; i < n; ++i) {
+        if (result > a[i])
+            result = a[i];
+        else
+            result;
+    }
+    return result;
+}
+void sortColsByMinElement(matrix m){
+        selectionSortColsMatrixByColCriteria(m,getMin);
+}
+
+//2*3
+//3*5
+//1 2 8
+//3 5 9
+//
+//0 1 5 9 8
+//5 7 9 3 0
+//4 8 9 3 4
+//0 0 0 0 0
+//0 0 0 0 0
+//result [1][3] = 3 * 9 + 5 * 3 + 9 * 3
+//result [row_index][col_index] =
+// m1.[row_index][0] *  m2.[0][col_index]+
+// m1.[row_index][1]  * m2.[1][col_index]+ 
+// m1.[row_index][i] * m2.[i][col_index]
+//1 +3+2+6+7+9
+
+matrix mulMatrices(matrix m1, matrix m2){
+    assert(m1.nCols == m2.nRows);
+    matrix result = getMemMatrix(m1.nRows,m2.nCols);
+    for (int index_row = 0; index_row < result.nRows; ++index_row) {
+        for (int index_col = 0; index_col < result.nCols; ++index_col) {
+            int s = 0;
+            for (int i = 0; i < m2.nCols; ++i) {
+                s += m1.values[index_row][i] * m2.values[i][index_col];
+            }
+            result.values[index_row][index_col] = s;
+        }
+    }
+    return result;
+}
+void getSquareOfMatrixIfSymmetric(matrix *m){
+    matrix current_result;
+    if (isSymmetricMatrix(m)) {
+         current_result =  mulMatrices(*m,*m);
+        freeMemMatrix(m);
+        *m = current_result;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
