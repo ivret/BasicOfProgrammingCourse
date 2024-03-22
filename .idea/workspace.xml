@@ -23,10 +23,16 @@
     <list default="true" id="2c91f2b6-d7e5-463a-ad34-6b17456152d5" name="Changes" comment="lab16_2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/BasicsOfProgrammingCourse.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/BasicsOfProgrammingCourse.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/compiler_depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/compiler_depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/compiler_depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/compiler_depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/array/array.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/array/array.c.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/matrix/matrix.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/matrix/matrix.c.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/main.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/main.c.obj.d" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/main.c.obj.d" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/objects.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/array/array.c" beforeDir="false" afterPath="$PROJECT_DIR$/libs/data_structures/array/array.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/array/array.h" beforeDir="false" afterPath="$PROJECT_DIR$/libs/data_structures/array/array.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libs/data_structures/matrix/matrix.c" beforeDir="false" afterPath="$PROJECT_DIR$/libs/data_structures/matrix/matrix.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libs/data_structures/matrix/matrix.h" beforeDir="false" afterPath="$PROJECT_DIR$/libs/data_structures/matrix/matrix.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
@@ -92,7 +98,13 @@
       <workItem from="1710790548439" duration="805000" />
       <workItem from="1710823941996" duration="4292000" />
       <workItem from="1710845879661" duration="17854000" />
-      <workItem from="1710910887490" duration="7683000" />
+      <workItem from="1710910887490" duration="15857000" />
+      <workItem from="1710996742475" duration="434000" />
+      <workItem from="1711017702496" duration="6148000" />
+      <workItem from="1711034910312" duration="7934000" />
+      <workItem from="1711047563449" duration="983000" />
+      <workItem from="1711083560983" duration="1519000" />
+      <workItem from="1711120130709" duration="3794000" />
     </task>
     <task id="LOCAL-00001" summary="lab16_2">
       <option name="closed" value="true" />
@@ -102,7 +114,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710863590136</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="lab16_2">
+      <option name="closed" value="true" />
+      <created>1710952040213</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1710952040213</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

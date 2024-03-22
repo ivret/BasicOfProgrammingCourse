@@ -135,14 +135,6 @@ void swap_pointers(void** a, void** b){
     *b = t;
 }
 
-int getSum(int *a, int n){
-    int result = 0;
-    for (int i = 0; i < n; ++i) {
-        result += a[i];
-    }
-    return result;
-}
-
 bool isZero(const int a[], const size_t size) {
     for (int i = 0; i < size; ++i)
         if (a[i])
@@ -178,7 +170,30 @@ int getMax(int *a, int n){
     return max_values;
 }
 
+long long getSumL(int *a,int n){
+    long long result = 0;
+    for (int i = 0; i < n; ++i) {
+        result += a[i];
+    }
+    return result;
+}
+bool isUnique(long long *a, int n){
+    for (int i = 0; i < n; ++i) {
+        for (int j = i + 1; j < n ; ++j) {
+            if (a[i] == a[j])
+                return false;
+        }
+    }
+    return true;
+}
 
+int getSum(int *a, int n){
+    int result = 0;
+    for (int i = 0; i < n; ++i) {
+        result += a[i];
+    }
+    return result;
+}
 
 
 

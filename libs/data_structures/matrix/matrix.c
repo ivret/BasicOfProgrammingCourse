@@ -86,15 +86,27 @@ void swapColumns(matrix m, int j1, int j2){
         swap_int(&m.values[row_index][j1],&m.values[row_index][j2]);
     }
 }
+//заполняет массив criteria_array значениями полученными при применение функции
+// criteria к строкам матрицы m
+void fillRowCriteriaArray(matrix  m, int *criteria_array, int (*criteria)(int*, int)){
+    for (int index_row = 0; index_row < m.nRows; ++index_row) {
+        criteria_array[index_row] = criteria(m.values[index_row], m.nCols);
+    }
+}
+
+void fillRowCriteriaArrayL(matrix  m, long long *criteria_array, long long (*criteria)(int*, int)){
+    for (int index_row = 0; index_row < m.nRows; ++index_row) {
+        criteria_array[index_row] = criteria(m.values[index_row], m.nCols);
+    }
+}
 
 //выполняет сортировку вставками строк
 //матрицы m по неубыванию значения функции criteria применяемой для строк
 void insertionSortRowsMatrixByRowCriteria(matrix m,
                                           int (*criteria)(int*, int)){
     int criteria_array[m.nRows];
-    for (int index_row = 0; index_row < m.nRows; ++index_row) {
-        criteria_array[index_row] = criteria(m.values[index_row], m.nCols);
-    }
+
+    fillRowCriteriaArray(m,criteria_array,criteria);
     int newElement, location;
 
     for (int i = 1; i < m.nRows; i++)
@@ -204,8 +216,10 @@ void transposeMatrix(matrix *m){
                 new_matrix.values[col_index][row_index] = m->values[row_index][col_index];
             }
         }
+
         freeMemMatrix(m);
-        *m = new_matrix;
+        memcpy(m,&new_matrix,sizeof (matrix));
+
     }
 }
 
@@ -303,23 +317,6 @@ void sortColsByMinElement(matrix m){
         selectionSortColsMatrixByColCriteria(m,getMin);
 }
 
-//2*3
-//3*5
-//1 2 8
-//3 5 9
-//
-//0 1 5 9 8
-//5 7 9 3 0
-//4 8 9 3 4
-//0 0 0 0 0
-//0 0 0 0 0
-//result [1][3] = 3 * 9 + 5 * 3 + 9 * 3
-//result [row_index][col_index] =
-// m1.[row_index][0] *  m2.[0][col_index]+
-// m1.[row_index][1]  * m2.[1][col_index]+ 
-// m1.[row_index][i] * m2.[i][col_index]
-//1 +3+2+6+7+9
-
 matrix mulMatrices(matrix m1, matrix m2){
     assert(m1.nCols == m2.nRows);
     matrix result = getMemMatrix(m1.nRows,m2.nCols);
@@ -343,7 +340,56 @@ void getSquareOfMatrixIfSymmetric(matrix *m){
     }
 }
 
+//заполняет массив criteria_array значениями полученными при применение функции
+// criteria к строкам матрицы m
 
+void transposeIfMatrixHasNotEqualSumOfRows(matrix *m){
+    long long sum_array[m->nRows];
+    fillRowCriteriaArrayL(*m,sum_array, getSumL);
+    if (isUnique(sum_array,m->nRows))
+        transposeMatrix(m);
+}
+
+bool isMutuallyInverseMatrices(matrix m1, matrix m2) {
+    matrix mul_matrix = mulMatrices(m1, m2);
+    bool a = isEMatrix(&mul_matrix);
+    freeMemMatrix(&mul_matrix);
+
+    return a;
+}
+
+int max(int a, int b) {
+    return (a > b ? a : b);
+}
+
+long long findSumOfMaxesOfPseudoDiagonal(matrix m) {
+    int arraySize = m.nRows + m.nCols - 1;
+    int maxes[arraySize];
+
+    for (int i = 0; i < arraySize; ++i) {
+        maxes[i] = INT_MIN;
+    }
+
+    int increment = m.nCols - 1;
+
+    for (int i = 0; i < m.nRows; ++i) {
+        for (int j = 0; j < m.nCols; ++j) {
+            int index = i - j + increment;
+
+            maxes[index] = max(maxes[index], m.values[i][j]);
+        }
+    }
+
+    long long sum = 0;
+
+    for (int i = 0; i < arraySize; ++i) {
+        if (i != increment) {
+            sum += maxes[i];
+        }
+    }
+
+    return sum;
+}
 
 
 

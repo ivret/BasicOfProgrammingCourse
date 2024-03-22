@@ -77,4 +77,17 @@ matrix mulMatrices(matrix m1, matrix m2);
 
 void getSquareOfMatrixIfSymmetric(matrix *m);
 
+void fillRowCriteriaArray(matrix  m, int *criteria_array, int (*criteria)(int*, int));
+
+void fillRowCriteriaArrayL(matrix  m, long long *criteria_array, long long (*criteria)(int*, int));
+
+void transposeIfMatrixHasNotEqualSumOfRows(matrix *m);
+
+bool isMutuallyInverseMatrices(matrix m1, matrix m2);
+
+int max(int a, int b);
+
+long long findSumOfMaxesOfPseudoDiagonal(matrix m);
+
+
 #endif //BASICSOFPROGRAMMINGCOURSE_MATRIX_H

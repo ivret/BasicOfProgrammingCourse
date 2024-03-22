@@ -1,6 +1,10 @@
 
 #include "data_structures/matrix/matrix.h"
+#include "data_structures/array/array.h"
+
 #include <assert.h>
+#include <stdio.h>
+
 
 void test_swapMinMaxstring() {
     matrix m = createMatrixFromArray(
@@ -69,10 +73,50 @@ void test_getSquareOfMatrixIfSymmetric() {
     freeMemMatrix(&m);
     freeMemMatrix(&m1);
 }
+
+void test_transposeIfMatrixHasNotEqualSumOfRows() {
+    matrix m = createMatrixFromArray(
+            (int[])
+                    {
+                            9, 1, 7,
+                            10, 2, 2,
+                            5, 8, 6
+                    }, 3, 3);
+    transposeIfMatrixHasNotEqualSumOfRows(&m);
+    outputMatrix(m);
+}
+void test_isMutuallyInverseMatrices(){
+    matrix m1 = createMatrixFromArray(
+            (int[])
+                    {
+                            1,0,
+                            0,1
+                    }, 2, 2);
+    matrix m2 = createMatrixFromArray(
+            (int[])
+                    {
+                            1,0,
+                            0,1
+                    }, 2, 2);
+    assert(isMutuallyInverseMatrices(m1,m2));
+}
+void test_findSumOfMaxesOfPseudoDiagonal() {
+    matrix m1 = createMatrixFromArray(
+            (int[])
+                    {
+                            3, 2,5,4,
+                            1, 3,6,3,
+                            3,2,1,2
+                    }, 3, 4);
+    assert(findSumOfMaxesOfPseudoDiagonal(m1));
+}
 int main(){
 //    test_swapMinMaxstring();
 //    test_swapsortRowsByMinElement();
 //    test_sortColsByMinElement();
-    test_getSquareOfMatrixIfSymmetric();
+//    test_getSquareOfMatrixIfSymmetric();
+//    test_transposeIfMatrixHasNotEqualSumOfRows();
+//    test_isMutuallyInverseMatrices();
+    test_findSumOfMaxesOfPseudoDiagonal();
     return 0;
 }
