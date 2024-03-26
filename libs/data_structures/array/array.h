@@ -67,7 +67,6 @@ void InsertionSort(int n, int mass[]);
 
 int getMax(int *a, int n);
 
-
 bool isUnique(long long *a, int n);
 
 long long getSumL(int  *a, int  n);

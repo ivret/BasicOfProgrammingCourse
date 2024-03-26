@@ -372,11 +372,11 @@ long long findSumOfMaxesOfPseudoDiagonal(matrix m) {
 
     int increment = m.nCols - 1;
 
-    for (int i = 0; i < m.nRows; ++i) {
-        for (int j = 0; j < m.nCols; ++j) {
-            int index = i - j + increment;
+    for (int index_row = 0; index_row < m.nRows; ++index_row) {
+        for (int index_col = 0; index_col < m.nCols; ++index_col) {
+            int index = index_row - index_col + increment;
 
-            maxes[index] = max(maxes[index], m.values[i][j]);
+            maxes[index] = max(maxes[index], m.values[index_row][index_col]);
         }
     }
 
@@ -391,8 +391,35 @@ long long findSumOfMaxesOfPseudoDiagonal(matrix m) {
     return sum;
 }
 
+//int getMinInArea(matrix m){
+//    int min = 0;
+//    position maximumPosition = getMaxValuePos(m);
+//    for (int index_row = 0; index_row < maximumPosition.rowIndex; ++index_row) {
+//        for (int index_col = max(maximumPosition.colIndex + maximumPosition.rowIndex - index_row,0)
+//                ;index_col < maximumPosition.colIndex; ++index_col){
+//                min = getMin(m.values[index_row], m.nCols);
+//        }
+//    }
+//    return min;
+//}
+//
+int minl(int a, int b) {
+    return (a < b ? a : b);
+}
+int getMinInArea(matrix m){
+    position max_pos = getMaxValuePos(m);
 
+    int min = m.values[max_pos.rowIndex][max_pos.colIndex];
+    for (int row_index = 0; row_index < max_pos.rowIndex; ++row_index) {
+        int end_index = minl(max_pos.colIndex - row_index + max_pos.rowIndex + 1, m.nCols);
+        for (int col_index = max(max_pos.colIndex + row_index - max_pos.rowIndex, 0);
+             col_index < end_index; ++col_index) {
+            min = minl(min, m.values[row_index][col_index]);
+        }
+    }
 
+    return min;
+}
 
 
 

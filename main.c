@@ -108,7 +108,17 @@ void test_findSumOfMaxesOfPseudoDiagonal() {
                             1, 3,6,3,
                             3,2,1,2
                     }, 3, 4);
-    assert(findSumOfMaxesOfPseudoDiagonal(m1));
+    assert(findSumOfMaxesOfPseudoDiagonal(m1) == 20);
+}
+void test_getMinInArea(){
+    matrix m = createMatrixFromArray(
+    (int [])
+    {
+        10,7,5,6,
+        3,11,8,9,
+        4,1,12,2
+    },3,4);
+    assert(getMinInArea(m) == 5);
 }
 int main(){
 //    test_swapMinMaxstring();
@@ -118,5 +128,6 @@ int main(){
 //    test_transposeIfMatrixHasNotEqualSumOfRows();
 //    test_isMutuallyInverseMatrices();
     test_findSumOfMaxesOfPseudoDiagonal();
+    test_getMinInArea();
     return 0;
 }
