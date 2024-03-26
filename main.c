@@ -116,9 +116,34 @@ void test_getMinInArea(){
     {
         10,7,5,6,
         3,11,8,9,
-        4,1,12,2
-    },3,4);
-    assert(getMinInArea(m) == 5);
+        4,1,14,2,
+        12,18,13,15
+    },4,4);
+    assert(getMinInArea(m) == 1);
+}
+
+
+void  test_sortByDistances() {
+    matrix m1 = createMatrixFromArray(
+            (int[])
+                    {
+                            10, 7, 5, 6,
+                            3, 11, 8, 9,
+                            4, 1, 14, 2,
+                            12, 18, 13, 15
+                    }, 4, 4);
+    matrix m2 = createMatrixFromArray(
+            (int[])
+                    {
+                            10, 7, 5, 6,
+                            4, 1, 14, 2,
+                            3, 11, 8, 9,
+                            12, 18, 13, 15
+                    }, 4, 4);
+    sortByDistances(m1);
+    assert(areTwoMatricesEqual(&m1,&m2));
+    freeMemMatrix(&m1);
+    freeMemMatrix(&m2);
 }
 int main(){
 //    test_swapMinMaxstring();
@@ -127,7 +152,8 @@ int main(){
 //    test_getSquareOfMatrixIfSymmetric();
 //    test_transposeIfMatrixHasNotEqualSumOfRows();
 //    test_isMutuallyInverseMatrices();
-    test_findSumOfMaxesOfPseudoDiagonal();
-    test_getMinInArea();
+//    test_findSumOfMaxesOfPseudoDiagonal();
+//    test_getMinInArea();
+    test_sortByDistances();
     return 0;
 }

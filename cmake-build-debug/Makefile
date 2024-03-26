@@ -272,54 +272,6 @@ main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\BasicsOfProgrammingCourse.dir\build.make CMakeFiles/BasicsOfProgrammingCourse.dir/main.c.s
 .PHONY : main.c.s
 
-olds_main/lab14.obj: olds_main/lab14.c.obj
-.PHONY : olds_main/lab14.obj
-
-# target to build an object file
-olds_main/lab14.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BasicsOfProgrammingCourse.dir\build.make CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab14.c.obj
-.PHONY : olds_main/lab14.c.obj
-
-olds_main/lab14.i: olds_main/lab14.c.i
-.PHONY : olds_main/lab14.i
-
-# target to preprocess a source file
-olds_main/lab14.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BasicsOfProgrammingCourse.dir\build.make CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab14.c.i
-.PHONY : olds_main/lab14.c.i
-
-olds_main/lab14.s: olds_main/lab14.c.s
-.PHONY : olds_main/lab14.s
-
-# target to generate assembly for a file
-olds_main/lab14.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BasicsOfProgrammingCourse.dir\build.make CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab14.c.s
-.PHONY : olds_main/lab14.c.s
-
-olds_main/lab15.obj: olds_main/lab15.c.obj
-.PHONY : olds_main/lab15.obj
-
-# target to build an object file
-olds_main/lab15.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BasicsOfProgrammingCourse.dir\build.make CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab15.c.obj
-.PHONY : olds_main/lab15.c.obj
-
-olds_main/lab15.i: olds_main/lab15.c.i
-.PHONY : olds_main/lab15.i
-
-# target to preprocess a source file
-olds_main/lab15.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BasicsOfProgrammingCourse.dir\build.make CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab15.c.i
-.PHONY : olds_main/lab15.c.i
-
-olds_main/lab15.s: olds_main/lab15.c.s
-.PHONY : olds_main/lab15.s
-
-# target to generate assembly for a file
-olds_main/lab15.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BasicsOfProgrammingCourse.dir\build.make CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab15.c.s
-.PHONY : olds_main/lab15.c.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -347,12 +299,6 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
-	@echo ... olds_main/lab14.obj
-	@echo ... olds_main/lab14.i
-	@echo ... olds_main/lab14.s
-	@echo ... olds_main/lab15.obj
-	@echo ... olds_main/lab15.i
-	@echo ... olds_main/lab15.s
 .PHONY : help
 
 

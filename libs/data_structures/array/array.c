@@ -16,6 +16,11 @@ void outputArray_ ( const int * const a , const size_t n ) {
     printf ("\n") ;
     }
 
+void outputArrayF ( const float * const a , const size_t n ) {
+    for ( size_t i = 0; i < n ; i ++)
+        printf ("%f ", a [ i ]) ;
+    printf ("\n") ;
+}
 void append_ (int * const a , size_t * const n , const int value ) {
     a [* n ] = value ;
     (* n ) ++;

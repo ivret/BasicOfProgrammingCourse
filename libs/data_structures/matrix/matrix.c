@@ -4,6 +4,7 @@
 #include <assert.h>
 #include <stdbool.h>
 #include <string.h>
+#include <math.h>
 #include "data_structures/array/array.h"
 
 //размещает в динамической памяти матрицу размером nRows на nCols. Возвращает матрицу
@@ -94,6 +95,11 @@ void fillRowCriteriaArray(matrix  m, int *criteria_array, int (*criteria)(int*, 
     }
 }
 
+void fillRowCriteriaArrayF(matrix  m, float *criteria_array, float (*criteria)(int*, int)){
+    for (int index_row = 0; index_row < m.nRows; ++index_row) {
+        criteria_array[index_row] = criteria(m.values[index_row], m.nCols);
+    }
+}
 void fillRowCriteriaArrayL(matrix  m, long long *criteria_array, long long (*criteria)(int*, int)){
     for (int index_row = 0; index_row < m.nRows; ++index_row) {
         criteria_array[index_row] = criteria(m.values[index_row], m.nCols);
@@ -117,11 +123,11 @@ void insertionSortRowsMatrixByRowCriteria(matrix m,
         while(location >= 0 && criteria_array[location] > newElement)
         {
             criteria_array[location+1] = criteria_array[location];
-            swapRows(m,location+1,location);
+            m.values[location +1] = m.values[location];
             location = location - 1;
         }
         criteria_array[location+1] = newElement;
-        m.values[i] = prow;
+        m.values[location + 1] = prow;
     }
 }
 //выполняет сортировку выбором столбцов
@@ -391,37 +397,73 @@ long long findSumOfMaxesOfPseudoDiagonal(matrix m) {
     return sum;
 }
 
-//int getMinInArea(matrix m){
-//    int min = 0;
-//    position maximumPosition = getMaxValuePos(m);
-//    for (int index_row = 0; index_row < maximumPosition.rowIndex; ++index_row) {
-//        for (int index_col = max(maximumPosition.colIndex + maximumPosition.rowIndex - index_row,0)
-//                ;index_col < maximumPosition.colIndex; ++index_col){
-//                min = getMin(m.values[index_row], m.nCols);
-//        }
-//    }
-//    return min;
-//}
-//
 int minl(int a, int b) {
     return (a < b ? a : b);
 }
-int getMinInArea(matrix m){
-    position max_pos = getMaxValuePos(m);
 
-    int min = m.values[max_pos.rowIndex][max_pos.colIndex];
-    for (int row_index = 0; row_index < max_pos.rowIndex; ++row_index) {
-        int end_index = minl(max_pos.colIndex - row_index + max_pos.rowIndex + 1, m.nCols);
-        for (int col_index = max(max_pos.colIndex + row_index - max_pos.rowIndex, 0);
-             col_index < end_index; ++col_index) {
-            min = minl(min, m.values[row_index][col_index]);
+int getMinInArea(matrix m){
+    position maximumPosition = getMaxValuePos(m);
+    int min = m.values[maximumPosition.rowIndex][maximumPosition.colIndex];
+    for (int index_row = 0; index_row < maximumPosition.rowIndex; ++index_row) {
+        int end_index = minl(m.nCols,maximumPosition.rowIndex + maximumPosition.colIndex - index_row);
+        for (int index_col = max(maximumPosition.colIndex - maximumPosition.rowIndex + index_row,0)
+                ;index_col < end_index; ++index_col){
+                min = minl(m.values[index_row][index_col], min);
         }
     }
-
     return min;
 }
 
+float getDistance(int *a, int n){
+    float d = 0;
+    int sum = 0;
+    for (int i = 0; i < n; ++i) {
+        sum += a[i] * a[i];
+        d = sqrtf((float) sum);
+    }
+    return d;
+}
 
+//Упорядочить точки по неубыванию их расстояний до начала координат.
+void insertionSortRowsMatrixByRowCriteriaF(matrix m,
+                                           float (*criteria)(int *, int)){
+    float criteria_array[m.nRows];
+
+    fillRowCriteriaArrayF(m,criteria_array,criteria);
+    float newElement;
+    int location;
+
+    for (int i = 1; i < m.nRows; i++)
+    {
+        newElement = criteria_array[i];
+        int* prow = m.values[i];
+        location = i - 1;
+        while(location >= 0 && criteria_array[location] > newElement)
+        {
+            criteria_array[location+1] = criteria_array[location];
+            m.values[location + 1] = m.values[location];
+            location = location - 1;
+        }
+        criteria_array[location+1] = newElement;
+        m.values[location+1] = prow;
+    }
+}
+
+void sortByDistances(matrix m){
+    insertionSortRowsMatrixByRowCriteriaF(m,getDistance);
+}
+
+int cmp_long_long(const void *pa, const void *pb){
+
+}
+
+int countNUnique(long long *a, int n){
+
+}
+
+int countEqClassesByRowsSum(matrix m){
+
+}
 
 
 

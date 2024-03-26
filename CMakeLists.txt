@@ -8,8 +8,7 @@ include ("libs/CMakeLists.txt")
 set (files
         "main.c"
         ${libraries}
-        olds_main/lab14.c
-        olds_main/lab15.c
+
 
 
 )

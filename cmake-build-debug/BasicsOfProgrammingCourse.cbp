@@ -111,12 +111,6 @@
 		<Unit filename="D:/study/op/work/BasicOfProgrammingCourse/main.c">
 			<Option target="BasicsOfProgrammingCourse"/>
 		</Unit>
-		<Unit filename="D:/study/op/work/BasicOfProgrammingCourse/olds_main/lab14.c">
-			<Option target="BasicsOfProgrammingCourse"/>
-		</Unit>
-		<Unit filename="D:/study/op/work/BasicOfProgrammingCourse/olds_main/lab15.c">
-			<Option target="BasicsOfProgrammingCourse"/>
-		</Unit>
 		<Unit filename="D:/study/op/work/BasicOfProgrammingCourse/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
