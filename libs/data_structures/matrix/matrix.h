@@ -100,7 +100,7 @@ void sortByDistances(matrix m);
 
 int cmp_long_long(const void *pa, const void *pb);
 
-int countNUnique(long long *a, int n);
+int countNUnique(int *a, int n);
 
 int countEqClassesByRowsSum(matrix m);
 #endif //BASICSOFPROGRAMMINGCOURSE_MATRIX_H

@@ -158,36 +158,6 @@ CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/tests/test_matrix.
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/tests/test_matrix.c.s"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\study\op\work\BasicOfProgrammingCourse\libs\data_structures\tests\test_matrix.c -o CMakeFiles\BasicsOfProgrammingCourse.dir\libs\data_structures\tests\test_matrix.c.s
 
-CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab14.c.obj: CMakeFiles/BasicsOfProgrammingCourse.dir/flags.make
-CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab14.c.obj: CMakeFiles/BasicsOfProgrammingCourse.dir/includes_C.rsp
-CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab14.c.obj: D:/study/op/work/BasicOfProgrammingCourse/olds_main/lab14.c
-CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab14.c.obj: CMakeFiles/BasicsOfProgrammingCourse.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\study\op\work\BasicOfProgrammingCourse\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab14.c.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab14.c.obj -MF CMakeFiles\BasicsOfProgrammingCourse.dir\olds_main\lab14.c.obj.d -o CMakeFiles\BasicsOfProgrammingCourse.dir\olds_main\lab14.c.obj -c D:\study\op\work\BasicOfProgrammingCourse\olds_main\lab14.c
-
-CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab14.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab14.c.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\study\op\work\BasicOfProgrammingCourse\olds_main\lab14.c > CMakeFiles\BasicsOfProgrammingCourse.dir\olds_main\lab14.c.i
-
-CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab14.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab14.c.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\study\op\work\BasicOfProgrammingCourse\olds_main\lab14.c -o CMakeFiles\BasicsOfProgrammingCourse.dir\olds_main\lab14.c.s
-
-CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab15.c.obj: CMakeFiles/BasicsOfProgrammingCourse.dir/flags.make
-CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab15.c.obj: CMakeFiles/BasicsOfProgrammingCourse.dir/includes_C.rsp
-CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab15.c.obj: D:/study/op/work/BasicOfProgrammingCourse/olds_main/lab15.c
-CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab15.c.obj: CMakeFiles/BasicsOfProgrammingCourse.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\study\op\work\BasicOfProgrammingCourse\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab15.c.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab15.c.obj -MF CMakeFiles\BasicsOfProgrammingCourse.dir\olds_main\lab15.c.obj.d -o CMakeFiles\BasicsOfProgrammingCourse.dir\olds_main\lab15.c.obj -c D:\study\op\work\BasicOfProgrammingCourse\olds_main\lab15.c
-
-CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab15.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab15.c.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\study\op\work\BasicOfProgrammingCourse\olds_main\lab15.c > CMakeFiles\BasicsOfProgrammingCourse.dir\olds_main\lab15.c.i
-
-CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab15.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab15.c.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\study\op\work\BasicOfProgrammingCourse\olds_main\lab15.c -o CMakeFiles\BasicsOfProgrammingCourse.dir\olds_main\lab15.c.s
-
 # Object files for target BasicsOfProgrammingCourse
 BasicsOfProgrammingCourse_OBJECTS = \
 "CMakeFiles/BasicsOfProgrammingCourse.dir/main.c.obj" \
@@ -195,9 +165,7 @@ BasicsOfProgrammingCourse_OBJECTS = \
 "CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/vectorVoid/vectorVoid.c.obj" \
 "CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/array/array.c.obj" \
 "CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/matrix/matrix.c.obj" \
-"CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/tests/test_matrix.c.obj" \
-"CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab14.c.obj" \
-"CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab15.c.obj"
+"CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/tests/test_matrix.c.obj"
 
 # External object files for target BasicsOfProgrammingCourse
 BasicsOfProgrammingCourse_EXTERNAL_OBJECTS =
@@ -208,13 +176,11 @@ BasicsOfProgrammingCourse.exe: CMakeFiles/BasicsOfProgrammingCourse.dir/libs/dat
 BasicsOfProgrammingCourse.exe: CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/array/array.c.obj
 BasicsOfProgrammingCourse.exe: CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/matrix/matrix.c.obj
 BasicsOfProgrammingCourse.exe: CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/tests/test_matrix.c.obj
-BasicsOfProgrammingCourse.exe: CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab14.c.obj
-BasicsOfProgrammingCourse.exe: CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab15.c.obj
 BasicsOfProgrammingCourse.exe: CMakeFiles/BasicsOfProgrammingCourse.dir/build.make
 BasicsOfProgrammingCourse.exe: CMakeFiles/BasicsOfProgrammingCourse.dir/linkLibs.rsp
 BasicsOfProgrammingCourse.exe: CMakeFiles/BasicsOfProgrammingCourse.dir/objects1.rsp
 BasicsOfProgrammingCourse.exe: CMakeFiles/BasicsOfProgrammingCourse.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\study\op\work\BasicOfProgrammingCourse\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking C executable BasicsOfProgrammingCourse.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\study\op\work\BasicOfProgrammingCourse\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable BasicsOfProgrammingCourse.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\BasicsOfProgrammingCourse.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

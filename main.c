@@ -145,6 +145,19 @@ void  test_sortByDistances() {
     freeMemMatrix(&m1);
     freeMemMatrix(&m2);
 }
+
+void test_countEqClassesByRowsSum(){
+    matrix m = createMatrixFromArray(
+            (int [])
+                    {7,1,
+                     2,7,
+                     5,4,
+                     4,3,
+                     1,0,
+                     8,10
+                    },6,2);
+    assert(countEqClassesByRowsSum(m) == 5);
+}
 int main(){
 //    test_swapMinMaxstring();
 //    test_swapsortRowsByMinElement();
@@ -155,5 +168,6 @@ int main(){
 //    test_findSumOfMaxesOfPseudoDiagonal();
 //    test_getMinInArea();
     test_sortByDistances();
+    test_countEqClassesByRowsSum();
     return 0;
 }

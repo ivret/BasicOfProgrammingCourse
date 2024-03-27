@@ -14,8 +14,6 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/study/op/work/BasicOfProgrammingCourse/libs/data_structures/vector/vector.c" "CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/vector/vector.c.obj" "gcc" "CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/vector/vector.c.obj.d"
   "D:/study/op/work/BasicOfProgrammingCourse/libs/data_structures/vectorVoid/vectorVoid.c" "CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/vectorVoid/vectorVoid.c.obj" "gcc" "CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/vectorVoid/vectorVoid.c.obj.d"
   "D:/study/op/work/BasicOfProgrammingCourse/main.c" "CMakeFiles/BasicsOfProgrammingCourse.dir/main.c.obj" "gcc" "CMakeFiles/BasicsOfProgrammingCourse.dir/main.c.obj.d"
-  "D:/study/op/work/BasicOfProgrammingCourse/olds_main/lab14.c" "CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab14.c.obj" "gcc" "CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab14.c.obj.d"
-  "D:/study/op/work/BasicOfProgrammingCourse/olds_main/lab15.c" "CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab15.c.obj" "gcc" "CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab15.c.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

@@ -454,15 +454,35 @@ void sortByDistances(matrix m){
 }
 
 int cmp_long_long(const void *pa, const void *pb){
-
+    return *(int *)pa - *(int *)pb;
 }
 
-int countNUnique(long long *a, int n){
-
+int countNUnique(int *a, int n) {
+    int count = 0;
+    for (int i = 0; i < n; i++) {
+        int unique = 1;
+        for (int j = 0; j < i; j++) {
+            if (a[i] == a[j]) {
+                unique = 0;
+                break;
+            }
+        }
+        if (unique) {
+            count++;
+        }
+    }
+    return count;
 }
 
 int countEqClassesByRowsSum(matrix m){
-
+    int  sum_rows[m.nRows];
+    int result = 0;
+    for (int index_row = 0; index_row < m.nRows; ++index_row) {
+        sum_rows[index_row] = getSum(m.values[index_row],m.nCols);
+        qsort(sum_rows,m.nCols,sizeof (int),cmp_long_long);
+        result = countNUnique(sum_rows,m.nRows);
+    }
+    return result;
 }
 
 
