@@ -103,4 +103,6 @@ int cmp_long_long(const void *pa, const void *pb);
 int countNUnique(int *a, int n);
 
 int countEqClassesByRowsSum(matrix m);
+
+int getNSpecialElement(matrix m);
 #endif //BASICSOFPROGRAMMINGCOURSE_MATRIX_H

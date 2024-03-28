@@ -458,16 +458,12 @@ int cmp_long_long(const void *pa, const void *pb){
 }
 
 int countNUnique(int *a, int n) {
-    int count = 0;
-    for (int i = 0; i < n; i++) {
-        int unique = 1;
-        for (int j = 0; j < i; j++) {
-            if (a[i] == a[j]) {
-                unique = 0;
-                break;
-            }
-        }
-        if (unique) {
+    if (n == 0)
+        return 0;
+
+    int count = 1;
+    for (int i = 1; i < n; i++) {
+        if (a[i - 1] != a[i]) {
             count++;
         }
     }
@@ -479,11 +475,58 @@ int countEqClassesByRowsSum(matrix m){
     int result = 0;
     for (int index_row = 0; index_row < m.nRows; ++index_row) {
         sum_rows[index_row] = getSum(m.values[index_row],m.nCols);
-        qsort(sum_rows,m.nCols,sizeof (int),cmp_long_long);
-        result = countNUnique(sum_rows,m.nRows);
     }
+    qsort(sum_rows,m.nCols,sizeof (int),cmp_long_long);
+    result = countNUnique(sum_rows,m.nRows);
+
     return result;
 }
+
+int getNSpecialElement(matrix m){
+    int count_special = 0;
+    for (int index_col = 0; index_col < m.nCols; ++index_col) {
+        int max_value = m.values[0][index_col];
+        int sum = max_value;
+        for (int index_row = 1; index_row < m.nRows; ++index_row) {
+            sum += m.values[index_row][index_col];
+            max_value = max(max_value,m.values[index_row][index_col]);
+        }
+        if(max_value > sum - max_value)
+            count_special++;
+    }
+    return count_special;
+}
+
+//int getNSpecialElementa(matrix m){
+//    int count = 0;
+//    for (int index_col = 0; index_col < m.nCols; ++index_col) {
+//        int max_value = m.values[0][index_col];
+//        int sum = max_value;
+//        for (int index_row = 0; index_row < m.nRows; ++index_row) {
+//            sum += m.values[]
+//        }
+//    }
+//}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

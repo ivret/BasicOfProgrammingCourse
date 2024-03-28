@@ -149,14 +149,26 @@ void  test_sortByDistances() {
 void test_countEqClassesByRowsSum(){
     matrix m = createMatrixFromArray(
             (int [])
-                    {7,1,
-                     2,7,
-                     5,4,
-                     4,3,
-                     1,0,
-                     8,10
+                    {7,1,//8
+                     2,7,//9
+                     5,4,//9
+                     4,3,//7
+                     1,0,//1
+                     8,10//18
                     },6,2);
+    //1,7,8,9,9,18
     assert(countEqClassesByRowsSum(m) == 5);
+}
+
+void test_getNSpecialElement(){
+    matrix m = createMatrixFromArray(
+            (int [])
+                    {
+                            3,5,5,4,
+                            2,3,6,7,
+                            12,2,1
+                    },4,4);
+    assert(getNSpecialElement(m) == 2);
 }
 int main(){
 //    test_swapMinMaxstring();
@@ -169,5 +181,6 @@ int main(){
 //    test_getMinInArea();
     test_sortByDistances();
     test_countEqClassesByRowsSum();
+    test_getNSpecialElement();
     return 0;
 }
