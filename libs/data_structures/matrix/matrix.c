@@ -533,6 +533,7 @@ bool isNonDescendingSorted(int *a, int n){
         if (a[i] > a[i + 1])
             return false;
     }
+
     return ordered;
 }
 
@@ -541,6 +542,7 @@ bool hasAllNonDescendingRows(matrix m){
         if(!isNonDescendingSorted(m.values[index_row],m.nRows))
             return false;
     }
+
     return true;
 }
 

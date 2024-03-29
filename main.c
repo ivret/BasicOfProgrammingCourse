@@ -223,6 +223,7 @@ void test_countNonDescendingRowsMatrices() {
     freeMemMatrix(&m2);
     freeMemMatrix(&m3);
 }
+
 int main(){
 //    test_swapMinMaxstring();
 //    test_swapsortRowsByMinElement();
