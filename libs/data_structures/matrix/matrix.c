@@ -497,16 +497,35 @@ int getNSpecialElement(matrix m){
     return count_special;
 }
 
-//int getNSpecialElementa(matrix m){
-//    int count = 0;
-//    for (int index_col = 0; index_col < m.nCols; ++index_col) {
-//        int max_value = m.values[0][index_col];
-//        int sum = max_value;
-//        for (int index_row = 0; index_row < m.nRows; ++index_row) {
-//            sum += m.values[]
-//        }
-//    }
-//}
+position getLeftMin(matrix m){
+    position index_min = {0,0};
+    int min_value = m.values[0][0];
+    for (int index_col = 0; index_col < m.nCols; ++index_col) {
+        for (int index_row = 0; index_row < m.nRows; ++index_row) {
+            if(min_value > m.values[index_row][index_col]){
+                min_value = m.values[index_row][index_col];
+                index_min.rowIndex = index_row;
+                index_min.colIndex = index_col;
+            }
+        }
+    }
+    return index_min;
+}
+
+void swapPenultimateRow(matrix m){
+    if (m.nRows == 1)
+        return;
+    int a[m.nRows];
+    int min = getLeftMin(m).colIndex;
+    for (int index_row = 0; index_row < m.nRows; ++index_row) {
+        a[index_row] = m.values[index_row][min];
+    }
+
+    for (int index_col = 0; index_col < m.nCols; ++index_col) {
+        m.values[m.nRows - 2][index_col] = a[index_col];
+    }
+}
+
 
 
 

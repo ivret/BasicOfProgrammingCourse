@@ -105,4 +105,9 @@ int countNUnique(int *a, int n);
 int countEqClassesByRowsSum(matrix m);
 
 int getNSpecialElement(matrix m);
+
+position getLeftMin(matrix m);
+
+void swapPenultimateRow(matrix m);
+
 #endif //BASICSOFPROGRAMMINGCOURSE_MATRIX_H

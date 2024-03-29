@@ -169,6 +169,24 @@ void test_getNSpecialElement(){
                             12,2,1
                     },4,4);
     assert(getNSpecialElement(m) == 2);
+}void test_swapPenultimateRow(){
+    matrix m = createMatrixFromArray(
+            (int [])
+                    {
+                            1,2,3,
+                            4,5,6,
+                            7,8,1
+                    },3,3);
+    matrix m1 = createMatrixFromArray(
+            (int [])
+                    {
+                            1,2,3,
+                            1,4,7,
+                            7,8,1
+                    },3,3);
+    swapPenultimateRow(m);
+    outputMatrix(m);
+    assert(areTwoMatricesEqual(&m,&m1));
 }
 int main(){
 //    test_swapMinMaxstring();
@@ -179,8 +197,9 @@ int main(){
 //    test_isMutuallyInverseMatrices();
 //    test_findSumOfMaxesOfPseudoDiagonal();
 //    test_getMinInArea();
-    test_sortByDistances();
-    test_countEqClassesByRowsSum();
-    test_getNSpecialElement();
+//    test_sortByDistances();
+//    test_countEqClassesByRowsSum();
+//    test_getNSpecialElement();
+    test_swapPenultimateRow();
     return 0;
 }
