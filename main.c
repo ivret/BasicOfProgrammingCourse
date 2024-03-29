@@ -224,6 +224,87 @@ void test_countNonDescendingRowsMatrices() {
     freeMemMatrix(&m3);
 }
 
+void test_printMatrixWithMaxZeroRows() {
+    matrix m = createMatrixFromArray(
+            (int[])
+                    {
+                            0,1,
+                            1,0,
+                            0,0
+                    }, 3, 2);
+    matrix m1 = createMatrixFromArray(
+            (int[])
+                    {
+                            1,1,
+                            2,1,
+                            1,1
+                    }, 3, 2);
+    matrix m2 = createMatrixFromArray(
+            (int[])
+                    {
+                            0,0,
+                            0,0,
+                            4,7
+                    }, 3, 2);
+    matrix m3 = createMatrixFromArray(
+            (int[])
+                    {
+                            0,0,
+                            0,1,
+                            0,0
+                    }, 3, 2);
+   matrix m4 = createMatrixFromArray(
+            (int[])
+                    {
+                            0,1,
+                            1,2,
+                            0,3
+                    }, 3, 2);
+   matrix ms[] = {m,m1,m2,m3};
+   int n = 4;
+    printMatrixWithMaxZeroRows(ms,n);
+}
+
+void test_printMatrixMinStandard() {
+    matrix m = createMatrixFromArray(
+            (int[])
+                    {
+                            0,1,
+                            1,0,
+                            0,0
+                    }, 3, 2);
+    matrix m1 = createMatrixFromArray(
+            (int[])
+                    {
+                            1,1,
+                            2,1,
+                            1,1
+                    }, 3, 2);
+    matrix m2 = createMatrixFromArray(
+            (int[])
+                    {
+                            0,0,
+                            0,0,
+                            4,7
+                    }, 3, 2);
+    matrix m3 = createMatrixFromArray(
+            (int[])
+                    {
+                            0,0,
+                            0,1,
+                            0,0
+                    }, 3, 2);
+   matrix m4 = createMatrixFromArray(
+            (int[])
+                    {
+                            0,1,
+                            1,2,
+                            0,3
+                    }, 3, 2);
+   matrix ms[] = {m,m1,m2,m3,m4};
+   int n = 5;
+   printMatrixMinStandard(ms,n);
+}
 int main(){
 //    test_swapMinMaxstring();
 //    test_swapsortRowsByMinElement();
@@ -237,5 +318,8 @@ int main(){
 //    test_countEqClassesByRowsSum();
 //    test_getNSpecialElement();
 //    test_swapPenultimateRow();
+//    test_printMatrixWithMaxZeroRows();
+    test_printMatrixMinStandard();
+
     return 0;
 }

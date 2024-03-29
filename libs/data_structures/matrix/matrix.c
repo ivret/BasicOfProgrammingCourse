@@ -284,14 +284,6 @@ matrix *createArrayOfMatrixFromArray(const int *values,
     return ms;
 }
 
-int countZeroRows(matrix m){
-    int zero_rows_amount = 0;
-    for (int row_index = 0; row_index < m.nRows; ++row_index)
-        zero_rows_amount += isZero(m.values[row_index], m.nCols);
-
-    return zero_rows_amount;
-}
-
 //lab 16
 void swapMinMaxstring(matrix m){
     position min_v_p = getMinValuePos(m);
@@ -553,20 +545,56 @@ int countNonDescendingRowsMatrices(matrix *ms, int nMatrix){
     }
 }
 
+int countZeroRows(matrix m){
+    int zero_rows_amount = 0;
+    for (int row_index = 0; row_index < m.nRows; ++row_index)
+        zero_rows_amount += isZero(m.values[row_index], m.nCols);
 
+    return zero_rows_amount;
+}
 
+void printMatrixWithMaxZeroRows(matrix *ms, int nMatrix){
+    int max_zero_rows = 0;
+    int zero_row_amounts[nMatrix];
+    for (int index_matrix = 0; index_matrix < nMatrix; ++index_matrix) {
+        zero_row_amounts[index_matrix] = countZeroRows(ms[index_matrix]);
+        if(zero_row_amounts[index_matrix] > max_zero_rows)
+            max_zero_rows = zero_row_amounts[index_matrix];
 
+    }
+    for (int index_matrix = 0; index_matrix < nMatrix; ++index_matrix) {
+        if(zero_row_amounts[index_matrix] == max_zero_rows)
+            outputMatrix(ms[index_matrix]);
+    }
+}
 
+// возращает максимальный по модулю  элемент матрицы m.
+int  getMaxValuePosAbs(matrix m){
+    int max_value =abs(m.values[0][0]);
+    for (int row_index = 0; row_index < m.nRows; ++row_index) {
+        for (int col_index = 0; col_index < m.nCols; ++col_index) {
+            if(max_value < abs(m.values[row_index][col_index])){
+                max_value = abs(m.values[row_index][col_index]);
 
-
-
-
-
-
-
-
-
-
+            }
+        }
+    }
+    return max_value;
+}
+int printMatrixMinStandard(matrix *ms,int nMatrix){
+    int m[nMatrix];
+    int min_standard = getMaxValuePosAbs(ms[0]);
+    m[0] = min_standard;
+    for (int index_matrix = 1; index_matrix < nMatrix; ++index_matrix) {
+        m[index_matrix] = getMaxValuePosAbs(ms[index_matrix]);
+        if(m[index_matrix] < min_standard)
+            min_standard = m[index_matrix];
+    }
+    for (int index_matrix = 0; index_matrix < nMatrix; ++index_matrix) {
+        if(min_standard == m[index_matrix])
+            outputMatrix(ms[index_matrix]);
+    }
+}
 
 
 

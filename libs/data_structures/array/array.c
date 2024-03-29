@@ -148,6 +148,13 @@ bool isZero(const int a[], const size_t size) {
     return true;
 }
 
+bool isZeroF(const int a[], const size_t size) {
+    for (int i = 0; i < size; ++i)
+        if (a[i])
+            return false;
+
+    return true;
+}
 void InsertionSort(int n, int mass[])
 {
     int newElement, location;

@@ -73,4 +73,6 @@ long long getSumL(int  *a, int  n);
 
 void outputArrayF ( const float * const a , const size_t n );
 
+bool isZeroF(const int a[], const size_t size);
+
 # endif
