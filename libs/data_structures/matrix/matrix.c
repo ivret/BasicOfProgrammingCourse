@@ -520,13 +520,36 @@ void swapPenultimateRow(matrix m){
     for (int index_row = 0; index_row < m.nRows; ++index_row) {
         a[index_row] = m.values[index_row][min];
     }
-
     for (int index_col = 0; index_col < m.nCols; ++index_col) {
         m.values[m.nRows - 2][index_col] = a[index_col];
     }
 }
 
+bool isNonDescendingSorted(int *a, int n){
+    if (n == 1)
+        return true;
+    bool ordered = true;
+    for (int i = 0; i < n - 1 ; ++i) {
+        if (a[i] > a[i + 1])
+            return false;
+    }
+    return ordered;
+}
 
+bool hasAllNonDescendingRows(matrix m){
+    for (int index_row = 0; index_row < m.nRows; ++index_row) {
+        if(!isNonDescendingSorted(m.values[index_row],m.nRows))
+            return false;
+    }
+    return true;
+}
+
+int countNonDescendingRowsMatrices(matrix *ms, int nMatrix){
+    int number_of_suitabl_matrix = 0;
+    for (int index_matrix = 0; index_matrix < nMatrix; ++index_matrix) {
+        hasAllNonDescendingRows(*ms);
+    }
+}
 
 
 

@@ -169,7 +169,9 @@ void test_getNSpecialElement(){
                             12,2,1
                     },4,4);
     assert(getNSpecialElement(m) == 2);
-}void test_swapPenultimateRow(){
+}
+
+void test_swapPenultimateRow(){
     matrix m = createMatrixFromArray(
             (int [])
                     {
@@ -188,6 +190,39 @@ void test_getNSpecialElement(){
     outputMatrix(m);
     assert(areTwoMatricesEqual(&m,&m1));
 }
+
+void test_countNonDescendingRowsMatrices() {
+    matrix m = createMatrixFromArray(
+            (int[])
+                    {
+                            1, 2,
+                            4, 5
+                    }, 2, 2);
+    matrix m1 = createMatrixFromArray(
+            (int[])
+                    {
+                            2, 3,
+                            7, 5
+                    }, 2, 2);
+    matrix m2 = createMatrixFromArray(
+            (int[])
+                    {
+                            7, 8,
+                            7, 5
+                    }, 2, 2);
+    matrix m3 = createMatrixFromArray(
+            (int[])
+                    {
+                            7, 8,
+                            7, 9
+                    }, 2, 2);
+    matrix ms[] = {m1,m2,m3,m};
+    assert(countNonDescendingRowsMatrices(ms,4) == 2);
+    freeMemMatrix(&m);
+    freeMemMatrix(&m1);
+    freeMemMatrix(&m2);
+    freeMemMatrix(&m3);
+}
 int main(){
 //    test_swapMinMaxstring();
 //    test_swapsortRowsByMinElement();
@@ -200,6 +235,6 @@ int main(){
 //    test_sortByDistances();
 //    test_countEqClassesByRowsSum();
 //    test_getNSpecialElement();
-    test_swapPenultimateRow();
+//    test_swapPenultimateRow();
     return 0;
 }
