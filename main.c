@@ -305,6 +305,17 @@ void test_printMatrixMinStandard() {
    int n = 5;
    printMatrixMinStandard(ms,n);
 }
+
+void test_getNSpecialElement2() {
+    matrix m = createMatrixFromArray(
+            (int[])
+                    {
+                            2, 3, 5, 5, 4,
+                            6, 2, 3, 8, 12,
+                            12, 12, 2, 1, 2
+                    }, 3, 5);
+    printf("%d", getNSpecialElement2(m));
+}
 int main(){
 //    test_swapMinMaxstring();
 //    test_swapsortRowsByMinElement();
@@ -319,7 +330,8 @@ int main(){
 //    test_getNSpecialElement();
 //    test_swapPenultimateRow();
 //    test_printMatrixWithMaxZeroRows();
-    test_printMatrixMinStandard();
+//    test_printMatrixMinStandard();
+    test_getNSpecialElement2();
 
     return 0;
 }

@@ -123,4 +123,10 @@ int countZeroRows(matrix m);
 void printMatrixWithMaxZeroRows(matrix *ms, int nMatrix);
 
 int printMatrixMinStandard(matrix *ms,int nMatrix);
+
+int countSpecialElements(int *a,int n);
+
+int getNSpecialElement2(matrix m);
+
+bool isElementSpecial(int *a,int n,int index);
 #endif //BASICSOFPROGRAMMINGCOURSE_MATRIX_H

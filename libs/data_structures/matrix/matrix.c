@@ -581,6 +581,7 @@ int  getMaxValuePosAbs(matrix m){
     }
     return max_value;
 }
+
 int printMatrixMinStandard(matrix *ms,int nMatrix){
     int m[nMatrix];
     int min_standard = getMaxValuePosAbs(ms[0]);
@@ -594,6 +595,35 @@ int printMatrixMinStandard(matrix *ms,int nMatrix){
         if(min_standard == m[index_matrix])
             outputMatrix(ms[index_matrix]);
     }
+}
+
+bool isElementSpecial(int *a,int n,int index){
+    for (int i = index + 1; i < n; ++i) {
+        if (a[index] >= a[i])
+            return false;
+    }
+    for (int i = 0; i < index; ++i) {
+        if (a[index] <= a[i])
+            return false;
+    }
+    return true;
+}
+
+int countSpecialElement(int *a,int n){
+    int count_special = 0;
+    for (int index_current = 0; index_current < n; ++index_current) {
+        if (isElementSpecial(a,n,index_current))
+            count_special++;
+    }
+    return count_special;
+}
+
+int getNSpecialElement2(matrix m){
+    int counter = 0;
+    for (int index_row = 0; index_row < m.nRows; ++index_row) {
+        counter += countSpecialElement(m.values[index_row],m.nCols);
+    }
+    return counter;
 }
 
 
