@@ -262,7 +262,7 @@ void test_printMatrixWithMaxZeroRows() {
                     }, 3, 2);
    matrix ms[] = {m,m1,m2,m3};
    int n = 4;
-    printMatrixWithMaxZeroRows(ms,n);
+   printMatrixWithMaxZeroRows(ms,n);
 }
 
 void test_printMatrixMinStandard() {
@@ -304,6 +304,12 @@ void test_printMatrixMinStandard() {
    matrix ms[] = {m,m1,m2,m3,m4};
    int n = 5;
    printMatrixMinStandard(ms,n);
+    freeMemMatrix(&m);
+    freeMemMatrix(&m1);
+    freeMemMatrix(&m2);
+    freeMemMatrix(&m3);
+    freeMemMatrix(&m4);
+
 }
 
 void test_getNSpecialElement2() {
@@ -314,7 +320,65 @@ void test_getNSpecialElement2() {
                             6, 2, 3, 8, 12,
                             12, 12, 2, 1, 2
                     }, 3, 5);
-    printf("%d", getNSpecialElement2(m));
+    assert(getNSpecialElement2(m) == 4);
+    freeMemMatrix(&m);
+}
+
+void test_getVectorIndexWithMaxAngle() {
+    matrix m1 = createMatrixFromArray(
+            (int[])
+                    {
+                            2, 3, 5, 5, 4,
+                            6, 2, 3, 8, 12,
+                            12, 12, 2, 1, 2
+                    },
+            3, 5
+    );
+    int b1[] = {2, 4, 1, 7, 8};
+
+    matrix m2 = createMatrixFromArray(
+            (int[])
+                    {
+                            2, 4, 5, 5, 4,
+                            0, 2, 0, 8, 0,
+                            2, 42, 2, 48, 2
+                    },
+            3, 5
+    );
+    int b2[] = {29, 4, 11, 7, 18};
+
+    assert(getVectorIndexWithMaxAngle(m1, b1) == 2);
+    assert(getVectorIndexWithMaxAngle(m2, b2) == 1);
+    freeMemMatrix(&m1);
+    freeMemMatrix(&m2);
+}
+
+void test_getSpecialScalarProduct() {
+    matrix m1 = createMatrixFromArray(
+            (int[])
+                    {
+                            2, 3, 5, 1,
+                            15, 2, 3, 8,
+                            12, 12, 2, 1,
+                            2, 3, 4, 5
+                    },
+            4, 4
+    );
+
+    matrix m2 = createMatrixFromArray(
+            (int[])
+                    {
+                            10, 4, 5,
+                            1, 0, 1,
+                            2, 2, 2,
+                    },
+            3, 3
+    );
+
+    assert(getSpecialScalarProduct(m1) == 74);
+    assert(getSpecialScalarProduct(m2) == 50);
+    freeMemMatrix(&m1);
+    freeMemMatrix(&m2);
 }
 
 int main(){
@@ -333,6 +397,7 @@ int main(){
 //    test_printMatrixWithMaxZeroRows();
 //    test_printMatrixMinStandard();
     test_getNSpecialElement2();
+    test_getVectorIndexWithMaxAngle();
 
     return 0;
 }

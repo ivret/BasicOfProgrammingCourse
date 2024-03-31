@@ -129,4 +129,10 @@ int countSpecialElements(int *a,int n);
 int getNSpecialElement2(matrix m);
 
 bool isElementSpecial(int *a,int n,int index);
+
+int getVectorIndexWithMaxAngle(matrix m, int *b);
+
+long long getSpecialScalarProduct(matrix m);
+
+long long getScalarProductRowAndCol(matrix m, int row_index, int col_index);
 #endif //BASICSOFPROGRAMMINGCOURSE_MATRIX_H

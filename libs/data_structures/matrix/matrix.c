@@ -626,6 +626,59 @@ int getNSpecialElement2(matrix m){
     return counter;
 }
 
+//17
+double getScalarProduct(int *a, int *b, int n){
+    double result = 0;
+    for (int i = 0; i < n; ++i) {
+        result += a[i] * b[i];
+    }
+
+    return result;
+}
+
+double getVectorLength(int *a, int n){
+    return sqrt(getScalarProduct(a, a, n));
+}
+
+double getCosine(int *a, int *b, int n){
+    return getScalarProduct(a, b, n) / (
+            getVectorLength(a, n) * getVectorLength(b, n));
+}
+
+int getVectorIndexWithMaxAngle(matrix m, int *b){
+    double min_cos = 1.0;
+    int max_angle_index = 0;
+    for (int row_index = 0; row_index < m.nRows; ++row_index) {
+        double cur_cos = fabs(getCosine(m.values[row_index], b, m.nCols));
+        if(cur_cos < min_cos){
+            min_cos = cur_cos;
+            max_angle_index = row_index;
+        }
+    }
+
+    return max_angle_index;
+}
+
+long long getScalarProductRowAndCol(matrix m, int row_index, int col_index){
+    long long result = 0;
+    for (int i = 0; i < m.nRows; ++i) {
+        result += m.values[row_index][i] * m.values[i][col_index];
+    }
+
+    return result;
+}
+
+long long getSpecialScalarProduct(matrix m){
+    return getScalarProductRowAndCol(
+            m,
+            getMaxValuePos(m).rowIndex,
+            getMinValuePos(m).colIndex
+    );
+}
+
+
+
+
 
 
 

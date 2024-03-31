@@ -21,14 +21,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c91f2b6-d7e5-463a-ad34-6b17456152d5" name="Changes" comment="lab16_3">
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/BasicsOfProgrammingCourse.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/BasicsOfProgrammingCourse.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/matrix/matrix.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/matrix/matrix.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/main.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/objects.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/data_structures/matrix/matrix.c" beforeDir="false" afterPath="$PROJECT_DIR$/libs/data_structures/matrix/matrix.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/data_structures/matrix/matrix.h" beforeDir="false" afterPath="$PROJECT_DIR$/libs/data_structures/matrix/matrix.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,6 +96,7 @@
       <workItem from="1711342442921" duration="11140000" />
       <workItem from="1711516315567" duration="1000" />
       <workItem from="1711603526547" duration="2000" />
+      <workItem from="1711779783472" duration="998000" />
     </task>
     <task id="LOCAL-00001" summary="lab16_2">
       <option name="closed" value="true" />
