@@ -20,12 +20,15 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c91f2b6-d7e5-463a-ad34-6b17456152d5" name="Changes" comment="lab17_3">
+    <list default="true" id="2c91f2b6-d7e5-463a-ad34-6b17456152d5" name="Changes" comment="lab17_findSpace">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/objects1.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/objects1.rsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/BasicsOfProgrammingCourse.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/BasicsOfProgrammingCourse.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/compiler_depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/compiler_depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/main.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/objects.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/tests/string.c" beforeDir="false" afterPath="$PROJECT_DIR$/libs/tests/string.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/tests/string.h" beforeDir="false" afterPath="$PROJECT_DIR$/libs/tests/string.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -104,7 +107,7 @@
       <workItem from="1711779783472" duration="998000" />
       <workItem from="1712304441208" duration="170000" />
       <workItem from="1712304628140" duration="141000" />
-      <workItem from="1712304817549" duration="766000" />
+      <workItem from="1712304817549" duration="8619000" />
     </task>
     <task id="LOCAL-00001" summary="lab16_2">
       <option name="closed" value="true" />
@@ -146,7 +149,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712304681197</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="lab17_findSpace">
+      <option name="closed" value="true" />
+      <created>1712305877271</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1712305877271</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,6 +172,7 @@
     <MESSAGE value="lab16_2" />
     <MESSAGE value="lab16_3" />
     <MESSAGE value="lab17_3" />
-    <option name="LAST_COMMIT_MESSAGE" value="lab17_3" />
+    <MESSAGE value="lab17_findSpace" />
+    <option name="LAST_COMMIT_MESSAGE" value="lab17_findSpace" />
   </component>
 </project>
