@@ -24,22 +24,34 @@ void test_findSpace(){
     assert(*findSpace("ufhe") == 0);
 }
 
+
 void test_findNonSpaceReverse(){
-    char s3[] = "asdf";
-    assert(findNonSpaceReverse(s3 + 3, s3 - 1) == s3 + 3);
+    char rend0[] = "forp";
+    assert(findNonSpaceReverse(rend0 + 3, rend0 - 1) == rend0 + 3);
     char rend[] = "tiodfv " ;
-    assert(*findNonSpaceReverse(rend + 7,rend - 1) == rend + 2);
-    char rend1[] = "fg\n\n\n";
-    assert(*findNonSpaceReverse(rend1 + 8,rend1 - 1) == rend1 + 6);
-    char rend2[] = "sd      fr  ";
-    assert(findNonSpaceReverse(rend2 + 11, rend2 - 1) == rend2 + 9);
+    assert(findNonSpaceReverse(rend + 6,rend - 1) == rend + 5);
+    char rend1[] = "  fg  \n";
+    assert(findNonSpaceReverse(rend1 + 6,rend1 - 1) == rend1 + 3);
+    char rend2[] = "";
+    assert(findNonSpaceReverse(rend2 - 1, rend2 - 1) == rend2 - 1);
 }
 
+void test_findSpaceReverse(){
+    char rend0[] = "forp\n";
+    assert(findNonSpaceReverse(rend0 + 4, rend0 - 1) == rend0 + 4);
+    char rend[] = "tiodfv " ;
+    assert(findNonSpaceReverse(rend + 6,rend - 1) == rend + 6);
+    char rend1[] = "  fg \n ";
+    assert(findNonSpaceReverse(rend1 + 6,rend1 - 1) == rend1 + 6);
+    char rend2[] = "";
+    assert(findNonSpaceReverse(rend2 - 1, rend2 - 1) == rend2 - 1);
+}
 
 int main() {
     test_strlen_();
     test_finderNonSpace();
     test_findSpace();
-
+    test_findNonSpaceReverse();
+    test_findSpaceReverse();
     return 0;
 }

@@ -37,4 +37,12 @@ char* findSpace(char *begin){
 //строки, за которым следует ноль-символ) и заканчивая rend (адрес символа
 // перед началом строки). Если символ не найден, возвращается адрес rend.
 char* findNonSpaceReverse(char *rbegin, const char *rend) {
+    while (rbegin > rend && isspace(*rbegin)) {
+        rbegin--;
+    }
+    return rbegin;
+}
+
+char* findSpaceReverse(char *rbegin, const char *rend){
+
 }
