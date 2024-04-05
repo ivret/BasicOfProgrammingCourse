@@ -4,7 +4,6 @@
 #include <assert.h>
 #include <stdbool.h>
 #include <string.h>
-#include <math.h>
 #include "data_structures/array/array.h"
 
 //размещает в динамической памяти матрицу размером nRows на nCols. Возвращает матрицу
@@ -87,32 +86,15 @@ void swapColumns(matrix m, int j1, int j2){
         swap_int(&m.values[row_index][j1],&m.values[row_index][j2]);
     }
 }
-//заполняет массив criteria_array значениями полученными при применение функции
-// criteria к строкам матрицы m
-void fillRowCriteriaArray(matrix  m, int *criteria_array, int (*criteria)(int*, int)){
-    for (int index_row = 0; index_row < m.nRows; ++index_row) {
-        criteria_array[index_row] = criteria(m.values[index_row], m.nCols);
-    }
-}
-
-void fillRowCriteriaArrayF(matrix  m, float *criteria_array, float (*criteria)(int*, int)){
-    for (int index_row = 0; index_row < m.nRows; ++index_row) {
-        criteria_array[index_row] = criteria(m.values[index_row], m.nCols);
-    }
-}
-void fillRowCriteriaArrayL(matrix  m, long long *criteria_array, long long (*criteria)(int*, int)){
-    for (int index_row = 0; index_row < m.nRows; ++index_row) {
-        criteria_array[index_row] = criteria(m.values[index_row], m.nCols);
-    }
-}
 
 //выполняет сортировку вставками строк
 //матрицы m по неубыванию значения функции criteria применяемой для строк
 void insertionSortRowsMatrixByRowCriteria(matrix m,
                                           int (*criteria)(int*, int)){
     int criteria_array[m.nRows];
-
-    fillRowCriteriaArray(m,criteria_array,criteria);
+    for (int index_row = 0; index_row < m.nRows; ++index_row) {
+        criteria_array[index_row] = criteria(m.values[index_row], m.nCols);
+    }
     int newElement, location;
 
     for (int i = 1; i < m.nRows; i++)
@@ -123,11 +105,11 @@ void insertionSortRowsMatrixByRowCriteria(matrix m,
         while(location >= 0 && criteria_array[location] > newElement)
         {
             criteria_array[location+1] = criteria_array[location];
-            m.values[location +1] = m.values[location];
+            swapRows(m,location+1,location);
             location = location - 1;
         }
         criteria_array[location+1] = newElement;
-        m.values[location + 1] = prow;
+        m.values[i] = prow;
     }
 }
 //выполняет сортировку выбором столбцов
@@ -222,10 +204,8 @@ void transposeMatrix(matrix *m){
                 new_matrix.values[col_index][row_index] = m->values[row_index][col_index];
             }
         }
-
         freeMemMatrix(m);
-        memcpy(m,&new_matrix,sizeof (matrix));
-
+        *m = new_matrix;
     }
 }
 
@@ -284,267 +264,6 @@ matrix *createArrayOfMatrixFromArray(const int *values,
     return ms;
 }
 
-//lab 16
-void swapMinMaxstring(matrix m){
-    position min_v_p = getMinValuePos(m);
-    position max_v_p = getMaxValuePos(m);
-    swapRows(m,min_v_p.rowIndex,max_v_p.rowIndex);
-}
-
-void sortRowsByMinElement(matrix m) {
-    for (int i = 0; i < m.nRows; ++i) {
-        for (int row_index = 0; row_index < m.nRows - 1; ++row_index) {
-            if (getMax(m.values[row_index], m.nCols) >
-                getMax(m.values[row_index + 1], m.nCols))
-                swapRows(m, row_index, row_index + 1);
-        }
-
-    }
-}
-int getMin(int *a, int n){
-    int result = a[0];
-    for (int i = 1; i < n; ++i) {
-        if (result > a[i])
-            result = a[i];
-        else
-            result;
-    }
-    return result;
-}
-void sortColsByMinElement(matrix m){
-        selectionSortColsMatrixByColCriteria(m,getMin);
-}
-
-matrix mulMatrices(matrix m1, matrix m2){
-    assert(m1.nCols == m2.nRows);
-    matrix result = getMemMatrix(m1.nRows,m2.nCols);
-    for (int index_row = 0; index_row < result.nRows; ++index_row) {
-        for (int index_col = 0; index_col < result.nCols; ++index_col) {
-            int s = 0;
-            for (int i = 0; i < m2.nCols; ++i) {
-                s += m1.values[index_row][i] * m2.values[i][index_col];
-            }
-            result.values[index_row][index_col] = s;
-        }
-    }
-    return result;
-}
-void getSquareOfMatrixIfSymmetric(matrix *m){
-    matrix current_result;
-    if (isSymmetricMatrix(m)) {
-         current_result =  mulMatrices(*m,*m);
-        freeMemMatrix(m);
-        *m = current_result;
-    }
-}
-
-//заполняет массив criteria_array значениями полученными при применение функции
-// criteria к строкам матрицы m
-
-void transposeIfMatrixHasNotEqualSumOfRows(matrix *m){
-    long long sum_array[m->nRows];
-    fillRowCriteriaArrayL(*m,sum_array, getSumL);
-    if (isUnique(sum_array,m->nRows))
-        transposeMatrix(m);
-}
-
-bool isMutuallyInverseMatrices(matrix m1, matrix m2) {
-    matrix mul_matrix = mulMatrices(m1, m2);
-    bool a = isEMatrix(&mul_matrix);
-    freeMemMatrix(&mul_matrix);
-
-    return a;
-}
-
-int max(int a, int b) {
-    return (a > b ? a : b);
-}
-
-long long findSumOfMaxesOfPseudoDiagonal(matrix m) {
-    int arraySize = m.nRows + m.nCols - 1;
-    int maxes[arraySize];
-
-    for (int i = 0; i < arraySize; ++i) {
-        maxes[i] = INT_MIN;
-    }
-
-    int increment = m.nCols - 1;
-
-    for (int index_row = 0; index_row < m.nRows; ++index_row) {
-        for (int index_col = 0; index_col < m.nCols; ++index_col) {
-            int index = index_row - index_col + increment;
-
-            maxes[index] = max(maxes[index], m.values[index_row][index_col]);
-        }
-    }
-
-    long long sum = 0;
-
-    for (int i = 0; i < arraySize; ++i) {
-        if (i != increment) {
-            sum += maxes[i];
-        }
-    }
-
-    return sum;
-}
-
-int minl(int a, int b) {
-    return (a < b ? a : b);
-}
-
-int getMinInArea(matrix m){
-    position maximumPosition = getMaxValuePos(m);
-    int min = m.values[maximumPosition.rowIndex][maximumPosition.colIndex];
-    for (int index_row = 0; index_row < maximumPosition.rowIndex; ++index_row) {
-        int end_index = minl(m.nCols,maximumPosition.rowIndex + maximumPosition.colIndex - index_row);
-        for (int index_col = max(maximumPosition.colIndex - maximumPosition.rowIndex + index_row,0)
-                ;index_col < end_index; ++index_col){
-                min = minl(m.values[index_row][index_col], min);
-        }
-    }
-    return min;
-}
-
-float getDistance(int *a, int n){
-    float d = 0;
-    int sum = 0;
-    for (int i = 0; i < n; ++i) {
-        sum += a[i] * a[i];
-        d = sqrtf((float) sum);
-    }
-    return d;
-}
-
-//Упорядочить точки по неубыванию их расстояний до начала координат.
-void insertionSortRowsMatrixByRowCriteriaF(matrix m,
-                                           float (*criteria)(int *, int)){
-    float criteria_array[m.nRows];
-
-    fillRowCriteriaArrayF(m,criteria_array,criteria);
-    float newElement;
-    int location;
-
-    for (int i = 1; i < m.nRows; i++)
-    {
-        newElement = criteria_array[i];
-        int* prow = m.values[i];
-        location = i - 1;
-        while(location >= 0 && criteria_array[location] > newElement)
-        {
-            criteria_array[location+1] = criteria_array[location];
-            m.values[location + 1] = m.values[location];
-            location = location - 1;
-        }
-        criteria_array[location+1] = newElement;
-        m.values[location+1] = prow;
-    }
-}
-
-void sortByDistances(matrix m){
-    insertionSortRowsMatrixByRowCriteriaF(m,getDistance);
-}
-
-int cmp_long_long(const void *pa, const void *pb){
-    return *(int *)pa - *(int *)pb;
-}
-
-int countNUnique(int *a, int n) {
-    if (n == 0)
-        return 0;
-
-    int count = 1;
-    for (int i = 1; i < n; i++) {
-        if (a[i - 1] != a[i]) {
-            count++;
-        }
-    }
-    return count;
-}
-
-int countEqClassesByRowsSum(matrix m){
-    int  sum_rows[m.nRows];
-    int result = 0;
-    for (int index_row = 0; index_row < m.nRows; ++index_row) {
-        sum_rows[index_row] = getSum(m.values[index_row],m.nCols);
-    }
-    qsort(sum_rows,m.nCols,sizeof (int),cmp_long_long);
-    result = countNUnique(sum_rows,m.nRows);
-
-    return result;
-}
-
-int getNSpecialElement(matrix m){
-    int count_special = 0;
-    for (int index_col = 0; index_col < m.nCols; ++index_col) {
-        int max_value = m.values[0][index_col];
-        int sum = max_value;
-        for (int index_row = 1; index_row < m.nRows; ++index_row) {
-            sum += m.values[index_row][index_col];
-            max_value = max(max_value,m.values[index_row][index_col]);
-        }
-        if(max_value > sum - max_value)
-            count_special++;
-    }
-    return count_special;
-}
-
-position getLeftMin(matrix m){
-    position index_min = {0,0};
-    int min_value = m.values[0][0];
-    for (int index_col = 0; index_col < m.nCols; ++index_col) {
-        for (int index_row = 0; index_row < m.nRows; ++index_row) {
-            if(min_value > m.values[index_row][index_col]){
-                min_value = m.values[index_row][index_col];
-                index_min.rowIndex = index_row;
-                index_min.colIndex = index_col;
-            }
-        }
-    }
-    return index_min;
-}
-
-void swapPenultimateRow(matrix m){
-    if (m.nRows == 1)
-        return;
-    int a[m.nRows];
-    int min = getLeftMin(m).colIndex;
-    for (int index_row = 0; index_row < m.nRows; ++index_row) {
-        a[index_row] = m.values[index_row][min];
-    }
-    for (int index_col = 0; index_col < m.nCols; ++index_col) {
-        m.values[m.nRows - 2][index_col] = a[index_col];
-    }
-}
-
-bool isNonDescendingSorted(int *a, int n){
-    if (n == 1)
-        return true;
-    bool ordered = true;
-    for (int i = 0; i < n - 1 ; ++i) {
-        if (a[i] > a[i + 1])
-            return false;
-    }
-
-    return ordered;
-}
-
-bool hasAllNonDescendingRows(matrix m){
-    for (int index_row = 0; index_row < m.nRows; ++index_row) {
-        if(!isNonDescendingSorted(m.values[index_row],m.nRows))
-            return false;
-    }
-
-    return true;
-}
-
-int countNonDescendingRowsMatrices(matrix *ms, int nMatrix){
-    int number_of_suitabl_matrix = 0;
-    for (int index_matrix = 0; index_matrix < nMatrix; ++index_matrix) {
-        hasAllNonDescendingRows(*ms);
-    }
-}
-
 int countZeroRows(matrix m){
     int zero_rows_amount = 0;
     for (int row_index = 0; row_index < m.nRows; ++row_index)
@@ -553,137 +272,17 @@ int countZeroRows(matrix m){
     return zero_rows_amount;
 }
 
-void printMatrixWithMaxZeroRows(matrix *ms, int nMatrix){
-    int max_zero_rows = 0;
-    int zero_row_amounts[nMatrix];
-    for (int index_matrix = 0; index_matrix < nMatrix; ++index_matrix) {
-        zero_row_amounts[index_matrix] = countZeroRows(ms[index_matrix]);
-        if(zero_row_amounts[index_matrix] > max_zero_rows)
-            max_zero_rows = zero_row_amounts[index_matrix];
-
-    }
-    for (int index_matrix = 0; index_matrix < nMatrix; ++index_matrix) {
-        if(zero_row_amounts[index_matrix] == max_zero_rows)
-            outputMatrix(ms[index_matrix]);
-    }
+//lab 16
+void swapMinMaxstring(matrix m){
+    position min_v_p = getMinValuePos(m);
+    position max_v_p = getMaxValuePos(m);
+    swapRows(m,min_v_p.rowIndex,max_v_p.rowIndex);
 }
 
-// возращает максимальный по модулю  элемент матрицы m.
-int  getMaxValuePosAbs(matrix m){
-    int max_value =abs(m.values[0][0]);
-    for (int row_index = 0; row_index < m.nRows; ++row_index) {
-        for (int col_index = 0; col_index < m.nCols; ++col_index) {
-            if(max_value < abs(m.values[row_index][col_index])){
-                max_value = abs(m.values[row_index][col_index]);
+int getMax(int *a, int n){
 
-            }
-        }
-    }
-    return max_value;
 }
 
-int printMatrixMinStandard(matrix *ms,int nMatrix){
-    int m[nMatrix];
-    int min_standard = getMaxValuePosAbs(ms[0]);
-    m[0] = min_standard;
-    for (int index_matrix = 1; index_matrix < nMatrix; ++index_matrix) {
-        m[index_matrix] = getMaxValuePosAbs(ms[index_matrix]);
-        if(m[index_matrix] < min_standard)
-            min_standard = m[index_matrix];
-    }
-    for (int index_matrix = 0; index_matrix < nMatrix; ++index_matrix) {
-        if(min_standard == m[index_matrix])
-            outputMatrix(ms[index_matrix]);
-    }
+void sortRowsByMinElement(matrix m){
+
 }
-
-bool isElementSpecial(int *a,int n,int index){
-    for (int i = index + 1; i < n; ++i) {
-        if (a[index] >= a[i])
-            return false;
-    }
-    for (int i = 0; i < index; ++i) {
-        if (a[index] <= a[i])
-            return false;
-    }
-    return true;
-}
-
-int countSpecialElement(int *a,int n){
-    int count_special = 0;
-    for (int index_current = 0; index_current < n; ++index_current) {
-        if (isElementSpecial(a,n,index_current))
-            count_special++;
-    }
-    return count_special;
-}
-
-int getNSpecialElement2(matrix m){
-    int counter = 0;
-    for (int index_row = 0; index_row < m.nRows; ++index_row) {
-        counter += countSpecialElement(m.values[index_row],m.nCols);
-    }
-    return counter;
-}
-
-//17
-double getScalarProduct(int *a, int *b, int n){
-    double result = 0;
-    for (int i = 0; i < n; ++i) {
-        result += a[i] * b[i];
-    }
-
-    return result;
-}
-
-double getVectorLength(int *a, int n){
-    return sqrt(getScalarProduct(a, a, n));
-}
-
-double getCosine(int *a, int *b, int n){
-    return getScalarProduct(a, b, n) / (
-            getVectorLength(a, n) * getVectorLength(b, n));
-}
-
-int getVectorIndexWithMaxAngle(matrix m, int *b){
-    double min_cos = 1.0;
-    int max_angle_index = 0;
-    for (int row_index = 0; row_index < m.nRows; ++row_index) {
-        double cur_cos = fabs(getCosine(m.values[row_index], b, m.nCols));
-        if(cur_cos < min_cos){
-            min_cos = cur_cos;
-            max_angle_index = row_index;
-        }
-    }
-
-    return max_angle_index;
-}
-
-long long getScalarProductRowAndCol(matrix m, int row_index, int col_index){
-    long long result = 0;
-    for (int i = 0; i < m.nRows; ++i) {
-        result += m.values[row_index][i] * m.values[i][col_index];
-    }
-
-    return result;
-}
-
-long long getSpecialScalarProduct(matrix m){
-    return getScalarProductRowAndCol(
-            m,
-            getMaxValuePos(m).rowIndex,
-            getMinValuePos(m).colIndex
-    );
-}
-
-
-
-
-
-
-
-
-
-
-
-

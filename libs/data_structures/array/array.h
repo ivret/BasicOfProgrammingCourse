@@ -65,14 +65,4 @@ bool isZero(const int a[], const size_t size);
 
 void InsertionSort(int n, int mass[]);
 
-int getMax(int *a, int n);
-
-bool isUnique(long long *a, int n);
-
-long long getSumL(int  *a, int  n);
-
-void outputArrayF ( const float * const a , const size_t n );
-
-bool isZeroF(const int a[], const size_t size);
-
 # endif

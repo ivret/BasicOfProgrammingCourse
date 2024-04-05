@@ -1,5 +1,5 @@
 CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/array/array.c.obj: \
- D:\study\op\work\BasicOfProgrammingCourse\libs\data_structures\array\array.c \
+ D:\study\op\work7\BasicOfProgrammingCourse\libs\data_structures\array\array.c \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.2/bin/mingw/x86_64-w64-mingw32/include/stdio.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.2/bin/mingw/x86_64-w64-mingw32/include/corecrt_stdio_config.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.2/bin/mingw/x86_64-w64-mingw32/include/corecrt.h \
@@ -17,5 +17,5 @@ CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/array/array.c.obj:
  C:/Program\ Files/JetBrains/CLion\ 2023.3.2/bin/mingw/x86_64-w64-mingw32/include/stdint.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stddef.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.2/bin/mingw/x86_64-w64-mingw32/include/stddef.h \
- D:\study\op\work\BasicOfProgrammingCourse\libs\data_structures\array\array.h \
+ D:\study\op\work7\BasicOfProgrammingCourse\libs\data_structures\array\array.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stdbool.h

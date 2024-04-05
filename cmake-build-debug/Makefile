@@ -56,10 +56,10 @@ RM = "C:\Program Files\JetBrains\CLion 2023.3.2\bin\cmake\win\x64\bin\cmake.exe"
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\study\op\work\BasicOfProgrammingCourse
+CMAKE_SOURCE_DIR = D:\study\op\work7\BasicOfProgrammingCourse
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\study\op\work\BasicOfProgrammingCourse\cmake-build-debug
+CMAKE_BINARY_DIR = D:\study\op\work7\BasicOfProgrammingCourse\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\study\op\work\BasicOfProgrammingCourse\cmake-build-debug\CMakeFiles D:\study\op\work\BasicOfProgrammingCourse\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\study\op\work7\BasicOfProgrammingCourse\cmake-build-debug\CMakeFiles D:\study\op\work7\BasicOfProgrammingCourse\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\study\op\work\BasicOfProgrammingCourse\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\study\op\work7\BasicOfProgrammingCourse\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -248,6 +248,30 @@ libs/data_structures/vectorVoid/vectorVoid.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\BasicsOfProgrammingCourse.dir\build.make CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/vectorVoid/vectorVoid.c.s
 .PHONY : libs/data_structures/vectorVoid/vectorVoid.c.s
 
+libs/tests/string.obj: libs/tests/string.c.obj
+.PHONY : libs/tests/string.obj
+
+# target to build an object file
+libs/tests/string.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BasicsOfProgrammingCourse.dir\build.make CMakeFiles/BasicsOfProgrammingCourse.dir/libs/tests/string.c.obj
+.PHONY : libs/tests/string.c.obj
+
+libs/tests/string.i: libs/tests/string.c.i
+.PHONY : libs/tests/string.i
+
+# target to preprocess a source file
+libs/tests/string.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BasicsOfProgrammingCourse.dir\build.make CMakeFiles/BasicsOfProgrammingCourse.dir/libs/tests/string.c.i
+.PHONY : libs/tests/string.c.i
+
+libs/tests/string.s: libs/tests/string.c.s
+.PHONY : libs/tests/string.s
+
+# target to generate assembly for a file
+libs/tests/string.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BasicsOfProgrammingCourse.dir\build.make CMakeFiles/BasicsOfProgrammingCourse.dir/libs/tests/string.c.s
+.PHONY : libs/tests/string.c.s
+
 main.obj: main.c.obj
 .PHONY : main.obj
 
@@ -271,6 +295,54 @@ main.s: main.c.s
 main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\BasicsOfProgrammingCourse.dir\build.make CMakeFiles/BasicsOfProgrammingCourse.dir/main.c.s
 .PHONY : main.c.s
+
+olds_main/lab14.obj: olds_main/lab14.c.obj
+.PHONY : olds_main/lab14.obj
+
+# target to build an object file
+olds_main/lab14.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BasicsOfProgrammingCourse.dir\build.make CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab14.c.obj
+.PHONY : olds_main/lab14.c.obj
+
+olds_main/lab14.i: olds_main/lab14.c.i
+.PHONY : olds_main/lab14.i
+
+# target to preprocess a source file
+olds_main/lab14.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BasicsOfProgrammingCourse.dir\build.make CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab14.c.i
+.PHONY : olds_main/lab14.c.i
+
+olds_main/lab14.s: olds_main/lab14.c.s
+.PHONY : olds_main/lab14.s
+
+# target to generate assembly for a file
+olds_main/lab14.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BasicsOfProgrammingCourse.dir\build.make CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab14.c.s
+.PHONY : olds_main/lab14.c.s
+
+olds_main/lab16.obj: olds_main/lab16.c.obj
+.PHONY : olds_main/lab16.obj
+
+# target to build an object file
+olds_main/lab16.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BasicsOfProgrammingCourse.dir\build.make CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab16.c.obj
+.PHONY : olds_main/lab16.c.obj
+
+olds_main/lab16.i: olds_main/lab16.c.i
+.PHONY : olds_main/lab16.i
+
+# target to preprocess a source file
+olds_main/lab16.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BasicsOfProgrammingCourse.dir\build.make CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab16.c.i
+.PHONY : olds_main/lab16.c.i
+
+olds_main/lab16.s: olds_main/lab16.c.s
+.PHONY : olds_main/lab16.s
+
+# target to generate assembly for a file
+olds_main/lab16.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BasicsOfProgrammingCourse.dir\build.make CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab16.c.s
+.PHONY : olds_main/lab16.c.s
 
 # Help Target
 help:
@@ -296,9 +368,18 @@ help:
 	@echo ... libs/data_structures/vectorVoid/vectorVoid.obj
 	@echo ... libs/data_structures/vectorVoid/vectorVoid.i
 	@echo ... libs/data_structures/vectorVoid/vectorVoid.s
+	@echo ... libs/tests/string.obj
+	@echo ... libs/tests/string.i
+	@echo ... libs/tests/string.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... olds_main/lab14.obj
+	@echo ... olds_main/lab14.i
+	@echo ... olds_main/lab14.s
+	@echo ... olds_main/lab16.obj
+	@echo ... olds_main/lab16.i
+	@echo ... olds_main/lab16.s
 .PHONY : help
 
 

@@ -16,11 +16,6 @@ void outputArray_ ( const int * const a , const size_t n ) {
     printf ("\n") ;
     }
 
-void outputArrayF ( const float * const a , const size_t n ) {
-    for ( size_t i = 0; i < n ; i ++)
-        printf ("%f ", a [ i ]) ;
-    printf ("\n") ;
-}
 void append_ (int * const a , size_t * const n , const int value ) {
     a [* n ] = value ;
     (* n ) ++;
@@ -140,6 +135,14 @@ void swap_pointers(void** a, void** b){
     *b = t;
 }
 
+int getSum(int *a, int n){
+    int result = 0;
+    for (int i = 0; i < n; ++i) {
+        result += a[i];
+    }
+    return result;
+}
+
 bool isZero(const int a[], const size_t size) {
     for (int i = 0; i < size; ++i)
         if (a[i])
@@ -148,13 +151,6 @@ bool isZero(const int a[], const size_t size) {
     return true;
 }
 
-bool isZeroF(const int a[], const size_t size) {
-    for (int i = 0; i < size; ++i)
-        if (a[i])
-            return false;
-
-    return true;
-}
 void InsertionSort(int n, int mass[])
 {
     int newElement, location;
@@ -171,49 +167,4 @@ void InsertionSort(int n, int mass[])
         mass[location+1] = newElement;
     }
 }
-int getMax(int *a, int n){
-    int max_values = a[0];
-    for (int i = 1; i < n; ++i) {
-        if (max_values > a[i])
-            max_values;
-        else
-            max_values = a[i];
-    }
-    return max_values;
-}
-
-long long getSumL(int *a,int n){
-    long long result = 0;
-    for (int i = 0; i < n; ++i) {
-        result += a[i];
-    }
-    return result;
-}
-bool isUnique(long long *a, int n){
-    for (int i = 0; i < n; ++i) {
-        for (int j = i + 1; j < n ; ++j) {
-            if (a[i] == a[j])
-                return false;
-        }
-    }
-    return true;
-}
-
-int getSum(int *a, int n){
-    int result = 0;
-    for (int i = 0; i < n; ++i) {
-        result += a[i];
-    }
-    return result;
-}
-
-
-
-
-
-
-
-
-
-
 

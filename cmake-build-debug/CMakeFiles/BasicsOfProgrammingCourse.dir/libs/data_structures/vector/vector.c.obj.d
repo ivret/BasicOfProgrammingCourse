@@ -1,6 +1,6 @@
 CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/vector/vector.c.obj: \
- D:\study\op\work\BasicOfProgrammingCourse\libs\data_structures\vector\vector.c \
- D:\study\op\work\BasicOfProgrammingCourse\libs\data_structures\vector\vector.h \
+ D:\study\op\work7\BasicOfProgrammingCourse\libs\data_structures\vector\vector.c \
+ D:\study\op\work7\BasicOfProgrammingCourse\libs\data_structures\vector\vector.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.2/bin/mingw/x86_64-w64-mingw32/include/stdlib.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.2/bin/mingw/x86_64-w64-mingw32/include/corecrt.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.3.2/bin/mingw/x86_64-w64-mingw32/include/_mingw.h \
