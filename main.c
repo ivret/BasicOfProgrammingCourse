@@ -17,9 +17,16 @@ void test_finderNonSpace(){
     assert(findNonSpace("") == 0);
     assert(findNonSpace("ufhe") == 'u');
 }
+void test_findSpace(){
+    assert(findNonSpace("u\n fhe") == '\n');
+    assert(findNonSpace("tr y") == ' ');
+    assert(findNonSpace("\n\n\n") == '\n');
+    assert(findNonSpace("ufhe") == 0);
+}
 
 
 int main() {
     test_strlen_();
+    test_findSpace();
     return 0;
 }
