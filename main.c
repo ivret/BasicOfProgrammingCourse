@@ -38,13 +38,25 @@ void test_findNonSpaceReverse(){
 
 void test_findSpaceReverse(){
     char rend0[] = "forp\n";
-    assert(findNonSpaceReverse(rend0 + 4, rend0 - 1) == rend0 + 4);
+    assert(findSpaceReverse(rend0 + 4, rend0 - 1) == rend0 + 4);
     char rend[] = "tiodfv " ;
-    assert(findNonSpaceReverse(rend + 6,rend - 1) == rend + 6);
+    assert(findSpaceReverse(rend + 6,rend - 1) == rend + 6);
     char rend1[] = "  fg \n ";
-    assert(findNonSpaceReverse(rend1 + 6,rend1 - 1) == rend1 + 6);
+    assert(findSpaceReverse(rend1 + 6,rend1 - 1) == rend1 + 6);
     char rend2[] = "";
-    assert(findNonSpaceReverse(rend2 - 1, rend2 - 1) == rend2 - 1);
+    assert(findSpaceReverse(rend2 - 1, rend2 - 1) == rend2 - 1);
+}
+
+void test_compares_2_memory_location(){
+    char a[] = "sdfgj";
+    char a1[] = "fghff";
+    assert(compares_2_memory_location(a,a1) == -1);
+    char a2[] = "afgj";
+    char a3[] = "fghff";
+    assert(compares_2_memory_location(a2,a3) == -1);
+    char a4[] = "Chernikov";
+    char a5[] = "Chernikov";
+    assert(compares_2_memory_location(a4,a5) == -1);
 }
 
 int main() {

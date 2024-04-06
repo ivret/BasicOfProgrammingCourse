@@ -44,5 +44,22 @@ char* findNonSpaceReverse(char *rbegin, const char *rend) {
 }
 
 char* findSpaceReverse(char *rbegin, const char *rend){
+    while (rbegin > rend && !isspace(*rbegin))
+        rbegin--;
+    return rbegin;
+}
+//Функция возвращает отрицательное значение, если lhs располагается до rhs
+//в лексикографическом порядке (как в словаре), значение 0, если lhs и rhs
+//равны, иначе – положительное значение.
+//Что же в назначении подразумевается под положительным и отрицательным
+//значениями? Разница символов, на котором остановилось сравнение двух строк.
+//Попробуйте выполнить реализацию функции самостоятельно. Тело функции
+//без пустых строк занимает 3 строчки кода.
+
+int compares_2_memory_location(char *a1,char *a2){
+
+}
+char* copy(const char *beginSource, const char *endSource,
+           char *beginDestination) {
 
 }
