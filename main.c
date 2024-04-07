@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <assert.h>
 #include <stdbool.h>
+#include <memory.h>
 #include "libs/tests/string.h"
 void test_strlen_(){
     assert(strlen_("ertyui") == 6);
@@ -47,16 +48,28 @@ void test_findSpaceReverse(){
     assert(findSpaceReverse(rend2 - 1, rend2 - 1) == rend2 - 1);
 }
 
-void test_compares_2_memory_location(){
-    char a[] = "sdfgj";
-    char a1[] = "fghff";
-    assert(compares_2_memory_location(a,a1) == -1);
+void test_compares_memory_location(){
+    char a[] = "bdfgj";
+    char a1[] = "aghff";
+    assert(compares_memory_location(a,a1) == 1);
     char a2[] = "afgj";
     char a3[] = "fghff";
-    assert(compares_2_memory_location(a2,a3) == -1);
+    assert(compares_memory_location(a2,a3) == -5);
     char a4[] = "Chernikov";
     char a5[] = "Chernikov";
-    assert(compares_2_memory_location(a4,a5) == -1);
+    assert(compares_memory_location(a4,a5) == 0);
+}
+
+void test_copy(){
+    char *a = "beginDistination";
+    char d[17];
+    assert(copy(a,a + 16,d) == memcpy(d,a,sizeof (char )*16));
+    char *a1 = "begin";
+    char d1[17];
+    assert(copy(a1,a1 + 5,d1) == memcpy(d1,a1,sizeof (char )*5));
+    char *a12 = "hello world";
+    char d12[17];
+    assert(copy(a12,a12 + 11,d12) == memcpy(d12,a12,sizeof (char )*11));
 }
 
 int main() {
@@ -65,5 +78,6 @@ int main() {
     test_findSpace();
     test_findNonSpaceReverse();
     test_findSpaceReverse();
+    test_compares_memory_location();
     return 0;
 }

@@ -31,11 +31,6 @@ char* findSpace(char *begin){
     return begin;
 }
 
-
-//возвращает указатель на первый справа символ, отличный от пробельных,
-//расположенный на ленте памяти, начиная с rbegin (последний символ
-//строки, за которым следует ноль-символ) и заканчивая rend (адрес символа
-// перед началом строки). Если символ не найден, возвращается адрес rend.
 char* findNonSpaceReverse(char *rbegin, const char *rend) {
     while (rbegin > rend && isspace(*rbegin)) {
         rbegin--;
@@ -48,16 +43,14 @@ char* findSpaceReverse(char *rbegin, const char *rend){
         rbegin--;
     return rbegin;
 }
-//Функция возвращает отрицательное значение, если lhs располагается до rhs
-//в лексикографическом порядке (как в словаре), значение 0, если lhs и rhs
-//равны, иначе – положительное значение.
-//Что же в назначении подразумевается под положительным и отрицательным
-//значениями? Разница символов, на котором остановилось сравнение двух строк.
-//Попробуйте выполнить реализацию функции самостоятельно. Тело функции
-//без пустых строк занимает 3 строчки кода.
 
-int compares_2_memory_location(char *a1,char *a2){
-
+int compares_memory_location(char *lhs,char *rhs){
+    int result = 0;
+    while (*lhs && *lhs == *rhs) {
+       lhs++;
+       rhs++;
+    }
+    return *lhs - *rhs;
 }
 char* copy(const char *beginSource, const char *endSource,
            char *beginDestination) {
