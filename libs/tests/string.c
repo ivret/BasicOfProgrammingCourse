@@ -44,15 +44,25 @@ char* findSpaceReverse(char *rbegin, const char *rend){
     return rbegin;
 }
 
-int compares_memory_location(char *lhs,char *rhs){
-    int result = 0;
-    while (*lhs && *lhs == *rhs) {
-       lhs++;
-       rhs++;
+int strcmp2(char *a1, char *a2){
+    while (*a1 && *a1 == *a2) {
+       a1++;
+       a2++;
     }
-    return *lhs - *rhs;
+    return *a1 - *a2;
 }
+
 char* copy(const char *beginSource, const char *endSource,
            char *beginDestination) {
+    while (beginSource != endSource){
+        *beginDestination = *beginSource;
+        beginSource++;
+        beginDestination++;
+    }
+    return beginDestination;
+}
+
+char* copyIf(char *beginSource, const char *endSource,
+             char *beginDestination, int (*f)(int)){
 
 }

@@ -15,8 +15,13 @@ char* findNonSpaceReverse(char *rbegin, const char *rend);
 
 char* findSpaceReverse(char *rbegin, const char *rend);
 
-int compares_memory_location(char *a1,char *a2);
+int strcmp2(char *a1, char *a2);
 
 char* copy(const char *beginSource, const char *endSource,
            char *beginDestination);
+
+char* copyIf(char *beginSource, const char *endSource,
+             char *beginDestination, int (*f)(int));
+
+
 #endif //BASICSOFPROGRAMMINGCOURSE_STRING_H

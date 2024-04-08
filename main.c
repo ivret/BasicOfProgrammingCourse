@@ -4,6 +4,7 @@
 #include <assert.h>
 #include <stdbool.h>
 #include <memory.h>
+#include <ctype.h>
 #include "libs/tests/string.h"
 void test_strlen_(){
     assert(strlen_("ertyui") == 6);
@@ -48,28 +49,53 @@ void test_findSpaceReverse(){
     assert(findSpaceReverse(rend2 - 1, rend2 - 1) == rend2 - 1);
 }
 
-void test_compares_memory_location(){
+void test_strcmp(){
     char a[] = "bdfgj";
     char a1[] = "aghff";
-    assert(compares_memory_location(a,a1) == 1);
+    assert(strcmp2(a, a1) == 1);
     char a2[] = "afgj";
     char a3[] = "fghff";
-    assert(compares_memory_location(a2,a3) == -5);
+    assert(strcmp2(a2, a3) == -5);
     char a4[] = "Chernikov";
     char a5[] = "Chernikov";
-    assert(compares_memory_location(a4,a5) == 0);
+    assert(strcmp2(a4, a5) == 0);
 }
 
+
 void test_copy(){
-    char *a = "beginDistination";
+    char *a = "be";
     char d[17];
-    assert(copy(a,a + 16,d) == memcpy(d,a,sizeof (char )*16));
+    copy(a,a + 3,d);
+    assert(!strcmp2(a,d));
     char *a1 = "begin";
     char d1[17];
-    assert(copy(a1,a1 + 5,d1) == memcpy(d1,a1,sizeof (char )*5));
+    copy(a1,a1 + 6,d1);
+    assert(!strcmp2(a1,d1));
     char *a12 = "hello world";
     char d12[17];
-    assert(copy(a12,a12 + 11,d12) == memcpy(d12,a12,sizeof (char )*11));
+    copy(a12,a12 + 12,d12);
+    assert(!strcmp2(a12,d12) );
+}
+
+int isNotSpace(int c){
+    return !isspace(c);
+}
+
+void test_copyIf(){
+    char src[] = "Init0 1Local2 3Machine4";
+    char dest[20];
+
+    char s1[] = "Init01Local";
+    copyIf(src, src + 14, dest, isNotSpace);
+    assert(!memcmp(dest, s1, 11));
+
+    char s2[] = "  ";
+    copyIf(src, src + 19, dest, isspace);
+    assert(!memcmp(dest, s2, 2));
+
+    char s3[] = "nitocal";
+    copyIf(src, src + 14, dest, islower);
+    assert(!memcmp(dest, s3, 7));
 }
 
 int main() {
@@ -78,6 +104,8 @@ int main() {
     test_findSpace();
     test_findNonSpaceReverse();
     test_findSpaceReverse();
-    test_compares_memory_location();
+    test_strcmp();
+    test_copy();
+    test_copyIf();
     return 0;
 }
