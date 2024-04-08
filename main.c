@@ -98,6 +98,20 @@ void test_copyIf(){
     assert(!memcmp(dest, s3, 7));
 }
 
+void test_copyIfReverse() {
+    char a[] = "copy 123 false23";
+    char d[30];
+    char s1[] = "  ";
+    copyIfReverse(a + 16,a - 1,d,isspace);
+    assert(!memcmp(d,s1,2));
+
+    char s2[] = "32eslaf321ypoc";
+    copyIfReverse(a + 16,a - 1,d,isNotSpace);
+    assert(!memcmp(d,s2,2));
+
+
+}
+
 int main() {
     test_strlen_();
     test_finderNonSpace();
@@ -107,5 +121,25 @@ int main() {
     test_strcmp();
     test_copy();
     test_copyIf();
+    test_copyIfReverse();
     return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
