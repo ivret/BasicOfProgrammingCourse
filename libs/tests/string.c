@@ -5,6 +5,7 @@
 #include <stdbool.h>
 #include <ctype.h>
 #include "string.h"
+
 size_t strlen_(const char *begin) {
     const char *end = begin;
     while (*end != '\0')
@@ -12,9 +13,6 @@ size_t strlen_(const char *begin) {
     return end - begin;
 }
 
-//возвращает указатель на первый
-//символ, отличный от пробельных, расположенный на ленте памяти, начиная с begin и
-// заканчивая ноль-символом. Если символ не найден, возвращается адрес первого ноль-символа
 char* findNonSpace(char *begin){
     while (begin != 0 && isspace(*begin)) {
         begin++;
@@ -22,8 +20,6 @@ char* findNonSpace(char *begin){
     return begin;
 }
 
-//возвращает указатель на первый пробельный символ, расположенный на ленте памяти
-// начиная с адреса begin или на первый ноль-символ.
 char* findSpace(char *begin){
     while (*begin && !isspace(*begin))
         begin++;

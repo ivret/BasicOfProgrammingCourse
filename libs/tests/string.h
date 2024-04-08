@@ -25,4 +25,5 @@ char* copyIf(char *beginSource, const char *endSource,
 
 char* copyIfReverse(char *rbeginSource, const char *rendSource,
                     char *beginDestination, int (*f)(int));
+
 #endif //BASICSOFPROGRAMMINGCOURSE_STRING_H
