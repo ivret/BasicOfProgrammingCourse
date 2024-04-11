@@ -18,8 +18,12 @@ file(REMOVE_RECURSE
   "CMakeFiles/BasicsOfProgrammingCourse.dir/main.c.obj.d"
   "CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab14.c.obj"
   "CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab14.c.obj.d"
+  "CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab15.c.obj"
+  "CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab15.c.obj.d"
   "CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab16.c.obj"
   "CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab16.c.obj.d"
+  "CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab17.c.obj"
+  "CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab17.c.obj.d"
   "libBasicsOfProgrammingCourse.dll.a"
 )
 

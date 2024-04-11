@@ -320,6 +320,30 @@ olds_main/lab14.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\BasicsOfProgrammingCourse.dir\build.make CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab14.c.s
 .PHONY : olds_main/lab14.c.s
 
+olds_main/lab15.obj: olds_main/lab15.c.obj
+.PHONY : olds_main/lab15.obj
+
+# target to build an object file
+olds_main/lab15.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BasicsOfProgrammingCourse.dir\build.make CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab15.c.obj
+.PHONY : olds_main/lab15.c.obj
+
+olds_main/lab15.i: olds_main/lab15.c.i
+.PHONY : olds_main/lab15.i
+
+# target to preprocess a source file
+olds_main/lab15.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BasicsOfProgrammingCourse.dir\build.make CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab15.c.i
+.PHONY : olds_main/lab15.c.i
+
+olds_main/lab15.s: olds_main/lab15.c.s
+.PHONY : olds_main/lab15.s
+
+# target to generate assembly for a file
+olds_main/lab15.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BasicsOfProgrammingCourse.dir\build.make CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab15.c.s
+.PHONY : olds_main/lab15.c.s
+
 olds_main/lab16.obj: olds_main/lab16.c.obj
 .PHONY : olds_main/lab16.obj
 
@@ -343,6 +367,30 @@ olds_main/lab16.s: olds_main/lab16.c.s
 olds_main/lab16.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\BasicsOfProgrammingCourse.dir\build.make CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab16.c.s
 .PHONY : olds_main/lab16.c.s
+
+olds_main/lab17.obj: olds_main/lab17.c.obj
+.PHONY : olds_main/lab17.obj
+
+# target to build an object file
+olds_main/lab17.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BasicsOfProgrammingCourse.dir\build.make CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab17.c.obj
+.PHONY : olds_main/lab17.c.obj
+
+olds_main/lab17.i: olds_main/lab17.c.i
+.PHONY : olds_main/lab17.i
+
+# target to preprocess a source file
+olds_main/lab17.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BasicsOfProgrammingCourse.dir\build.make CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab17.c.i
+.PHONY : olds_main/lab17.c.i
+
+olds_main/lab17.s: olds_main/lab17.c.s
+.PHONY : olds_main/lab17.s
+
+# target to generate assembly for a file
+olds_main/lab17.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BasicsOfProgrammingCourse.dir\build.make CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab17.c.s
+.PHONY : olds_main/lab17.c.s
 
 # Help Target
 help:
@@ -377,9 +425,15 @@ help:
 	@echo ... olds_main/lab14.obj
 	@echo ... olds_main/lab14.i
 	@echo ... olds_main/lab14.s
+	@echo ... olds_main/lab15.obj
+	@echo ... olds_main/lab15.i
+	@echo ... olds_main/lab15.s
 	@echo ... olds_main/lab16.obj
 	@echo ... olds_main/lab16.i
 	@echo ... olds_main/lab16.s
+	@echo ... olds_main/lab17.obj
+	@echo ... olds_main/lab17.i
+	@echo ... olds_main/lab17.s
 .PHONY : help
 
 

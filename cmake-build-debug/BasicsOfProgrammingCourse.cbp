@@ -120,7 +120,13 @@
 		<Unit filename="D:/study/op/work7/BasicOfProgrammingCourse/olds_main/lab14.c">
 			<Option target="BasicsOfProgrammingCourse"/>
 		</Unit>
+		<Unit filename="D:/study/op/work7/BasicOfProgrammingCourse/olds_main/lab15.c">
+			<Option target="BasicsOfProgrammingCourse"/>
+		</Unit>
 		<Unit filename="D:/study/op/work7/BasicOfProgrammingCourse/olds_main/lab16.c">
+			<Option target="BasicsOfProgrammingCourse"/>
+		</Unit>
+		<Unit filename="D:/study/op/work7/BasicOfProgrammingCourse/olds_main/lab17.c">
 			<Option target="BasicsOfProgrammingCourse"/>
 		</Unit>
 		<Unit filename="D:/study/op/work7/BasicOfProgrammingCourse/CMakeLists.txt">

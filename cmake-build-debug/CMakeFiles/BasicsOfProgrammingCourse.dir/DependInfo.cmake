@@ -16,7 +16,9 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/study/op/work7/BasicOfProgrammingCourse/libs/tests/string.c" "CMakeFiles/BasicsOfProgrammingCourse.dir/libs/tests/string.c.obj" "gcc" "CMakeFiles/BasicsOfProgrammingCourse.dir/libs/tests/string.c.obj.d"
   "D:/study/op/work7/BasicOfProgrammingCourse/main.c" "CMakeFiles/BasicsOfProgrammingCourse.dir/main.c.obj" "gcc" "CMakeFiles/BasicsOfProgrammingCourse.dir/main.c.obj.d"
   "D:/study/op/work7/BasicOfProgrammingCourse/olds_main/lab14.c" "CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab14.c.obj" "gcc" "CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab14.c.obj.d"
+  "D:/study/op/work7/BasicOfProgrammingCourse/olds_main/lab15.c" "CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab15.c.obj" "gcc" "CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab15.c.obj.d"
   "D:/study/op/work7/BasicOfProgrammingCourse/olds_main/lab16.c" "CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab16.c.obj" "gcc" "CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab16.c.obj.d"
+  "D:/study/op/work7/BasicOfProgrammingCourse/olds_main/lab17.c" "CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab17.c.obj" "gcc" "CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab17.c.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

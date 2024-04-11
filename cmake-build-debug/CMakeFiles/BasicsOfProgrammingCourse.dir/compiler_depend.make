@@ -181,7 +181,11 @@ CMakeFiles/BasicsOfProgrammingCourse.dir/main.c.obj: D:/study/op/work7/BasicOfPr
 
 CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab14.c.obj: D:/study/op/work7/BasicOfProgrammingCourse/olds_main/lab14.c
 
+CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab15.c.obj: D:/study/op/work7/BasicOfProgrammingCourse/olds_main/lab15.c
+
 CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab16.c.obj: D:/study/op/work7/BasicOfProgrammingCourse/olds_main/lab16.c
+
+CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab17.c.obj: D:/study/op/work7/BasicOfProgrammingCourse/olds_main/lab17.c
 
 
 D:/study/op/work7/BasicOfProgrammingCourse/libs/data_structures/matrix/matrix.c:
@@ -274,4 +278,8 @@ D:/study/op/work7/BasicOfProgrammingCourse/main.c:
 
 D:/study/op/work7/BasicOfProgrammingCourse/olds_main/lab14.c:
 
+D:/study/op/work7/BasicOfProgrammingCourse/olds_main/lab15.c:
+
 D:/study/op/work7/BasicOfProgrammingCourse/olds_main/lab16.c:
+
+D:/study/op/work7/BasicOfProgrammingCourse/olds_main/lab17.c:

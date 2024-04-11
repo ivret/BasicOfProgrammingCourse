@@ -6,6 +6,7 @@
 #include <ctype.h>
 #include "string.h"
 
+
 size_t strlen_(const char *begin) {
     const char *end = begin;
     while (*end != '\0')
@@ -40,7 +41,7 @@ char* findSpaceReverse(char *rbegin, const char *rend){
     return rbegin;
 }
 
-int strcmp2(char *a1, char *a2){
+int strcmp_(char *a1, char *a2){
     while (*a1 && *a1 == *a2) {
        a1++;
        a2++;
@@ -82,3 +83,79 @@ char* copyIfReverse(char *rbeginSource, const char *rendSource,
     }
     return beginDestination;
 }
+
+char* getEndOfString(char *s){
+    while (*s != '\0')
+        s++;
+    return s;
+}
+
+void strcpy_(char *dest,char *source){
+    copy(source, getEndOfString(source) + 1,dest);
+}
+
+void removeNonLetters(char *s) {
+    char *endSource = getEndOfString(s);
+    char *destination = copyIf(s, endSource, s, isgraph);
+    *destination = '\0';
+}
+
+void digitToStartTransform(char *s){
+    char s1[100];
+    strcpy_(s1,s);
+    char*  ptrWrite = s;
+    char* ptrRead = getEndOfString(s1 ) - 1;
+    char* rend = s1 - 1;
+    while (ptrRead != rend) {
+        if (isdigit(*ptrRead)) {
+            *ptrWrite = *ptrRead;
+            ptrWrite++;
+        }
+        ptrRead--;
+    }
+    ptrRead = s1;
+    while (*ptrRead != 0) {
+        if (!isdigit(*ptrRead)) {
+            *ptrWrite = *ptrRead;
+            ptrWrite++;
+        }
+        ptrRead++;
+    }
+    *ptrWrite = '\0';
+}
+
+void removeAdjacentEqualLetters(char *s){
+    char* ptrRead = s + 1;
+    char* ptrWrite = s + 1;
+    while (*ptrRead != 0){
+        if (*ptrRead != *(ptrRead - 1)){
+            *ptrWrite = *ptrRead;
+            ptrWrite++;
+        }
+        ptrRead++;
+    }
+    *ptrWrite = '\0';
+}
+
+void removeExtraSpaces(char *s){
+    char* ptrRead = findNonSpace(s);
+    char* ptrWrite = s;
+    while (*ptrRead != 0){
+        *ptrWrite = *ptrRead;
+        ptrWrite++;
+        if (isspace(*ptrRead)) {
+            ptrRead = findNonSpace(ptrRead);
+        } else {
+            ptrRead++;
+        }
+    }
+    *ptrWrite = '\0';
+}
+
+
+
+
+
+
+
+
