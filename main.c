@@ -90,6 +90,7 @@ void test_reverseDigitForSpaces(){
     ASSERT_STRING("     jf ", s2);
     ASSERT_STRING("ff    j    rtt", s3);
 }
+
 void test_all(){
     test_digitToStartTransform_oneWord();
     test_removeAdjacentEqualLetters();
