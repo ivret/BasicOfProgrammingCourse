@@ -45,23 +45,57 @@ void test_removeAdjacentEqualLetters(){
 }
 
 void test_removeExtraSpaces(){
-    char s[] = "Hi12333   hgfddd";
+    char s[] = " Hi123  dd";
     char s1[] = " ";
     char s2[] = "   ";
     char s3[] = "fffj   jfoetrtt";
+    char s4[] = "     fffj   jfoetrtt";
     removeExtraSpaces(s);
     removeExtraSpaces(s1);
     removeExtraSpaces(s2);
     removeExtraSpaces(s3);
-    ASSERT_STRING("Hi12333 hgfddd", s);
+    removeExtraSpaces(s4);
+    ASSERT_STRING("Hi123 dd", s);
     ASSERT_STRING("", s1);
     ASSERT_STRING("", s2);
     ASSERT_STRING("fffj jfoetrtt", s3);
+    ASSERT_STRING("fffj jfoetrtt", s3);
+}
+void test_moveLettersInBeginDigitsInEnd() {
+    char s[] = " Hi123  dd";
+    char s1[] = "";
+    char s2[] = "  123jf ";
+    char s3[] = "ff12   j1234rtt";
+    moveLettersInBeginDigitsInEnd(s);
+    moveLettersInBeginDigitsInEnd(s1);
+    moveLettersInBeginDigitsInEnd(s2);
+    moveLettersInBeginDigitsInEnd(s3);
+    ASSERT_STRING(" Hi123  dd", s);
+    ASSERT_STRING("", s1);
+    ASSERT_STRING("  jf123 ", s2);
+    ASSERT_STRING("ff12   jrtt1234", s3);
+}
+
+void test_reverseDigitForSpaces(){
+    char s[20] = " Hi2  dd";
+    char s1[20] = "2";
+    char s2[20] = "  3jf ";
+    char s3[20] = "ff1   j4rtt";
+    replaceDigitSpace(s);
+    replaceDigitSpace(s1);
+    replaceDigitSpace(s2);
+    replaceDigitSpace(s3);
+    ASSERT_STRING(" Hi    dd", s);
+    ASSERT_STRING("  ", s1);
+    ASSERT_STRING("     jf ", s2);
+    ASSERT_STRING("ff    j    rtt", s3);
 }
 void test_all(){
     test_digitToStartTransform_oneWord();
     test_removeAdjacentEqualLetters();
     test_removeExtraSpaces();
+    test_moveLettersInBeginDigitsInEnd();
+    test_reverseDigitForSpaces();
 }
 
 int main(){

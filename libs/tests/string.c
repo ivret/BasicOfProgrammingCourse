@@ -6,6 +6,7 @@
 #include <ctype.h>
 #include "string.h"
 
+char _stringBuffer[MAX_STRING_SIZE + 1];
 
 size_t strlen_(const char *begin) {
     const char *end = begin;
@@ -136,7 +137,9 @@ void removeAdjacentEqualLetters(char *s){
     }
     *ptrWrite = '\0';
 }
-
+    //char* findNonSpace(char *begin) – возвращает указатель на первый
+    //символ, отличный от пробельных46, расположенный на ленте памяти,
+    // начиная с begin и заканчивая ноль-символом. Если символ не найден, возвращается адрес первого ноль-символа
 void removeExtraSpaces(char *s){
     char* ptrRead = findNonSpace(s);
     char* ptrWrite = s;
@@ -152,6 +155,95 @@ void removeExtraSpaces(char *s){
     *ptrWrite = '\0';
 }
 
+int getWord(char *beginSearch, WordDescriptor *word) {
+    word->begin = findNonSpace(beginSearch);
+    if (*word->begin == '\0')
+        return 0;
+    word->end = findSpace(word->begin);
+    return 1;
+}
+char* copyWord(char *dest,WordDescriptor word){
+    return copy(word.begin,word.end,dest);
+}
+
+void wordDescriptorToString(WordDescriptor word, char *destination){
+    *copyWord(destination,word) = '\0';
+}
+
+void moveLettersInBeginDigitsInEndWord(WordDescriptor word){
+    wordDescriptorToString(word,_stringBuffer);
+    char *ptrWrite = word.begin;
+    char *ptrRead = _stringBuffer;
+    while (*ptrRead != 0){
+        if (isalpha(*ptrRead)){
+            *ptrWrite = *ptrRead;
+            ptrWrite++;
+        }
+        ptrRead++;
+    }
+    ptrRead = _stringBuffer;
+    while (*ptrRead != 0){
+        if (isdigit(*ptrRead)){
+            *ptrWrite = *ptrRead;
+            ptrWrite++;
+        }
+        ptrRead++;
+    }
+}
+
+void moveLettersInBeginDigitsInEnd(char *s){
+    WordDescriptor word = {s,s};
+    while (getWord(word.end,&word)){
+        moveLettersInBeginDigitsInEndWord(word);
+    }
+}
+
+//Преобразовать строку, заменяя каждую цифру соответствующим ей числом
+//пробелов. Имеются такие задачи, при которых размер строки может увеличиться.
+// Мы пока что будем исходить из предположения, что размер итоговой
+//строки не превысит некоторого MAX_STRING_SIZE определенного в string_.h
+char* writeSpaces(char digitCods,char *s){
+    int digit = digitCods - '0';
+    for (int i = 0; i < digit; ++i) {
+        *s = ' ';
+        s++;
+    }
+    return s;
+}
+
+void replaceDigitSpace(char  *s){
+    strcpy_(_stringBuffer,s);
+    char *ptrWrite = s;
+    char *ptrRead = _stringBuffer;
+    while (*ptrRead != 0){
+        if (isdigit(*ptrRead)){
+            ptrWrite = writeSpaces(*ptrRead,ptrWrite);
+        }
+        else{
+            *ptrWrite = *ptrRead;
+            ptrWrite++;
+        }
+        ptrRead++;
+    }
+    *ptrWrite = '\0';
+}
+
+void replace(char *source, char *w1, char *w2) {
+    size_t w1Size = strlen_(w1);
+    size_t w2Size = strlen_(w2);
+    WordDescriptor word1 = {w1, w1 + w1Size};
+    WordDescriptor word2 = {w2, w2 + w2Size};
+    char *readPtr, *recPtr;
+    if (w1Size >= w2Size) {
+        readPtr = source;
+        recPtr = source;
+    } else {
+        copy(source, getEndOfString(source), _stringBuffer);
+        readPtr = _stringBuffer;
+        recPtr = source;
+    }
+
+}
 
 
 

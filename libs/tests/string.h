@@ -4,7 +4,9 @@
 
 #ifndef BASICSOFPROGRAMMINGCOURSE_STRING_H
 #define BASICSOFPROGRAMMINGCOURSE_STRING_H
-
+#define MAX_STRING_SIZE 100
+#define MAX_N_WORDS_IN_STRING 100
+#define MAX_WORD_SIZE 20
 size_t strlen_(const char *begin);
 
 char* findNonSpace(char *begin);
@@ -37,4 +39,27 @@ void strcpy_(char *dest,char *source);
 void removeAdjacentEqualLetters(char *s);
 
 void removeExtraSpaces(char *s);
+typedef struct WordDescriptor {
+    char *begin; // позиция начала слова
+    char *end; // позиция первого символа, после последнего символа слова
+} WordDescriptor;
+
+
+int getWord(char *beginSearch, WordDescriptor *word);
+
+void ReverseWordstartAndGigitEnd();
+
+char* copyWord(char *dest,WordDescriptor word);
+
+void wordDescriptorToString(WordDescriptor word, char *destination);
+
+void moveLettersInBeginDigitsInEndWord(WordDescriptor word);
+
+void moveLettersInBeginDigitsInEnd(char *s);
+
+char countSpase(char digit);
+
+void replaceDigitSpace(char  *s);
+
+
 #endif //BASICSOFPROGRAMMINGCOURSE_STRING_H
