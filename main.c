@@ -90,6 +90,20 @@ void test_reverseDigitForSpaces(){
     ASSERT_STRING("     jf ", s2);
     ASSERT_STRING("ff    j    rtt", s3);
 }
+void test_replace() {
+    char s[100] = "jdjv try";
+    char s1[100] = "2345 gjtk";
+    char s2[100] = " include iostrim ";
+    char s3[100] = "ff1   j4rtt";
+    replace(s,"try","false");
+    replace(s1,"2345","567");
+    replace(s2,"include","iostrim");
+    replace(s3,"ff1","gss");
+    ASSERT_STRING("jdjv false", s);
+    ASSERT_STRING("567 gjtk", s1);
+    ASSERT_STRING("iostrim iostrim", s2);
+    ASSERT_STRING("gss j4rtt", s3);
+}
 
 void test_all(){
     test_digitToStartTransform_oneWord();
@@ -97,6 +111,7 @@ void test_all(){
     test_removeExtraSpaces();
     test_moveLettersInBeginDigitsInEnd();
     test_reverseDigitForSpaces();
+    test_replace();
 }
 
 int main(){

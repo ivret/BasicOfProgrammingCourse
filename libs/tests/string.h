@@ -61,5 +61,9 @@ char countSpase(char digit);
 
 void replaceDigitSpace(char  *s);
 
+int wordCompare(WordDescriptor word1, WordDescriptor word2);
+
+void replace(char *source, char *w1, char *w2);
+
 
 #endif //BASICSOFPROGRAMMINGCOURSE_STRING_H

@@ -228,7 +228,24 @@ void replaceDigitSpace(char  *s){
     *ptrWrite = '\0';
 }
 
+int wordCompare(WordDescriptor word1, WordDescriptor word2){
+    while (word1.begin != word1.end &&
+           word2.begin != word2.end &&
+           *word1.begin == *word2.begin){
+        word1.begin++;
+        word2.begin++;
+    }
+    if (word1.begin == word1.end &&
+        word2.begin == word2.end) {
+        return 0;
+    }
+    else{
+        return *word1.begin - *word2.begin;
+    }
+}
 void replace(char *source, char *w1, char *w2) {
+    if(*source == 0)
+        return;
     size_t w1Size = strlen_(w1);
     size_t w2Size = strlen_(w2);
     WordDescriptor word1 = {w1, w1 + w1Size};
@@ -238,11 +255,23 @@ void replace(char *source, char *w1, char *w2) {
         readPtr = source;
         recPtr = source;
     } else {
-        copy(source, getEndOfString(source), _stringBuffer);
+        copy(source, getEndOfString(source) + 1, _stringBuffer);
         readPtr = _stringBuffer;
         recPtr = source;
     }
-
+    WordDescriptor word;
+    while (getWord(readPtr,&word)){
+        if(!wordCompare(word,word1)){
+             recPtr = copyWord(recPtr,word2);
+        } else{
+            recPtr = copyWord(recPtr,word);
+        }
+        *recPtr = ' ';
+        recPtr ++;
+        readPtr = word.end;
+    }
+    recPtr--;
+    *recPtr = '\0';
 }
 
 
