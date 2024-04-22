@@ -65,5 +65,7 @@ int wordCompare(WordDescriptor word1, WordDescriptor word2);
 
 void replace(char *source, char *w1, char *w2);
 
+bool areABCOrderedWord(char *s);
 
+bool areABCOrderedWords(char *s);
 #endif //BASICSOFPROGRAMMINGCOURSE_STRING_H

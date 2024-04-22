@@ -105,6 +105,16 @@ void test_replace() {
     ASSERT_STRING("gss j4rtt", s3);
 }
 
+void test_areABCOrderedWords(){
+    char s1[] = "adfgf cdedd efjff";
+    char s2[] = " cdfbdfv efjdf awdv";
+    char s3[] = "";
+    char s4[] = "escf cdddfe aweubc";
+    assert(areABCOrderedWords(s1));
+    assert(!areABCOrderedWords(s2));
+    assert(areABCOrderedWords(s3));
+    assert(areABCOrderedWords(s4));
+}
 void test_all(){
     test_digitToStartTransform_oneWord();
     test_removeAdjacentEqualLetters();
@@ -112,6 +122,7 @@ void test_all(){
     test_moveLettersInBeginDigitsInEnd();
     test_reverseDigitForSpaces();
     test_replace();
+    test_areABCOrderedWords();
 }
 
 int main(){

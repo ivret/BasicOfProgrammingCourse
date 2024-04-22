@@ -271,7 +271,48 @@ void replace(char *source, char *w1, char *w2) {
     recPtr--;
     *recPtr = '\0';
 }
+int getWord1(char *beginSearch, WordDescriptor *word) {
+    word->begin = findNonSpace(beginSearch);
+    if (*word->begin == '\0')
+        return 0;
+    word->end = findSpace(word->begin);
+    return 1;
+}
 
+
+bool areABCOrderedWords(char *s){
+    WordDescriptor undo;
+    getWord(s, &undo);
+
+    WordDescriptor current;
+    int order;
+    while(getWord(undo.end, &current)){
+        if((order = compareWord(undo, current)) != 0) {
+            undo = current;
+            break;
+        }
+        undo = current;
+    }
+
+    while (getWord(undo.end, &current)){
+        int res = compareWord(undo, current);
+        if (res != 0 && res != order)
+            return false;
+        undo = current;
+    }
+
+    return true;
+}
+//bool areABCOrderedWord(char *s){
+//    WordDescriptor word;
+//    getWord(s,&word);
+//
+//    WordDescriptor word1;
+//    while (getWord())
+//        compareWord(word1,)
+//
+//
+//}
 
 
 
