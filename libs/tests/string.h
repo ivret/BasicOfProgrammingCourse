@@ -68,4 +68,18 @@ void replace(char *source, char *w1, char *w2);
 bool areABCOrderedWord(char *s);
 
 bool areABCOrderedWords(char *s);
+
+typedef struct BagOfWords {
+    WordDescriptor words[MAX_N_WORDS_IN_STRING];
+    size_t size;
+} BagOfWords;
+
+typedef struct WordDescriptor2 {
+    char *word;
+    int length;
+} WordDescriptor2;
+
+void getBagOfWords(BagOfWords *bag, char *s);
+
+void printWordsInReverse(BagOfWords *bag);
 #endif //BASICSOFPROGRAMMINGCOURSE_STRING_H

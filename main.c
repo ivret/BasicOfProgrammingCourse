@@ -115,6 +115,20 @@ void test_areABCOrderedWords(){
     assert(areABCOrderedWords(s3));
     assert(areABCOrderedWords(s4));
 }
+void test_printWordsInReverse() {
+    char s[100] = "jdjv try";
+    char s1[100] = " ";
+    char s2[100] = " include f iostrim ";
+    char s3[100] = "ff1  d j4rtt";
+    printWordsInReverse(s);
+    printWordsInReverse(s1);
+    printWordsInReverse(s2);
+    printWordsInReverse(s3);
+    ASSERT_STRING("try jdjv", s);
+    ASSERT_STRING(" ", s1);
+    ASSERT_STRING("iostrim f include", s2);
+    ASSERT_STRING("j4rtt d ff1", s3);
+}
 void test_all(){
     test_digitToStartTransform_oneWord();
     test_removeAdjacentEqualLetters();
@@ -123,6 +137,7 @@ void test_all(){
     test_reverseDigitForSpaces();
     test_replace();
     test_areABCOrderedWords();
+    test_printWordsInReverse();
 }
 
 int main(){

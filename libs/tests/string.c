@@ -7,6 +7,8 @@
 #include "string.h"
 
 char _stringBuffer[MAX_STRING_SIZE + 1];
+BagOfWords _bag;
+BagOfWords _bag2;
 
 size_t strlen_(const char *begin) {
     const char *end = begin;
@@ -280,40 +282,49 @@ int getWord1(char *beginSearch, WordDescriptor *word) {
 }
 
 
-bool areABCOrderedWords(char *s){
-    WordDescriptor undo;
-    getWord(s, &undo);
 
-    WordDescriptor current;
+bool areABCOrderedWords(char *s){
+    WordDescriptor word;
+    getWord(s, &word);
+
+    WordDescriptor wordCurrent;
     int order;
-    while(getWord(undo.end, &current)){
-        if((order = compareWord(undo, current)) != 0) {
-            undo = current;
+    while(getWord(word.end, &wordCurrent)){
+        if((order = compareWord(word, wordCurrent)) != 0) {
+            word = wordCurrent;
             break;
         }
-        undo = current;
+        word = wordCurrent;
     }
 
-    while (getWord(undo.end, &current)){
-        int res = compareWord(undo, current);
-        if (res != 0 && res != order)
+    while (getWord(word.end, &wordCurrent)){
+        int res = compareWord(word, wordCurrent);
+        if (res != order)
             return false;
-        undo = current;
+        word = wordCurrent;
     }
 
     return true;
 }
-//bool areABCOrderedWord(char *s){
-//    WordDescriptor word;
-//    getWord(s,&word);
-//
-//    WordDescriptor word1;
-//    while (getWord())
-//        compareWord(word1,)
-//
-//
-//}
 
+
+
+void getBagOfWords(BagOfWords *bag, char *s) {
+    WordDescriptor word1 = {s, s};
+    bag->size = 0;
+
+    while (getWord(word1.end, &word1)) {
+        bag->words[bag->size++] = word1;
+    }
+}
+
+void printWordsInReverse(BagOfWords *bag) {
+    for (int i = bag->size - 1; i >= 0; i--) {
+        WordDescriptor2 word = bag->words[i];
+        printf("%.*s\n", word.length, word.word);
+    }
+
+}
 
 
 
