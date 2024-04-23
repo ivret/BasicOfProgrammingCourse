@@ -140,6 +140,7 @@ void test_countWordsPalindromes(){
     assert(countWordsPalindromes(s3) == 1);
     assert(countWordsPalindromes(s4) == 0);
 }
+
 void test_all(){
     test_digitToStartTransform_oneWord();
     test_removeAdjacentEqualLetters();
