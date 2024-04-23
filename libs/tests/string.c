@@ -318,12 +318,37 @@ void getBagOfWords(BagOfWords *bag, char *s) {
     }
 }
 
-void printWordsInReverse(BagOfWords *bag) {
-    for (int i = bag->size - 1; i >= 0; i--) {
-        WordDescriptor2 word = bag->words[i];
-        printf("%.*s\n", word.length, word.word);
-    }
+//void printWordsInReverse(BagOfWords *bag) {
+//    for (int i = bag->size - 1; i >= 0; i--) {
+//        WordDescriptor2 word = bag->words[i];
+//        printf("%.*s\n", word.length, word.word);
+//    }
+//
+//}
 
+int countWordsPalindromes(char *s) {
+    int counter = 0;
+    WordDescriptor word = {s, s};
+    while (*word.end != 0) {
+        while (*word.end != ',' && *word.end != 0) {
+            word.end++;
+        }
+
+        s = word.end--;
+        while (word.begin < word.end && *word.begin == *word.end) {
+            word.begin++;
+            word.end--;
+        }
+
+        if (word.begin >= word.end)
+            counter++;
+
+        if (*s != 0)
+            word.begin = word.end = ++s;
+        else
+            word.end = s;
+    }
+    return counter;
 }
 
 

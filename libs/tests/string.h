@@ -82,4 +82,8 @@ typedef struct WordDescriptor2 {
 void getBagOfWords(BagOfWords *bag, char *s);
 
 void printWordsInReverse(BagOfWords *bag);
+
+int countWordsPalindromes(char *s);
+
+int palindrome(char  *s,char start,char finish);
 #endif //BASICSOFPROGRAMMINGCOURSE_STRING_H
