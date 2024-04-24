@@ -86,4 +86,6 @@ void printWordsInReverse(BagOfWords *bag);
 int countWordsPalindromes(char *s);
 
 int palindrome(char  *s,char start,char finish);
+
+void movingString_2(char* s1, char* s2, char* out);
 #endif //BASICSOFPROGRAMMINGCOURSE_STRING_H

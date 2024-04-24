@@ -326,6 +326,15 @@ void getBagOfWords(BagOfWords *bag, char *s) {
 //
 //}
 
+bool isPalindromis(char  *s,char start,char finish){
+    while (start < finish){
+        if(s[start] != s[finish])
+            return false;
+        start++;
+        finish--;
+    }
+    return true;
+}
 int countWordsPalindromes(char *s) {
     int counter = 0;
     WordDescriptor word = {s, s};
@@ -335,7 +344,7 @@ int countWordsPalindromes(char *s) {
         }
 
         s = word.end--;
-        while (word.begin < word.end && *word.begin == *word.end) {
+        while (word.begin < word.end &&*word.begin == *word.end) {
             word.begin++;
             word.end--;
         }
@@ -351,6 +360,33 @@ int countWordsPalindromes(char *s) {
     return counter;
 }
 
+
+void movingString_2(char* s1, char* s2, char* out) {
+    char* rec_ptr = out;
+    WordDescriptor word1, word2;
+    bool isW1Found, isW2Found;
+    char *beginSearch1 = s1, *beginSearch2 = s2;
+    while ((isW1Found = getWord(beginSearch1, &word1)),
+            (isW2Found = getWord(beginSearch2, &word2)),
+            isW1Found || isW2Found) {
+        if (isW1Found) {
+            beginSearch1 = word1.end;
+            rec_ptr = copyWord(rec_ptr, word1);
+            *rec_ptr = ' ';
+            rec_ptr++;
+        }
+        if (isW2Found) {
+            beginSearch2 = word2.end;
+            rec_ptr = copyWord(rec_ptr, word2);
+            *rec_ptr = ' ';
+            rec_ptr++;
+        }
+    }
+    if (rec_ptr != out)
+        rec_ptr--;
+
+    *rec_ptr = 0;
+}
 
 
 

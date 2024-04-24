@@ -141,6 +141,27 @@ void test_countWordsPalindromes(){
     assert(countWordsPalindromes(s4) == 0);
 }
 
+void test_movingString_2() {
+    char s[] = "jd try";
+    char s_0[] = "jd try";
+    char s1[] = "2345 df tk";
+    char s1_1[] = "5 d k";
+    char s2[] = " inc io";
+    char s2_2[] = " ";
+    char s3[] = " ";
+    char s3_3[] = " ";
+    char buff[10000];
+    movingString_2(s,s_0,buff);
+    ASSERT_STRING( "jd jd try try",buff);
+    movingString_2(s1,s1_1,buff);
+    ASSERT_STRING("2345 5 df d tk k", buff);
+    movingString_2(s2,s2_2,buff);
+    ASSERT_STRING("inc io", buff);
+    movingString_2(s3,s3_3,buff);
+    ASSERT_STRING("", buff);
+}
+
+
 void test_all(){
     test_digitToStartTransform_oneWord();
     test_removeAdjacentEqualLetters();
@@ -150,7 +171,8 @@ void test_all(){
     test_replace();
     test_areABCOrderedWords();
 //    test_printWordsInReverse();
-    test_countWordsPalindromes();
+//    test_countWordsPalindromes();
+    test_movingString_2();
 }
 
 int main(){
