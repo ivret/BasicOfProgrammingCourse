@@ -92,4 +92,16 @@ void movingString_2(char* s1, char* s2, char* out);
 int getWordReverse(char *rbegin, char *rend, WordDescriptor *word);
 
 void getWordReverseOrder(char *s);
+
+void printWordBeforeFirstWordWithA(char *s);
+
+typedef enum WordBeforeFirstWordWithAReturnCode {
+    FIRST_WORD_WITH_A,
+    NOT_FOUND_A_WORD_WITH_A,
+    WORD_FOUND,
+    EMPTY_STRING
+} WordBeforeFirstWordWithAReturnCode;
+
+WordBeforeFirstWordWithAReturnCode getWordBeforeFirstWordWithA(
+        char *s, WordDescriptor *w);
 #endif //BASICSOFPROGRAMMINGCOURSE_STRING_H

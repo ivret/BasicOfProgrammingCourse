@@ -175,6 +175,35 @@ void test_getWordReverseOrder() {
     ASSERT_STRING(" ", s2);
     ASSERT_STRING("j4rtt ff1", s3);
 }
+
+void testAll_getWordBeforeFirstWordWithA() {
+    WordDescriptor word;
+    char s1[] = "";
+    assert(
+            getWordBeforeFirstWordWithA(s1, &word)
+            == EMPTY_STRING
+    );
+    char s2[] = "ABC";
+    assert(
+            getWordBeforeFirstWordWithA(s2, &word)
+            == FIRST_WORD_WITH_A
+    );
+    char s3[] = "BC A";
+    assert(
+            getWordBeforeFirstWordWithA(s3, &word)
+            == WORD_FOUND
+    );
+    char got[MAX_WORD_SIZE];
+    copyWord(got, word);
+    got[word.end - word.begin] = '\0';
+    ASSERT_STRING("BC", got);
+
+    char s4[] = "B Q WE YR OW IUWR";
+    assert(getWordBeforeFirstWordWithA(s4, &word) ==
+           NOT_FOUND_A_WORD_WITH_A);
+}
+
+
 void test_all(){
     test_digitToStartTransform_oneWord();
     test_removeAdjacentEqualLetters();
@@ -187,6 +216,7 @@ void test_all(){
 //    test_countWordsPalindromes();
     test_movingString_2();
     test_getWordReverseOrder();
+    testAll_getWordBeforeFirstWordWithA();
 }
 
 int main(){
