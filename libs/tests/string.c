@@ -273,15 +273,6 @@ void replace(char *source, char *w1, char *w2) {
     recPtr--;
     *recPtr = '\0';
 }
-int getWord1(char *beginSearch, WordDescriptor *word) {
-    word->begin = findNonSpace(beginSearch);
-    if (*word->begin == '\0')
-        return 0;
-    word->end = findSpace(word->begin);
-    return 1;
-}
-
-
 
 bool areABCOrderedWords(char *s){
     WordDescriptor word;
@@ -361,34 +352,78 @@ int countWordsPalindromes(char *s) {
 }
 
 
-void movingString_2(char* s1, char* s2, char* out) {
-    char* rec_ptr = out;
+//void movingString_2(char* s1, char* s2, char* out) {
+//    char* rec_ptr = out;
+//    WordDescriptor word1, word2;
+//    bool isW1Found, isW2Found;
+//    char *beginSearch1 = s1, *beginSearch2 = s2;
+//    while ((isW1Found = getWord(beginSearch1, &word1)),
+//            (isW2Found = getWord(beginSearch2, &word2)),
+//            isW1Found || isW2Found) {
+//        if (isW1Found) {
+//            beginSearch1 = word1.end;
+//            rec_ptr = copyWord(rec_ptr, word1);
+//            *rec_ptr = ' ';
+//            rec_ptr++;
+//        }
+//        if (isW2Found) {
+//            beginSearch2 = word2.end;
+//            rec_ptr = copyWord(rec_ptr, word2);
+//            *rec_ptr = ' ';
+//            rec_ptr++;
+//        }
+//    }
+//    if (rec_ptr != out)
+//        rec_ptr--;
+//
+//    *rec_ptr = 0;
+//}
+void movingString_2(char *s1,char *s2,char *out) {
+    char* res = out;
     WordDescriptor word1, word2;
     bool isW1Found, isW2Found;
     char *beginSearch1 = s1, *beginSearch2 = s2;
     while ((isW1Found = getWord(beginSearch1, &word1)),
             (isW2Found = getWord(beginSearch2, &word2)),
             isW1Found || isW2Found) {
-        if (isW1Found) {
+        if (isW1Found){
             beginSearch1 = word1.end;
-            rec_ptr = copyWord(rec_ptr, word1);
-            *rec_ptr = ' ';
-            rec_ptr++;
+            res = copyWord(res,word1);
+            *res = ' ';
+            res++;
         }
-        if (isW2Found) {
+        if (isW2Found){
             beginSearch2 = word2.end;
-            rec_ptr = copyWord(rec_ptr, word2);
-            *rec_ptr = ' ';
-            rec_ptr++;
+            res = copyWord(res,word2);
+            *res = ' ';
+            res++;
         }
     }
-    if (rec_ptr != out)
-        rec_ptr--;
-
-    *rec_ptr = 0;
+    if(out != res)
+        res--;
+    *res = 0;
 }
 
+int getWordReverse(char *r_begin, char *r_end, WordDescriptor *word){
+    word->end = findNonSpaceReverse(r_begin , r_end);
+    if (word->end == r_end)
+        return 0;
+    word->begin = findSpaceReverse(word->end, r_end) +1 ;
+    word->end++;
+    return 1;
+}
 
+void getWordReverseOrder(char *s) {
+    if (*s == 0)
+        return;
 
-
-
+    strcpy_(_stringBuffer, s);
+    WordDescriptor word = {getEndOfString(_stringBuffer), NULL};
+    while (getWordReverse(word.begin-1, _stringBuffer-1, &word)) {
+        s = copyWord(s, word);
+        *s = ' ';
+        s++;
+    }
+    s--;
+    *s = 0;
+}

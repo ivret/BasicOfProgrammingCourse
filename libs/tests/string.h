@@ -88,4 +88,8 @@ int countWordsPalindromes(char *s);
 int palindrome(char  *s,char start,char finish);
 
 void movingString_2(char* s1, char* s2, char* out);
+
+int getWordReverse(char *rbegin, char *rend, WordDescriptor *word);
+
+void getWordReverseOrder(char *s);
 #endif //BASICSOFPROGRAMMINGCOURSE_STRING_H

@@ -151,17 +151,30 @@ void test_movingString_2() {
     char s3[] = " ";
     char s3_3[] = " ";
     char buff[10000];
+    movingString_2(s3,s3_3,buff);
+    ASSERT_STRING("", buff);
     movingString_2(s,s_0,buff);
     ASSERT_STRING( "jd jd try try",buff);
     movingString_2(s1,s1_1,buff);
     ASSERT_STRING("2345 5 df d tk k", buff);
     movingString_2(s2,s2_2,buff);
     ASSERT_STRING("inc io", buff);
-    movingString_2(s3,s3_3,buff);
-    ASSERT_STRING("", buff);
 }
 
-
+void test_getWordReverseOrder() {
+    char s[] = "jdjv try";
+    char s1[] = "2345 gj";
+    char s2[] = " ";
+    char s3[] = "ff1   j4rtt";
+    getWordReverseOrder(s);
+    getWordReverseOrder(s1);
+    getWordReverseOrder(s2);
+    getWordReverseOrder(s3);
+    ASSERT_STRING("try jdjv", s);
+    ASSERT_STRING("gj 2345", s1);
+    ASSERT_STRING(" ", s2);
+    ASSERT_STRING("j4rtt ff1", s3);
+}
 void test_all(){
     test_digitToStartTransform_oneWord();
     test_removeAdjacentEqualLetters();
@@ -173,6 +186,7 @@ void test_all(){
 //    test_printWordsInReverse();
 //    test_countWordsPalindromes();
     test_movingString_2();
+    test_getWordReverseOrder();
 }
 
 int main(){
