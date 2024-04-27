@@ -501,3 +501,7 @@ bool haveSetsEqualABC(char *s){
     }
     return haveEqualWords(_stringBuffer);
 }
+
+//Получить строку из слов данной строки, которые отличны от последнего слова.
+
+void
