@@ -6,10 +6,9 @@
 #include <ctype.h>
 #include "string.h"
 
-char _stringBuffer[MAX_STRING_SIZE + 1];
+char _stringBuffer[MAX_STRING_SIZE+1];
 BagOfWords _bag;
 BagOfWords _bag2;
-
 size_t strlen_(const char *begin) {
     const char *end = begin;
     while (*end != '\0')
@@ -230,10 +229,10 @@ void replaceDigitSpace(char  *s){
     *ptrWrite = '\0';
 }
 
-int compareWord(WordDescriptor word1, WordDescriptor word2 ){
+int compareWords(WordDescriptor word1, WordDescriptor word2 ){
     while (word1.begin != word1.end &&
            word2.begin != word2.end &&
-           *word1.begin == *word1.end){
+           *word1.begin == *word2.begin){
         word1.begin++;
         word2.begin++;
     }
@@ -260,7 +259,7 @@ void replace(char *source, char *w1, char *w2) {
     }
     WordDescriptor word;
     while (getWord(readPtr,&word)){
-        if(!compareWord(word, word1))
+        if(!compareWords(word, word1))
             recPtr = copyWord(recPtr,word2);
         else{
             recPtr = copyWord(recPtr,word);
@@ -281,7 +280,7 @@ bool areABCOrderedWords(char *s){
     WordDescriptor wordCurrent;
     int order;
     while(getWord(word.end, &wordCurrent)){
-        if((order = compareWord(word, wordCurrent)) != 0) {
+        if((order = compareWords(word, wordCurrent)) != 0) {
             word = wordCurrent;
             break;
         }
@@ -289,7 +288,7 @@ bool areABCOrderedWords(char *s){
     }
 
     while (getWord(word.end, &wordCurrent)){
-        int res = compareWord(word, wordCurrent);
+        int res = compareWords(word, wordCurrent);
         if (res != order)
             return false;
         word = wordCurrent;
@@ -453,4 +452,33 @@ WordBeforeFirstWordWithAReturnCode getWordBeforeFirstWordWithA(
             *w = word;
     }
     return NOT_FOUND_A_WORD_WITH_A;
+}
+
+void wordDescriptorToString1(WordDescriptor word, char *destination) {
+    destination = copyWord(destination, word);
+    *destination = 0;
+}
+
+WordDescriptor lastWordInFirstStringInSecondString(char* s1, char* s2) {
+    getBagOfWords(&_bag, s1);
+    getBagOfWords(&_bag2, s2);
+    for (int bag1_index =((int) _bag.size)-1; bag1_index >= 0; --bag1_index) {
+        for (int bag2_index = 0; bag2_index < _bag2.size; ++bag2_index) {
+            if (!compareWords(_bag.words[bag1_index], _bag2.words[bag2_index]))
+                return _bag.words[bag1_index];
+        }
+    }
+    return (WordDescriptor) {NULL, NULL};
+}
+//Определить, есть ли в данной строке одинаковые слова
+bool haveEqualWords(char  *s){
+    getBagOfWords(&_bag,s);
+    for (int i = 0; i < _bag.size - 1; ++i) {
+        for (int j = i + 1; j < _bag.size; ++j) {
+            if (!compareWords(_bag.words[i],_bag.words[j])){
+                return true;
+            }
+        }
+    }
+    return false;
 }

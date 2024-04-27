@@ -7,6 +7,8 @@
 #define MAX_STRING_SIZE 100
 #define MAX_N_WORDS_IN_STRING 100
 #define MAX_WORD_SIZE 20
+
+
 size_t strlen_(const char *begin);
 
 char* findNonSpace(char *begin);
@@ -44,6 +46,7 @@ typedef struct WordDescriptor {
     char *end; // позиция первого символа, после последнего символа слова
 } WordDescriptor;
 
+int compareWords(WordDescriptor word1, WordDescriptor word2 );
 
 int getWord(char *beginSearch, WordDescriptor *word);
 
@@ -61,8 +64,6 @@ char countSpase(char digit);
 
 void replaceDigitSpace(char  *s);
 
-int wordCompare(WordDescriptor word1, WordDescriptor word2);
-
 void replace(char *source, char *w1, char *w2);
 
 bool areABCOrderedWord(char *s);
@@ -78,6 +79,10 @@ typedef struct WordDescriptor2 {
     char *word;
     int length;
 } WordDescriptor2;
+
+extern char _stringBuffer[MAX_STRING_SIZE+1];
+extern BagOfWords _bag;
+extern BagOfWords _bag2;
 
 void getBagOfWords(BagOfWords *bag, char *s);
 
@@ -104,4 +109,10 @@ typedef enum WordBeforeFirstWordWithAReturnCode {
 
 WordBeforeFirstWordWithAReturnCode getWordBeforeFirstWordWithA(
         char *s, WordDescriptor *w);
+
+void wordDescriptorToString1(WordDescriptor word, char *destination);
+
+WordDescriptor lastWordInFirstStringInSecondString(char* s1, char* s2);
+
+bool haveEqualWords(char  *s);
 #endif //BASICSOFPROGRAMMINGCOURSE_STRING_H

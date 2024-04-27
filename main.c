@@ -203,7 +203,34 @@ void testAll_getWordBeforeFirstWordWithA() {
            NOT_FOUND_A_WORD_WITH_A);
 }
 
+void testAll_lastWordInFirstStringInSecondString() {
+    WordDescriptor word;
+    char s1[] = "word1 word2 word3";
+    char s2[] = "word4 word5 word6";
+    assert(
+            lastWordInFirstStringInSecondString(s1, s2).begin == NULL);
+    char s3[] = "";
+    assert(
+            lastWordInFirstStringInSecondString(s3, s3).begin == NULL
+    );
+    char s4[] = "word4 word2 word5";
+    word = lastWordInFirstStringInSecondString(s1, s4);
+    char got[MAX_STRING_SIZE];
+    wordDescriptorToString(word, got);
+    ASSERT_STRING("word2", got);
 
+}
+
+void test_haveEqualWords(){
+    char s1[] = "rg tr rg";
+    char s2[] = " ffff ffffff ";
+    char s3[] = " ";
+    char s4[] = "v";
+    assert(haveEqualWords(s1) == 1);
+    assert(haveEqualWords(s2) == 0);
+    assert(haveEqualWords(s3) == 0);
+    assert(haveEqualWords(s4) == 0);
+}
 void test_all(){
     test_digitToStartTransform_oneWord();
     test_removeAdjacentEqualLetters();
@@ -217,6 +244,8 @@ void test_all(){
     test_movingString_2();
     test_getWordReverseOrder();
     testAll_getWordBeforeFirstWordWithA();
+    testAll_lastWordInFirstStringInSecondString();
+    test_haveEqualWords();
 }
 
 int main(){
