@@ -231,6 +231,17 @@ void test_haveEqualWords(){
     assert(haveEqualWords(s3) == 0);
     assert(haveEqualWords(s4) == 0);
 }
+
+void test_haveSetsEqualABC(){
+    char s1[] = "gr tr rg";
+    char s2[] = " ffff ffffff ";
+    char s3[] = " ";
+    char s4[] = "vtr tvr";
+    assert(haveSetsEqualABC(s1) == 1);
+    assert(haveSetsEqualABC(s2) == 0);
+    assert(haveSetsEqualABC(s3) == 0);
+    assert(haveSetsEqualABC(s4) == 1);
+}
 void test_all(){
     test_digitToStartTransform_oneWord();
     test_removeAdjacentEqualLetters();
@@ -246,6 +257,7 @@ void test_all(){
     testAll_getWordBeforeFirstWordWithA();
     testAll_lastWordInFirstStringInSecondString();
     test_haveEqualWords();
+    test_haveSetsEqualABC();
 }
 
 int main(){

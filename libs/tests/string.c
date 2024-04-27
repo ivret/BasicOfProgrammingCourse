@@ -470,7 +470,7 @@ WordDescriptor lastWordInFirstStringInSecondString(char* s1, char* s2) {
     }
     return (WordDescriptor) {NULL, NULL};
 }
-//Определить, есть ли в данной строке одинаковые слова
+
 bool haveEqualWords(char  *s){
     getBagOfWords(&_bag,s);
     for (int i = 0; i < _bag.size - 1; ++i) {
@@ -481,4 +481,23 @@ bool haveEqualWords(char  *s){
         }
     }
     return false;
+}
+
+int compareSymbols(const void* p1,const void *p2){
+    char c1 = *(const char *)p1;
+    char c2 = *(const char *)p2;
+    return c1 - c2;
+}
+
+void sortWord(WordDescriptor word){
+    qsort(word.begin,word.end - word.begin,1,compareSymbols);
+}
+
+bool haveSetsEqualABC(char *s){
+    strcpy_(_stringBuffer,s);
+    WordDescriptor word = {NULL,_stringBuffer};
+    while (getWord(word.end,&word)){
+        sortWord(word);
+    }
+    return haveEqualWords(_stringBuffer);
 }

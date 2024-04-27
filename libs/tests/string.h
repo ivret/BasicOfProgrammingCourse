@@ -115,4 +115,6 @@ void wordDescriptorToString1(WordDescriptor word, char *destination);
 WordDescriptor lastWordInFirstStringInSecondString(char* s1, char* s2);
 
 bool haveEqualWords(char  *s);
+
+bool haveSetsEqualABC(char *s);
 #endif //BASICSOFPROGRAMMINGCOURSE_STRING_H
