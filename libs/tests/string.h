@@ -121,4 +121,6 @@ bool haveSetsEqualABC(char *s);
 void printStrNoEqualLastWord(char *s);
 
 WordDescriptor getPreviousFirstEqualWord(char  *s1, char  *s2);
+
+void deleteIsPalindromes(char *s);
 #endif //BASICSOFPROGRAMMINGCOURSE_STRING_H

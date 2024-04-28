@@ -553,9 +553,14 @@ bool isPalindromesWord(WordDescriptor word){
     return true;
 }
 
-//void deleteIsPalindromes(char *s){
-//    WordDescriptor word = {s,s};
-//    while (getWord(word.end,&word)){
-//        if()
-//    }
-//}
+void deleteIsPalindromes(char *s){
+    WordDescriptor word = {s,s};
+    while (getWord(word.end,&word)){
+        if(isPalindromesWord(word))
+            word.begin++;
+        s = copyWord(s,word);
+        *s = ' ';
+        s++;
+    }
+    *s = '\0';
+}

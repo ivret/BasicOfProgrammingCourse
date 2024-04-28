@@ -278,6 +278,20 @@ void test_getPreviousFirstEqualWord() {
     assert(word.begin == NULL);
 }
 
+void test_deleteIsPalindromes() {
+    char s[] = "rt ded fr rt";
+    char s1[] = "2345 gjtk d";
+    char s2[] = "ssd ";
+    char s3[] = " ";
+    deleteIsPalindromes(s);
+    deleteIsPalindromes(s1);
+    deleteIsPalindromes(s2);
+    deleteIsPalindromes(s3);
+    ASSERT_STRING("rt fr rt", s);
+    ASSERT_STRING("2345 gjtk ", s1);
+    ASSERT_STRING("ssd", s2);
+    ASSERT_STRING("", s3);
+}
 void test_all(){
     test_digitToStartTransform_oneWord();
     test_removeAdjacentEqualLetters();
@@ -296,6 +310,7 @@ void test_all(){
     test_haveSetsEqualABC();
     test_printStrNoEqualLastWord();
     test_getPreviousFirstEqualWord();
+    test_deleteIsPalindromes();
 }
 
 int main(){
