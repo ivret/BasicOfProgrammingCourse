@@ -117,4 +117,8 @@ WordDescriptor lastWordInFirstStringInSecondString(char* s1, char* s2);
 bool haveEqualWords(char  *s);
 
 bool haveSetsEqualABC(char *s);
+
+void printStrNoEqualLastWord(char *s);
+
+WordDescriptor getPreviousFirstEqualWord(char  *s1, char  *s2);
 #endif //BASICSOFPROGRAMMINGCOURSE_STRING_H

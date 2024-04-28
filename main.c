@@ -242,6 +242,42 @@ void test_haveSetsEqualABC(){
     assert(haveSetsEqualABC(s3) == 0);
     assert(haveSetsEqualABC(s4) == 1);
 }
+
+void test_printStrNoEqualLastWord() {
+    char s[] = "rt de fr rt";
+    char s1[] = "2345 gjtk d";
+    char s2[] = "ssd ";
+    char s3[] = " ";
+    printStrNoEqualLastWord(s);
+    printStrNoEqualLastWord(s1);
+    printStrNoEqualLastWord(s2);
+    printStrNoEqualLastWord(s3);
+    ASSERT_STRING("de fr", s);
+    ASSERT_STRING("2345 gjtk", s1);
+    ASSERT_STRING("ssd ", s2);
+    ASSERT_STRING("", s3);
+}
+
+void test_getPreviousFirstEqualWord() {
+    char s1[] = "word1 word2 word3 word2";
+    char s2[] = "word4 word3 word5";
+    char s3[] = "";
+    char s4[] = "word5";
+    char s5[] = "word5";
+    char got[MAX_STRING_SIZE];
+    WordDescriptor word;
+
+    word = getPreviousFirstEqualWord(s1, s2);
+    wordDescriptorToString(word, got);
+    ASSERT_STRING("word2", got);
+
+    word = getPreviousFirstEqualWord(s3, s4);
+    assert(word.begin == NULL);
+
+    word = getPreviousFirstEqualWord(s5, s5);
+    assert(word.begin == NULL);
+}
+
 void test_all(){
     test_digitToStartTransform_oneWord();
     test_removeAdjacentEqualLetters();
@@ -258,6 +294,8 @@ void test_all(){
     testAll_lastWordInFirstStringInSecondString();
     test_haveEqualWords();
     test_haveSetsEqualABC();
+    test_printStrNoEqualLastWord();
+    test_getPreviousFirstEqualWord();
 }
 
 int main(){

@@ -473,7 +473,7 @@ WordDescriptor lastWordInFirstStringInSecondString(char* s1, char* s2) {
 
 bool haveEqualWords(char  *s){
     getBagOfWords(&_bag,s);
-    for (int i = 0; i < _bag.size - 1; ++i) {
+    for (int i = 0; i < ((int)_bag.size) - 1; ++i) {
         for (int j = i + 1; j < _bag.size; ++j) {
             if (!compareWords(_bag.words[i],_bag.words[j])){
                 return true;
@@ -504,4 +504,58 @@ bool haveSetsEqualABC(char *s){
 
 //Получить строку из слов данной строки, которые отличны от последнего слова.
 
-void
+void printStrNoEqualLastWord(char *s){
+    WordDescriptor lastWord;
+
+    if(getWordReverse(getEndOfString(s) - 1,s -1,&lastWord) == 0){
+        *s = 0;
+        return;
+    }
+    WordDescriptor word = {NULL,s};
+    while (getWord(word.end,&word)){
+        if (compareWords(lastWord,word)) {
+            s = copyWord(s, word);
+            *s = ' ';
+            s++;
+        }
+    }
+    *(--s) = '\0';
+
+
+}
+
+WordDescriptor getPreviousFirstEqualWord(char  *s1, char  *s2){
+    getBagOfWords(&_bag, s1);
+    getBagOfWords(&_bag2, s2);
+
+    for (int index_bag1 = 0; index_bag1 < ((int)_bag.size) - 1; ++index_bag1) {
+        for (int index_bag2 = 0; index_bag2 < _bag2.size; ++index_bag2) {
+            if (!compareWords(_bag.words[index_bag1],_bag2.words[index_bag2])){
+                if (index_bag1 == 0){
+                    return (WordDescriptor){NULL,NULL};
+                }
+                return _bag.words[index_bag1 - 1] ;
+            }
+        }
+    }
+    return (WordDescriptor){NULL,NULL};
+}
+
+bool isPalindromesWord(WordDescriptor word){
+    word.end--;
+    while (word.end > word.begin){
+        if (*word.begin != *word.end){
+            return false;
+        }
+        word.end--;
+        word.begin++;
+    }
+    return true;
+}
+
+//void deleteIsPalindromes(char *s){
+//    WordDescriptor word = {s,s};
+//    while (getWord(word.end,&word)){
+//        if()
+//    }
+//}
