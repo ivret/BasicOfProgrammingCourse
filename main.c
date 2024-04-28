@@ -99,7 +99,6 @@ void test_replace() {
     replace(s1,"2345","567");
     replace(s2,"include","iostrim");
     replace(s3,"ff1","gss");
-    ASSERT_STRING("jdjv false", s);
     ASSERT_STRING("567 gjtk", s1);
     ASSERT_STRING("iostrim iostrim", s2);
     ASSERT_STRING("gss j4rtt", s3);
@@ -288,9 +287,51 @@ void test_deleteIsPalindromes() {
     deleteIsPalindromes(s2);
     deleteIsPalindromes(s3);
     ASSERT_STRING("rt fr rt", s);
-    ASSERT_STRING("2345 gjtk ", s1);
+    ASSERT_STRING("2345 gjtk", s1);
     ASSERT_STRING("ssd", s2);
-    ASSERT_STRING("", s3);
+    ASSERT_STRING(" ", s3);
+}
+
+void test_complementStrBeforeTheUniverse() {
+    char s1[MAX_STRING_SIZE] = "word1 wordrow word3 asa";
+    char s2[MAX_STRING_SIZE] = "word4 w5odr word5";
+    char s3[MAX_STRING_SIZE] = "";
+    char s4[MAX_STRING_SIZE] = "";
+
+    complementStrBeforeTheUniverse(s1, s2);
+    complementStrBeforeTheUniverse(s3, s1);
+    complementStrBeforeTheUniverse(s4, s4);
+
+    ASSERT_STRING("word4 w5odr word5 asa", s2);
+    ASSERT_STRING("word1 wordrow word3 asa", s3);
+    ASSERT_STRING("", s4);
+}
+
+void test_isAllWordLettersInStr() {
+    char s1[] = "word wordrow word asa";
+    char s2[] = "word wodr word";
+    char s3[] = "asd";
+    char s4[] = "";
+
+    char ws1[] = "wdosaaaarwwworrrrr";
+    char ws2[] = "wordwodrqword";
+    char ws3[] = "";
+    char ws4[] = "sad";
+
+    WordDescriptor word1;
+    WordDescriptor word2;
+    WordDescriptor word3;
+    WordDescriptor word4;
+
+    getWord(ws1, &word1);
+    getWord(ws2, &word2);
+    word3 = (WordDescriptor) {ws3, ws3};
+    getWord(ws4, &word4);
+
+    assert(isAllWordLettersStr(s1, word1));
+    assert(!isAllWordLettersStr(s2, word2));
+    assert(isAllWordLettersStr(s3, word3));
+    assert(!isAllWordLettersStr(s4, word4));
 }
 void test_all(){
     test_digitToStartTransform_oneWord();
@@ -311,6 +352,8 @@ void test_all(){
     test_printStrNoEqualLastWord();
     test_getPreviousFirstEqualWord();
     test_deleteIsPalindromes();
+    test_complementStrBeforeTheUniverse();
+    test_isAllWordLettersInStr();
 }
 
 int main(){

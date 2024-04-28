@@ -5,6 +5,7 @@
 #include <stdbool.h>
 #include <ctype.h>
 #include "string.h"
+#include <memory.h>
 
 char _stringBuffer[MAX_STRING_SIZE+1];
 BagOfWords _bag;
@@ -556,11 +557,62 @@ bool isPalindromesWord(WordDescriptor word){
 void deleteIsPalindromes(char *s){
     WordDescriptor word = {s,s};
     while (getWord(word.end,&word)){
-        if(isPalindromesWord(word))
-            word.begin++;
-        s = copyWord(s,word);
-        *s = ' ';
-        s++;
+        if(!isPalindromesWord(word)) {
+            s = copyWord(s,word);
+            *s = ' ';
+            s++;
+        }
     }
-    *s = '\0';
+    *(s - 1) = '\0';
+}
+
+void complementStrBeforeThe(char* s, BagOfWords bag, size_t start_copy_index) {
+
+        char *ptr = getEndOfString(s);
+        if (ptr != s){
+            *ptr = ' ';
+            ptr++;
+        }
+        for (size_t i = start_copy_index; i < bag.size; ++i) {
+            ptr = copyWord(ptr, bag.words[i]);
+            *ptr = ' ';
+            ptr++;
+        }
+        ptr--;
+        *ptr = '\0';
+    }
+
+    void complementStrBeforeTheUniverse(char* s1, char* s2) {
+        getBagOfWords(&_bag, s1);
+        getBagOfWords(&_bag2, s2);
+        if (_bag.size > _bag2.size){
+            complementStrBeforeThe(s2, _bag, _bag2.size);
+        }
+        if (_bag.size < _bag2.size){
+            complementStrBeforeThe(s1, _bag2, _bag.size);
+        }
+    }
+
+bool isAllWordLettersStr(char* s, WordDescriptor word) {
+    const int alphabet_size = 26;
+    char buffer[alphabet_size];
+    memset(buffer, 0, alphabet_size);
+    int size = 0;
+    char* ptr = word.begin;
+    while (ptr != word.end) {
+        if (buffer[*ptr-'a'] == 0) {
+            buffer[*ptr - 'a'] = 1;
+            size++;
+        }
+        ptr++;
+    }
+    ptr = s;
+    while (*ptr && size) {
+        if (buffer[*ptr -'a']) {
+            buffer[*ptr-'a'] = 0;
+            size--;
+        }
+        ptr++;
+    }
+    return size==0;
 }

@@ -123,4 +123,10 @@ void printStrNoEqualLastWord(char *s);
 WordDescriptor getPreviousFirstEqualWord(char  *s1, char  *s2);
 
 void deleteIsPalindromes(char *s);
+
+void complementStrBeforeTheUniverse(char* s1, char* s2);
+
+void complementStrBeforeThe(char* s, BagOfWords bag, size_t start_copy_index);
+
+bool isAllWordLettersStr(char* s, WordDescriptor word);
 #endif //BASICSOFPROGRAMMINGCOURSE_STRING_H
