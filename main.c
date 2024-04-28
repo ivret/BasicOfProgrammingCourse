@@ -352,6 +352,7 @@ void test_all(){
     test_printStrNoEqualLastWord();
     test_getPreviousFirstEqualWord();
     test_deleteIsPalindromes();
+
     test_complementStrBeforeTheUniverse();
     test_isAllWordLettersInStr();
 }
