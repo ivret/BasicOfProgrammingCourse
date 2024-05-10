@@ -580,18 +580,18 @@ void complementStrBeforeThe(char* s, BagOfWords bag, size_t start_copy_index) {
         }
         ptr--;
         *ptr = '\0';
+}
+void complementStrBeforeTheUniverse(char* s1, char* s2) {
+    getBagOfWords(&_bag, s1);
+    getBagOfWords(&_bag2, s2);
+    if (_bag.size > _bag2.size) {
+        complementStrBeforeThe(s2, _bag, _bag2.size);
     }
+    if (_bag.size < _bag2.size) {
+        complementStrBeforeThe(s1, _bag2, _bag.size);
+    }
+}
 
-    void complementStrBeforeTheUniverse(char* s1, char* s2) {
-        getBagOfWords(&_bag, s1);
-        getBagOfWords(&_bag2, s2);
-        if (_bag.size > _bag2.size){
-            complementStrBeforeThe(s2, _bag, _bag2.size);
-        }
-        if (_bag.size < _bag2.size){
-            complementStrBeforeThe(s1, _bag2, _bag.size);
-        }
-    }
 
 bool isAllWordLettersStr(char* s, WordDescriptor word) {
     const int alphabet_size = 26;

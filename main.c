@@ -357,7 +357,10 @@ void test_all(){
     test_isAllWordLettersInStr();
 }
 
+
+
 int main(){
     test_all();
+
     return 0;
 }
