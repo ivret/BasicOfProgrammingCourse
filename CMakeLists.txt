@@ -13,9 +13,10 @@ set (files
         libs/tests/string.c
         libs/tests/string.h
         olds_main/lab17.c
+        olds_main/lab18.c
+        libs/data_structures/penultimate_labe/lab_19.c
+        libs/data_structures/penultimate_labe/lab_19.h
         main.c
-        libs/data_structures/lab_19.c
-        libs/data_structures/lab_19.h
 
 
 )

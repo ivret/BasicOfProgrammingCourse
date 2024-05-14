@@ -6,6 +6,11 @@
 #define BASICSOFPROGRAMMINGCOURSE_MATRIX_H
 #include <stdbool.h>
 #include <limits.h>
+#include <malloc.h>
+#include <stdio.h>
+#include <assert.h>
+#include <stdbool.h>
+#include <string.h>
 typedef struct matrix {
     int **values; // элементы матрицы
     int nRows; // количество рядов
@@ -68,4 +73,10 @@ void swapMinMaxstring(matrix m);
 int getMax(int *a, int n);
 
 void sortRowsByMinElement(matrix m);
+
+void inputMatrixF(matrix *m, FILE*  f);
+
+matrix createMatrixFile(FILE *f);
+
+matrix  *createMatrixFromArrayFile(FILE *f,int *n);
 #endif //BASICSOFPROGRAMMINGCOURSE_MATRIX_H

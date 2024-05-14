@@ -4,6 +4,11 @@
 #include <assert.h>
 #include <stdbool.h>
 #include <string.h>
+#include <malloc.h>
+#include <stdio.h>
+#include <assert.h>
+#include <stdbool.h>
+#include <string.h>
 #include "data_structures/array/array.h"
 
 //размещает в динамической памяти матрицу размером nRows на nCols. Возвращает матрицу
@@ -165,20 +170,20 @@ bool isEMatrix(matrix *m){
         }
     return true;
 }
-//возвращает значение ’истина’, еcли матрица m является симметричной, ложь – в противном случае
-bool isSymmetricMatrix(matrix *m){
-    if  (isSquareMatrix(m)){
-        for (int index_col = 1; index_col < m->nCols; ++index_col) {
-            for (int index = 0; index < index_col; index++) {
-                if (m->values[index_col][index] != m->values[index][index_col]
-                && m->values[index_col] != m->values[index])
-                    return false;
-                return true;
-            }
-        }
-    }
-    return false;
-}
+////возвращает значение ’истина’, еcли матрица m является симметричной, ложь – в противном случае
+//bool isSymmetricMatrix(matrix *m){
+//    if  (isSquareMatrix(m)){
+//        for (int index_col = 1; index_col < m->nCols; ++index_col) {
+//            for (int index = 0; index < index_col; index++) {
+//                if (m->values[index_col][index] != m->values[index][index_col]
+//                && m->values[index_col] != m->values[index])
+//                    return false;
+//                return true;
+//            }
+//        }
+//    }
+//    return false;
+//}
 
 //транспонирует квадратную матрицу m.
 void transposeSquareMatrix(matrix *m) {
@@ -279,10 +284,52 @@ void swapMinMaxstring(matrix m){
     swapRows(m,min_v_p.rowIndex,max_v_p.rowIndex);
 }
 
-int getMax(int *a, int n){
+//лабораторная 19
 
+void inputMatrixFile(matrix *m, FILE* f){
+    for (int row_index = 0; row_index < m->nRows; ++row_index)
+        for (int col_index = 0; col_index < m->nCols; ++col_index)
+            fscanf(f, "%i", m->values[row_index] + col_index);
 }
 
-void sortRowsByMinElement(matrix m){
+matrix createMatrixFile(FILE *f){
+    int n;
+    fscanf(f,"%d",&n);
+    matrix m = getMemMatrix(n,n);
+    inputMatrixF(&m,f);
+    return m;
+}
 
+matrix  *createMatrixFromArrayFile(FILE *f,int *n){
+    fscanf(f,"%d",n);
+
+    matrix *ms = malloc(*n * sizeof (matrix));
+    for (int i = 0; i < *n; ++i) {
+        ms[i] = createMatrixFile(f);
+    }
+    return ms;
+}
+
+// Вывод массива a размера n
+void outputArrayF(int a[], const size_t n, const char* sep, FILE* f) {
+    for (size_t i = 1; i < n; i++, a++)
+        fprintf(f, "%d%s", *a, sep);
+
+    if(n)
+        fprintf(f, "%d", *a);
+
+    fputc('\n', f);
+}
+
+void outputMatrixSquareF(matrix m, FILE* f){
+    fprintf(f, "%d\n", m.nRows);
+    for (int row_index = 0; row_index < m.nRows; ++row_index) {
+        outputArrayF(m.values[row_index], m.nCols, " ", f);
+    }
+}
+
+void outputMatricesSquareFile(matrix *ms, int nMatrices, FILE* f){
+    fprintf(f, "%d\n", nMatrices);
+    for (int i = 0; i < nMatrices; ++i)
+        outputMatrixSquareF(ms[i], f);
 }
