@@ -9,8 +9,32 @@
 #include <assert.h>
 #include <stdbool.h>
 #include <string.h>
+#include <ctype.h>
 #include "data_structures/array/array.h"
 #include "data_structures/matrix/matrix.h"
 #include "data_structures/array/array.h"
+#include "data_structures/vector/vector.h"
+#include "data_structures/vectorVoid/vectorVoid.h"
 
+void fileModifiesAnEntryRowOnCol(const char file[]);
+
+void write(const char* filename, const char* data);
+
+long getFileSize(const char* filename);
+
+bool cmpStrFile(const char *s, const char *filename);
+
+void test_lab19_01();
+
+void lab19_task02(const char *filename);
+
+void testTransformFloat();
+
+int calculateExpression(int x, int y, char op);
+
+int isOperation(char c);
+
+void lab19_task03(const char *filename);
+
+void test_lab19_03();
 #endif //BASICSOFPROGRAMMINGCOURSE_LAB_19_H

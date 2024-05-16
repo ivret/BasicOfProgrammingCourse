@@ -79,4 +79,10 @@ void inputMatrixF(matrix *m, FILE*  f);
 matrix createMatrixFile(FILE *f);
 
 matrix  *createMatrixFromArrayFile(FILE *f,int *n);
+
+void outputArrayF(int a[], const size_t n, const char* sep, FILE* f);
+
+void outputMatrixSquareFile(matrix m, FILE* f);
+
+void outputMatricesSquareFiles(matrix *ms, int nMatrices, FILE* f);
 #endif //BASICSOFPROGRAMMINGCOURSE_MATRIX_H

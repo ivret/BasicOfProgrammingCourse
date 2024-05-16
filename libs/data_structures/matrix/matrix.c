@@ -296,7 +296,7 @@ matrix createMatrixFile(FILE *f){
     int n;
     fscanf(f,"%d",&n);
     matrix m = getMemMatrix(n,n);
-    inputMatrixF(&m,f);
+    inputMatrixFile(&m,f);
     return m;
 }
 
@@ -321,15 +321,15 @@ void outputArrayF(int a[], const size_t n, const char* sep, FILE* f) {
     fputc('\n', f);
 }
 
-void outputMatrixSquareF(matrix m, FILE* f){
+void outputMatrixSquareFile(matrix m, FILE* f){
     fprintf(f, "%d\n", m.nRows);
     for (int row_index = 0; row_index < m.nRows; ++row_index) {
         outputArrayF(m.values[row_index], m.nCols, " ", f);
     }
 }
 
-void outputMatricesSquareFile(matrix *ms, int nMatrices, FILE* f){
+void outputMatricesSquareFiles(matrix *ms, int nMatrices, FILE* f){
     fprintf(f, "%d\n", nMatrices);
     for (int i = 0; i < nMatrices; ++i)
-        outputMatrixSquareF(ms[i], f);
+        outputMatrixSquareFile(ms[i], f);
 }

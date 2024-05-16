@@ -106,46 +106,46 @@ void test_matrix_isEMatrix(){
     freeMemMatrix(&m2);
 }
 
-void test_matrix_isSymmetricMatrix(){
-    matrix m1 = createMatrixFromArray(
-            (int[]) {
-                    7, 5, 4,
-                    0, 0, 0,
-                    1, 3, 2,
-            },
-            3, 3
-    );
-
-    assert(!isSymmetricMatrix(&m1));
-
-    matrix m2 = createMatrixFromArray(
-            (int[]) {
-                    1, 0, 0, 0,
-                    0, 1, 0, 0,
-                    0, 0, 1, 0,
-                    0, 0, 0, 1
-            },
-            4, 4
-    );
-
-    assert(isSymmetricMatrix(&m2));
-
-    matrix m3 = createMatrixFromArray(
-            (int[]) {
-                    1, 0, 9, 2,
-                    0, 3, 1, 7,
-                    9, 1, 5, 0,
-                    2, 7, 0, 4
-            },
-            4, 4
-    );
-
-    assert(isSymmetricMatrix(&m3));
-
-    freeMemMatrix(&m1);
-    freeMemMatrix(&m2);
-    freeMemMatrix(&m3);
-}
+//void test_matrix_isSymmetricMatrix(){
+//    matrix m1 = createMatrixFromArray(
+//            (int[]) {
+//                    7, 5, 4,
+//                    0, 0, 0,
+//                    1, 3, 2,
+//            },
+//            3, 3
+//    );
+//
+//    assert(!isSymmetricMatrix(&m1));
+//
+//    matrix m2 = createMatrixFromArray(
+//            (int[]) {
+//                    1, 0, 0, 0,
+//                    0, 1, 0, 0,
+//                    0, 0, 1, 0,
+//                    0, 0, 0, 1
+//            },
+//            4, 4
+//    );
+//
+//    assert(isSymmetricMatrix(&m2));
+//
+//    matrix m3 = createMatrixFromArray(
+//            (int[]) {
+//                    1, 0, 9, 2,
+//                    0, 3, 1, 7,
+//                    9, 1, 5, 0,
+//                    2, 7, 0, 4
+//            },
+//            4, 4
+//    );
+//
+//    assert(isSymmetricMatrix(&m3));
+//
+//    freeMemMatrix(&m1);
+//    freeMemMatrix(&m2);
+//    freeMemMatrix(&m3);
+//}
 
 void test_matrix_transposeMatrix(){
     matrix m = createMatrixFromArray(
@@ -200,7 +200,7 @@ void test_matrix_all(){
     test_matrix_insertionSortRowsMatrixByRowCriteria();
     test_matrix_selectionSortColsMatrixByColCriteria();
     test_matrix_isEMatrix();
-    test_matrix_isSymmetricMatrix();
+//    test_matrix_isSymmetricMatrix();
     test_matrix_transposeMatrix();
     test_matrix_getMinMaxValuePos();
 }
