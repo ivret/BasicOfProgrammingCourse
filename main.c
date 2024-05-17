@@ -1,9 +1,13 @@
 
 #include "libs/data_structures/penultimate_labe/lab_19.h"
-
+#include <stdio.h>
 int main(){
     test_lab19_01();
     testTransformFloat();
-    test_lab19_03();
+    test_calculate_the_value_end();
+    test_saves_str_Word();
+
     return 0;
 }
+
+

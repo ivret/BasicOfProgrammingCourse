@@ -36,5 +36,9 @@ int isOperation(char c);
 
 void lab19_task03(const char *filename);
 
-void test_lab19_03();
+void test_calculate_the_value_end();
+
+void saves_str_Word(const char *filename, const char *seq);
+
+void test_saves_str_Word();
 #endif //BASICSOFPROGRAMMINGCOURSE_LAB_19_H

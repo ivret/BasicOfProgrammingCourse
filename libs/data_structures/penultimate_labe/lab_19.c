@@ -175,7 +175,7 @@ void lab19_task03(const char *filename){
     fclose(f);
 }
 
-void test_lab19_03(){
+void test_calculate_the_value_end(){
     char lab19_task03_str[] = "9 - 2 * 2 ";
     char lab19_task03_out_str[] = "9 - 2 * 2 5";
     const char filename[] = "3.txt";
@@ -184,4 +184,38 @@ void test_lab19_03(){
     lab19_task03(filename);
 
     assert(cmpStrFile(lab19_task03_out_str, filename));
+}
+
+void saves_str_Word(const char *filename, const char *seq){
+    long filesize = getFileSize(filename) + 1;
+    char *buffer = malloc(filesize);
+
+    FILE *f = fopen(filename, "r");
+
+    char *current_word = buffer;
+    while (fscanf(f, "%s", current_word) == 1) {
+        if (strstr(current_word, seq)) {
+            current_word += strlen(current_word);
+            *current_word = ' ';
+            current_word++;
+        }
+    }
+    *current_word = 0;
+
+    fclose(f);
+
+    write(filename, buffer);
+
+    free(buffer);
+}
+
+void test_saves_str_Word(){
+    char lab19_task04_str[] = "adf ceab rgds asabend gthabrr dendroid adbt";
+    char lab19_task04_out_str[] = "asabend dendroid ";
+    const char filename[] = "4.txt";
+    write(filename, lab19_task04_str);
+
+    saves_str_Word(filename, "end");
+
+    assert(cmpStrFile(lab19_task04_out_str, filename));
 }
