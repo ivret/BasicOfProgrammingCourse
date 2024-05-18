@@ -484,3 +484,179 @@ void test_replaceMatrixSymmetricTheTransposed(){
     freeMemMatrix(&m1);
     freeMemMatrix(&m2);
 }
+
+
+
+char* loadStrBin(FILE* f){
+    size_t len;
+    fread(&len, sizeof(size_t), 1, f);
+
+    char *s = (char*) malloc(len + 1);
+    fread(s, 1, len, f);
+    s[len] = 0;
+
+    return s;
+}
+
+char *createCopyStr(const char *s){
+    size_t len = strlen_(s) + 1;
+    char *result = (char *) malloc(len);
+    memcpy(result, s, len);
+    return result;
+}
+
+sportsMan createSportsMan(
+        const char *firstname,
+        const char *lastname,
+        const char *surname,
+        int best_result){
+    sportsMan sm;
+    sm.firstname = createCopyStr(firstname);
+    sm.lastname = createCopyStr(lastname);
+    sm.surname = createCopyStr(surname);
+    sm.best_result = best_result;
+
+    return sm;
+}
+
+sportsMan createSportsManF(FILE *f){
+    sportsMan sm;
+    sm.firstname = loadStrBin(f);
+    sm.lastname = loadStrBin(f);
+    sm.surname = loadStrBin(f);
+    sm.best_result = readInt(f);
+
+    return sm;
+}
+
+void saveStrBin(const char *s, FILE* f){
+    size_t len = strlen_(s);
+    fwrite(&len, sizeof(size_t), 1, f);
+    fwrite(s, 1, len, f);
+}
+
+void saveSportsMan(sportsMan sm, FILE *f){
+    saveStrBin(sm.firstname, f);
+    saveStrBin(sm.lastname, f);
+    saveStrBin(sm.surname, f);
+    writeInt(sm.best_result, f);
+}
+
+void freeSportsMan(sportsMan *sm){
+    free(sm->firstname);
+    free(sm->lastname);
+    free(sm->surname);
+    memset(sm, 0, sizeof(sportsMan));
+}
+
+void freeSportsManV(void *sm){
+    freeSportsMan(sm);
+}
+
+void lab19_generate_file(const char *filename){
+    FILE *f = fopen(filename, "wb");
+
+    sportsMan sm1 = createSportsMan("Денис", "Денисов", "Денисович", 7);
+    sportsMan sm2 = createSportsMan("Фёдор", "Фёдоров", "Фёдорович", 10);
+    sportsMan sm3 = createSportsMan("Иван", "Иванов", "Иванович", 8);
+    sportsMan sm4 = createSportsMan("Максим", "Максимов", "Максимович", 6);
+    sportsMan sm5 = createSportsMan("Егор", "Егоров", "Егорович", 4);
+
+    writeInt(5, f);
+    saveSportsMan(sm1, f);
+    saveSportsMan(sm2, f);
+    saveSportsMan(sm3, f);
+    saveSportsMan(sm4, f);
+    saveSportsMan(sm5, f);
+
+    fclose(f);
+
+    freeSportsMan(&sm1);
+    freeSportsMan(&sm2);
+    freeSportsMan(&sm3);
+    freeSportsMan(&sm4);
+    freeSportsMan(&sm5);
+}
+
+int sportsmanCmp(const void * val1, const void * val2){
+    sportsMan *sm1 = (sportsMan*) val1;
+    sportsMan *sm2 = (sportsMan*) val2;
+    if (sm1->best_result < sm2->best_result)
+        return -1;
+    else if (sm1->best_result == sm2->best_result)
+        return 0;
+    else
+        return 1;
+}
+
+void lab19_team(const char *filename, int n){
+    lab19_generate_file(filename);
+
+    FILE *f = fopen(filename, "rb");
+
+    int sports_mans_amount = readInt(f);
+
+    if (sports_mans_amount <= n) {
+        fclose(f);
+        return;
+    }
+
+    sportsMan *sms = (sportsMan*) malloc(sports_mans_amount * sizeof(sportsMan));
+    for (int i = 0; i < sports_mans_amount; ++i) {
+        sms[i] = createSportsManF(f);
+    }
+    fclose(f);
+
+    qsort(sms, sports_mans_amount, sizeof (sportsMan), sportsmanCmp);
+
+    f = fopen(filename, "wb");
+    writeInt(n, f);
+    for (int i = sports_mans_amount - n; i < sports_mans_amount; ++i) {
+        saveSportsMan(sms[i], f);
+    }
+    fclose(f);
+
+    for (int i = 0; i < sports_mans_amount; ++i) {
+        freeSportsMan(sms + i);
+    }
+
+    free(sms);
+}
+
+bool sportsmanAllCmp(const sportsMan *sm1, const sportsMan *sm2){
+    return sm1->best_result == sm2->best_result &&
+           !strcmp(sm1->firstname, sm2->firstname) &&
+           !strcmp(sm1->surname, sm2->surname) &&
+           !strcmp(sm1->lastname, sm2->lastname);
+}
+
+void test_lab19_team(){
+    const char filename[] = "9.txt";
+    lab19_generate_file(filename);
+
+    lab19_team(filename, 3);
+
+    sportsMan sm1 = createSportsMan("Денис", "Денисов", "Денисович", 7);
+    sportsMan sm2 = createSportsMan("Иван", "Иванов", "Иванович", 8);
+    sportsMan sm3 = createSportsMan("Фёдор", "Фёдоров", "Фёдорович", 10);
+
+    FILE *f = fopen(filename, "rb");
+    int sports_mans_amount = readInt(f);
+    sportsMan *sms = (sportsMan*) malloc(sports_mans_amount * sizeof(sportsMan));
+    for (int i = 0; i < sports_mans_amount; ++i) {
+        sms[i] = createSportsManF(f);
+    }
+    fclose(f);
+
+    assert(sportsmanAllCmp(sms, &sm1));
+    assert(sportsmanAllCmp(sms + 1, &sm2));
+    assert(sportsmanAllCmp(sms + 2, &sm3));
+
+    freeSportsMan(&sm1);
+    freeSportsMan(&sm2);
+    freeSportsMan(&sm3);
+    freeSportsMan(sms);
+    freeSportsMan(sms + 1);
+    freeSportsMan(sms + 2);
+    free(sms);
+}

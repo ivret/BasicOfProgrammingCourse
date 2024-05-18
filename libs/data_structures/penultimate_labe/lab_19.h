@@ -68,4 +68,36 @@ void lab19_task08_generate_file(const char *filename);
 void lab19_replaceMatrixSymmetricTheTransposed(const char *filename);
 
 void test_replaceMatrixSymmetricTheTransposed();
+typedef struct sportsMan{
+    char *firstname;
+    char *lastname;
+    char *surname;
+    int best_result;
+} sportsMan;
+
+char* loadStrBin(FILE* f);
+
+char *createCopyStr(const char *s);
+
+sportsMan createSportsMan(
+        const char *firstname,
+        const char *lastname,
+        const char *surname,
+        int best_result);
+
+sportsMan createSportsManF(FILE *f);
+
+void saveStrBin(const char *s, FILE* f);
+
+void saveSportsMan(sportsMan sm, FILE *f);
+
+void freeSportsMan(sportsMan *sm);
+
+void freeSportsManV(void *sm);
+
+void lab19_generate_file(const char *filename);
+
+int sportsmanCmp(const void * val1, const void * val2);
+
+void test_lab19_team();
 #endif //BASICSOFPROGRAMMINGCOURSE_LAB_19_H

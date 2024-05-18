@@ -10,6 +10,7 @@ int main(){
     test_deletePolinomXRoot();
     task_separatePositiveNegativeInFile();
     test_replaceMatrixSymmetricTheTransposed();
+    test_lab19_team();
     return 0;
 }
 
