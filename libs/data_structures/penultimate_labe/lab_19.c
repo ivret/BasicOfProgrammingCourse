@@ -461,6 +461,7 @@ void test_replaceMatrixSymmetricTheTransposed(){
             3, 3
     );
 
+
     matrix m2 = createMatrixFromArray(
             (int[]) {
                     0, 5, 4, 3,
