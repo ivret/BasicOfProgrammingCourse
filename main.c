@@ -7,6 +7,8 @@ int main(){
     test_calculate_the_value_end();
     test_saves_str_Word();
     test_ConvertsStrLongWord();
+    test_deletePolinomXRoot();
+    task_separatePositiveNegativeInFile();
     return 0;
 }
 

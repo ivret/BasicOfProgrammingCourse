@@ -16,6 +16,7 @@
 #include "data_structures/vector/vector.h"
 #include "data_structures/vectorVoid/vectorVoid.h"
 #include "data_structures/str/string.h"
+#include "data_structures/polynom/polynominals.h"
 
 
 void fileModifiesAnEntryRowOnCol(const char file[]);
@@ -49,4 +50,16 @@ int wordLen(WordDescriptor wd);
 void ConvertsStrLongWord(const char *filename);
 
 void test_ConvertsStrLongWord();
+
+void lab19_task06_deletePolinomXRoot(const char *filename);
+
+void lab19_deletePolinomXRoot(const char *filename, double x);
+
+void test_deletePolinomXRoot();
+
+void separatePositiveNegativeInFile(const char *fileName);
+
+void generateFileTask7(const char *fileName);
+
+void task_separatePositiveNegativeInFile();
 #endif //BASICSOFPROGRAMMINGCOURSE_LAB_19_H

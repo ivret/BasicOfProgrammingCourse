@@ -18,6 +18,8 @@ set (files
         libs/data_structures/penultimate_labe/lab_19.h
         main.c
         olds_main/lab18.c
+        libs/data_structures/polynom/polynominals.c
+        libs/data_structures/polynom/polynominals.h
 
 
 )

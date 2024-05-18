@@ -1,5 +1,6 @@
 #include "lab_19.h"
 #include <string.h>
+#include <math.h>
 
 
 void fileModifiesAnEntryRowOnCol(const char file[]){
@@ -272,4 +273,124 @@ void test_ConvertsStrLongWord(){
     ConvertsStrLongWord(filename);
 
     assert(cmpStrFile(lab19_task05_out_str, filename));
+}
+
+void lab19_task06_deletePolinomXRoot(const char *filename){
+    double lab19_task06_factors[] = {1.0, -7.0, 10.0, 1.0, -2.0, 1.0};
+    int lab19_task06_powers[] = {3, 2, 0, 2, 1, 0};
+    int lab19_task06_mon_amounts[] = {3, 3};
+    int lab19_task06_pol_amount = 2;
+
+    polynomial *ps = createPolynomialsFromArray(
+            lab19_task06_powers,
+            lab19_task06_factors,
+            lab19_task06_mon_amounts,
+            lab19_task06_pol_amount);
+
+    FILE *f = fopen(filename, "wb");
+
+    savePolynomials(ps, f, lab19_task06_pol_amount);
+
+    fclose(f);
+}
+
+void lab19_deletePolinomXRoot(const char *filename, double x){
+    FILE *f = fopen(filename, "rb");
+
+    int pol_amount;
+    polynomial *ps = loadPolynomials(f, &pol_amount);
+    fclose(f);
+
+    int i = 0;
+    while (i < pol_amount)
+        if (fabs(calculatePolynomial(ps[i], x)) < 0.00001) {
+            freePolynomial(ps + i);
+            ps[i] = ps[--pol_amount];
+        }
+        else
+            i++;
+
+    f = fopen(filename, "wb");
+    savePolynomials(ps, f, pol_amount);
+    fclose(f);
+}
+
+void test_deletePolinomXRoot(){
+    const char filename[] = "6.txt";
+    lab19_task06_deletePolinomXRoot(filename);
+
+    lab19_deletePolinomXRoot(filename, 1);
+
+    double factors[] = {1.0, -2.0, 1.0};
+    int powers[] = {2, 1, 0};
+    int mon_amounts[] = {3};
+    int pol_amount = 1;
+    polynomial *res = createPolynomialsFromArray(
+            powers,
+            factors,
+            mon_amounts,
+            pol_amount);
+
+    FILE *f = fopen(filename, "rb");
+    int f_pol_amount;
+    polynomial *ps = loadPolynomials(f, &f_pol_amount);
+    fclose(f);
+
+    assert(pol_amount == f_pol_amount);
+    assert(!memcmp(res, ps, pol_amount));
+}
+
+int readInt(FILE *f){
+    int x;
+    fread(&x, sizeof (int), 1, f);
+
+    return x;
+}
+
+void writeInt(int x, FILE *f){
+    fwrite(&x, sizeof (int), 1, f);
+}
+
+void separatePositiveNegativeInFile(const char *fileName) {
+    int size = (int) (getFileSize(fileName) / sizeof (int));
+
+    FILE *f = fopen(fileName, "rb");
+    int positiveArray[size / 2];
+    int negativeArray[size / 2];
+    int sizeP = 0;
+    int sizeN = 0;
+    for (int i = 0; i < size; ++i) {
+        int x = readInt(f);
+        if(x > 0)
+            positiveArray[sizeP++] = x;
+        if(x < 0)
+            negativeArray[sizeN++] = x;
+    }
+    fclose(f);
+    f = fopen(fileName, "wb");
+    fwrite(positiveArray, sizeof(int), sizeP, f);
+    fwrite(negativeArray, sizeof(int), sizeN, f);
+    fclose(f);
+}
+
+void generateFileTask7(const char *fileName){
+    FILE *f = fopen(fileName, "wb");
+
+    int a[] = {2, -4, 6, 7, -9, -10,11,-12};
+    fwrite(a,1,sizeof(a),f);
+    fclose(f);
+}
+void task_separatePositiveNegativeInFile(){
+    const char filename[] = "7.txt";
+
+    generateFileTask7(filename);
+
+    separatePositiveNegativeInFile(filename);
+    int a[8];
+    int a1[] = {2,6, 7, 11, -4, -9, -10, -12};
+    FILE *f = fopen(filename,"rb");
+
+    fread(a,sizeof(int),8,f);
+    fclose(f);
+    assert(memcmp(a, a1, sizeof(int) *8) == 0);
 }
