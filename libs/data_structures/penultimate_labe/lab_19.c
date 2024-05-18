@@ -219,3 +219,57 @@ void test_saves_str_Word(){
 
     assert(cmpStrFile(lab19_task04_out_str, filename));
 }
+
+int wordLen(WordDescriptor wd){
+    return wd.end - wd.begin;
+}
+
+void ConvertsStrLongWord(const char *filename){
+    long filesize = getFileSize(filename) + 1;
+    char *buffer = malloc(filesize);
+
+    FILE *f = fopen(filename, "r");
+
+    char *current_word = buffer;
+
+    while (fgets(current_word, filesize, f) != NULL) {
+        WordDescriptor wd, longest_wd;
+        wd.begin = wd.end = longest_wd.begin = longest_wd.end = current_word;
+
+        int max_len = 0;
+        while (getWord(wd.end, &wd)) {
+            int cur_len = wordLen(wd);
+            if (cur_len > max_len) {
+                longest_wd = wd;
+                max_len = cur_len;
+            }
+        }
+
+        memcpy(current_word, longest_wd.begin, max_len);
+        current_word += max_len;
+        *current_word = '\n';
+        current_word++;
+    }
+    *current_word = 0;
+
+    fclose(f);
+
+    write(filename, buffer);
+
+    free(buffer);
+}
+
+void test_ConvertsStrLongWord(){
+    char lab19_task05_str[] = "asd adfrgb asdv sd ca dfe\n"
+                              "trewerwerwge dfa asdfvdf asdv adf\n"
+                              "fhasdh sdfaab iejff sadjfhugwfihf\n";
+    char lab19_task05_out_str[] = "adfrgb\n"
+                                  "trewerwerwge\n"
+                                  "sadjfhugwfihf\n";
+    const char filename[] = "5.txt";
+    write(filename, lab19_task05_str);
+
+    ConvertsStrLongWord(filename);
+
+    assert(cmpStrFile(lab19_task05_out_str, filename));
+}

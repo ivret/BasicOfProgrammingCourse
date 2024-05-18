@@ -15,6 +15,8 @@
 #include "data_structures/array/array.h"
 #include "data_structures/vector/vector.h"
 #include "data_structures/vectorVoid/vectorVoid.h"
+#include "data_structures/str/string.h"
+
 
 void fileModifiesAnEntryRowOnCol(const char file[]);
 
@@ -41,4 +43,10 @@ void test_calculate_the_value_end();
 void saves_str_Word(const char *filename, const char *seq);
 
 void test_saves_str_Word();
+
+int wordLen(WordDescriptor wd);
+
+void ConvertsStrLongWord(const char *filename);
+
+void test_ConvertsStrLongWord();
 #endif //BASICSOFPROGRAMMINGCOURSE_LAB_19_H

@@ -6,7 +6,7 @@ int main(){
     testTransformFloat();
     test_calculate_the_value_end();
     test_saves_str_Word();
-
+    test_ConvertsStrLongWord();
     return 0;
 }
 

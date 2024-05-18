@@ -10,13 +10,14 @@ set (files
         olds_main/lab14.c
         olds_main/lab16.c
         olds_main/lab15.c
-        libs/tests/string.c
-        libs/tests/string.h
+        libs/data_structures/str/string.c
+        libs/data_structures/str/string.h
         olds_main/lab17.c
         olds_main/lab18.c
         libs/data_structures/penultimate_labe/lab_19.c
         libs/data_structures/penultimate_labe/lab_19.h
         main.c
+        olds_main/lab18.c
 
 
 )
