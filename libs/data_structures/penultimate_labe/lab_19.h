@@ -17,6 +17,7 @@
 #include "data_structures/vectorVoid/vectorVoid.h"
 #include "data_structures/str/string.h"
 #include "data_structures/polynom/polynominals.h"
+#include "data_structures/data/data.h"
 
 
 void fileModifiesAnEntryRowOnCol(const char file[]);

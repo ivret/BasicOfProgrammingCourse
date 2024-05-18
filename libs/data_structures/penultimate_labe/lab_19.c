@@ -3,6 +3,7 @@
 #include <math.h>
 
 
+
 void fileModifiesAnEntryRowOnCol(const char file[]){
         FILE *f = fopen(file, "r");
 
@@ -659,4 +660,100 @@ void test_lab19_team(){
     freeSportsMan(sms + 1);
     freeSportsMan(sms + 2);
     free(sms);
+}
+
+void lab19_task10_generate_storehouse_file(const char *filename){
+    FILE *f = fopen(filename, "wb");
+
+    storehouse sh;
+    sh.records_amount = 7;
+    sh.records = malloc(sh.records_amount * sizeof (productExInfo));
+
+    sh.records[0] = createProductExInfo("Лопата", 200, 1200.0);
+    sh.records[1] = createProductExInfo("Тарелка", 1000, 200.0);
+    sh.records[2] = createProductExInfo("Стул", 120, 11100.0);
+    sh.records[3] = createProductExInfo("Блок бумаги", 1200, 700.0);
+    sh.records[4] = createProductExInfo("Лампочка", 3200, 200.0);
+    sh.records[5] = createProductExInfo("Футболка", 2200, 1200.0);
+    sh.records[6] = createProductExInfo("Космический корабль", 3, 123456789000.0);
+
+    saveStorehouse(&sh, f);
+    freeStorehouse(&sh);
+
+    fclose(f);
+}
+
+void lab19_task10_generate_records_file(const char *filename){
+    FILE *f = fopen(filename, "wb");
+
+    int n = 10;
+    productInfo* sh = malloc(n * sizeof(productInfo));
+
+    sh[0] = createProductInfo("Лопата", 100);
+    sh[1] = createProductInfo("Лампочка", 1199);
+    sh[2] = createProductInfo("Стул", 30);
+    sh[3] = createProductInfo("Блок бумаги", 1000);
+    sh[4] = createProductInfo("Тарелка", 500);
+    sh[5] = createProductInfo("Лампочка", 1000);
+    sh[6] = createProductInfo("Футболка", 1200);
+    sh[7] = createProductInfo("Лампочка", 1000);
+    sh[8] = createProductInfo("Космический корабль", 1);
+    sh[9] = createProductInfo("Футболка", 1200);
+
+    fwrite(&n, sizeof(int), 1, f);
+    for (int i = 0; i < n; ++i) {
+        saveProductInfo(&sh[i], f);
+        freeProductInfo(&sh[i]);
+    }
+
+    fclose(f);
+}
+
+void lab19_task10(const char *sh_filename, const char *rs_filename){
+    FILE *sh_f = fopen(sh_filename, "rb");
+    storehouse sh = loadStorehouse(sh_f);
+    fclose(sh_f);
+
+    FILE *rs_f = fopen(rs_filename, "rb");
+    updateStorehouse(&sh, rs_f);
+    fclose(rs_f);
+
+    sh_f = fopen(sh_filename, "wb");
+    saveStorehouse(&sh, rs_f);
+    fclose(rs_f);
+
+    freeStorehouse(&sh);
+}
+
+void test_lab19_10(){
+    const char sh_filename[] = "10sh.txt";
+    const char rs_filename[] = "10rs.txt";
+    lab19_task10_generate_storehouse_file(sh_filename);
+    lab19_task10_generate_records_file(rs_filename);
+
+    lab19_task10(sh_filename, rs_filename);
+
+    storehouse sh;
+    sh.records_amount = 6;
+    sh.records = malloc(sh.records_amount * sizeof (productExInfo));
+
+    sh.records[0] = createProductExInfo("Лопата", 100, 1200.0);
+    sh.records[1] = createProductExInfo("Тарелка", 500, 200.0);
+    sh.records[2] = createProductExInfo("Стул", 90, 11100.0);
+    sh.records[3] = createProductExInfo("Блок бумаги", 200, 700.0);
+    sh.records[4] = createProductExInfo("Лампочка", 1, 200.0);
+    sh.records[5] = createProductExInfo("Космический корабль", 2, 123456789000.0);
+
+    FILE* sh_f = fopen(sh_filename, "rb");
+    storehouse sh2 = loadStorehouse(sh_f);
+    fclose(sh_f);
+
+    assert(sh.records_amount == sh2.records_amount);
+    for (int record_index = 0; record_index < sh.records_amount; ++record_index) {
+        assert(cmpProductExInfo(sh.records + record_index, sh2.records + record_index));
+    }
+
+
+    freeStorehouse(&sh2);
+    freeStorehouse(&sh);
 }

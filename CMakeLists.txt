@@ -20,6 +20,8 @@ set (files
         olds_main/lab18.c
         libs/data_structures/polynom/polynominals.c
         libs/data_structures/polynom/polynominals.h
+        libs/data_structures/data/data.c
+        libs/data_structures/data/data.h
 
 
 )
