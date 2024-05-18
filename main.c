@@ -9,6 +9,7 @@ int main(){
     test_ConvertsStrLongWord();
     test_deletePolinomXRoot();
     task_separatePositiveNegativeInFile();
+    test_replaceMatrixSymmetricTheTransposed();
     return 0;
 }
 

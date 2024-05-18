@@ -170,20 +170,20 @@ bool isEMatrix(matrix *m){
         }
     return true;
 }
-////возвращает значение ’истина’, еcли матрица m является симметричной, ложь – в противном случае
-//bool isSymmetricMatrix(matrix *m){
-//    if  (isSquareMatrix(m)){
-//        for (int index_col = 1; index_col < m->nCols; ++index_col) {
-//            for (int index = 0; index < index_col; index++) {
-//                if (m->values[index_col][index] != m->values[index][index_col]
-//                && m->values[index_col] != m->values[index])
-//                    return false;
-//                return true;
-//            }
-//        }
-//    }
-//    return false;
-//}
+//возвращает значение ’истина’, еcли матрица m является симметричной, ложь – в противном случае
+bool isSymmetricMatrix(matrix *m){
+    if  (isSquareMatrix(m)){
+        for (int index_col = 1; index_col < m->nCols; ++index_col) {
+            for (int index = 0; index < index_col; index++) {
+                if (m->values[index_col][index] != m->values[index][index_col]
+                && m->values[index_col] != m->values[index])
+                    return false;
+                return true;
+            }
+        }
+    }
+    return false;
+}
 
 //транспонирует квадратную матрицу m.
 void transposeSquareMatrix(matrix *m) {
@@ -332,4 +332,42 @@ void outputMatricesSquareFiles(matrix *ms, int nMatrices, FILE* f){
     fprintf(f, "%d\n", nMatrices);
     for (int i = 0; i < nMatrices; ++i)
         outputMatrixSquareFile(ms[i], f);
+}
+
+void outputMatrixSquareFBin(matrix m, FILE* f){
+    fwrite(&m.nRows, sizeof (int), 1, f);
+    for (int row_index = 0; row_index < m.nRows; ++row_index) {
+        fwrite(m.values[row_index], sizeof (int), m.nCols, f);
+    }
+}
+
+void outputMatricesSquareFBin(matrix *ms, int nMatrices, FILE* f){
+    fwrite(&nMatrices, sizeof (int), 1, f);
+    for (int i = 0; i < nMatrices; ++i)
+        outputMatrixSquareFBin(ms[i], f);
+}
+
+void inputMatrixFBin(matrix *m, FILE* f){
+    for (int row_index = 0; row_index < m->nRows; ++row_index)
+        fread(m->values[row_index], sizeof(int), m->nCols, f);
+}
+
+matrix createMatrixSquareFBin(FILE* f){
+    int n;
+    fread(&n, sizeof (int), 1, f);
+
+    matrix m = getMemMatrix(n, n);
+    inputMatrixFBin(&m, f);
+    return m;
+}
+
+matrix* createArrayOfMatricesSquareFBin(FILE* f, int *n){
+    fread(n, sizeof (int), 1, f);
+
+    matrix *ms = malloc(*n * sizeof (matrix));
+    for (int i = 0; i < *n; ++i) {
+        ms[i] = createMatrixSquareFBin(f);
+    }
+
+    return ms;
 }

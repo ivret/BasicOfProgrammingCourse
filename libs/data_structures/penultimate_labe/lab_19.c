@@ -394,3 +394,92 @@ void task_separatePositiveNegativeInFile(){
     fclose(f);
     assert(memcmp(a, a1, sizeof(int) *8) == 0);
 }
+
+void lab19_task08_generate_file(const char *filename){
+    matrix m1 = createMatrixFromArray(
+            (int[]) {
+                    0, 5, 4,
+                    -1, 0, 0,
+                    1, 3, 0
+            },
+            3, 3
+    );
+
+    matrix m2 = createMatrixFromArray(
+            (int[]) {
+                    0, 5, 4, 3,
+                    5, 1, 3, 2,
+                    4, 3, 0, 1,
+                    3, 2, 1, 7
+            },
+            4, 4
+    );
+
+    matrix ms[] = {m1, m2};
+
+    FILE *f = fopen(filename, "wb");
+    outputMatricesSquareFBin(ms, 2, f);
+
+    fclose(f);
+
+    freeMemMatrix(&m1);
+    freeMemMatrix(&m2);
+}
+
+void lab19_replaceMatrixSymmetricTheTransposed(const char *filename){
+    FILE *f = fopen(filename, "rb");
+
+    int n;
+    matrix *ms = createArrayOfMatricesSquareFBin(f, &n);
+
+    fclose(f);
+
+    for (int i = 0; i < n; ++i) {
+        if (!isSymmetricMatrix(&ms[i]))
+            transposeSquareMatrix(&ms[i]);
+    }
+
+    f = fopen(filename, "wb");
+    outputMatricesSquareFBin(ms, n, f);
+    fclose(f);
+
+    freeMemMatrices(ms, n);
+}
+
+void test_replaceMatrixSymmetricTheTransposed(){
+    const char filename[] = "8.txt";
+    lab19_task08_generate_file(filename);
+
+    lab19_replaceMatrixSymmetricTheTransposed(filename);
+
+    matrix m1 = createMatrixFromArray(
+            (int[]) {
+                    0, -1, 1,
+                    5, 0, 3,
+                    4, 0, 0
+            },
+            3, 3
+    );
+
+    matrix m2 = createMatrixFromArray(
+            (int[]) {
+                    0, 5, 4, 3,
+                    5, 1, 3, 2,
+                    4, 3, 0, 1,
+                    3, 2, 1, 7
+            },
+            4, 4
+    );
+
+    FILE *f = fopen(filename, "rb");
+    int n;
+    matrix *ms = createArrayOfMatricesSquareFBin(f, &n);
+    fclose(f);
+
+    assert(areTwoMatricesEqual(&m1, ms));
+    assert(areTwoMatricesEqual(&m2, ms + 1));
+
+    freeMemMatrices(ms, n);
+    freeMemMatrix(&m1);
+    freeMemMatrix(&m2);
+}

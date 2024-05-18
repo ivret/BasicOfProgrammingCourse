@@ -85,4 +85,14 @@ void outputArrayF(int a[], const size_t n, const char* sep, FILE* f);
 void outputMatrixSquareFile(matrix m, FILE* f);
 
 void outputMatricesSquareFiles(matrix *ms, int nMatrices, FILE* f);
+
+void outputMatrixSquareFBin(matrix m, FILE* f);
+
+void outputMatricesSquareFBin(matrix *ms, int nMatrices, FILE* f);
+
+void inputMatrixFBin(matrix *m, FILE* f);
+
+matrix createMatrixSquareFBin(FILE* f);
+
+matrix* createArrayOfMatricesSquareFBin(FILE* f, int *n);
 #endif //BASICSOFPROGRAMMINGCOURSE_MATRIX_H

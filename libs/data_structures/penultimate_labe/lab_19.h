@@ -62,4 +62,10 @@ void separatePositiveNegativeInFile(const char *fileName);
 void generateFileTask7(const char *fileName);
 
 void task_separatePositiveNegativeInFile();
+
+void lab19_task08_generate_file(const char *filename);
+
+void lab19_replaceMatrixSymmetricTheTransposed(const char *filename);
+
+void test_replaceMatrixSymmetricTheTransposed();
 #endif //BASICSOFPROGRAMMINGCOURSE_LAB_19_H
