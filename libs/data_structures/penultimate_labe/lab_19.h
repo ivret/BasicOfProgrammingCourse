@@ -101,4 +101,12 @@ void lab19_generate_file(const char *filename);
 int sportsmanCmp(const void * val1, const void * val2);
 
 void test_lab19_team();
+
+void lab19_task10_generate_storehouse_file(const char *filename);
+
+void lab19_task10_generate_records_file(const char *filename);
+
+void lab19_task10(const char *sh_filename, const char *rs_filename);
+
+void test_lab19_10();
 #endif //BASICSOFPROGRAMMINGCOURSE_LAB_19_H

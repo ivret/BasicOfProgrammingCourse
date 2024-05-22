@@ -21,13 +21,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c91f2b6-d7e5-463a-ad34-6b17456152d5" name="Changes" comment="lab17_lesult">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/BasicsOfProgrammingCourse.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/BasicsOfProgrammingCourse.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/BasicsOfProgrammingCourse.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/BasicsOfProgrammingCourse.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/array/array.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/array/array.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/matrix/matrix.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/matrix/matrix.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/tests/test_matrix.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/tests/test_matrix.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/vector/vector.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/vector/vector.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/vectorVoid/vectorVoid.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/libs/data_structures/vectorVoid/vectorVoid.c.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/main.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/objects.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/tests/string.c" beforeDir="false" afterPath="$PROJECT_DIR$/libs/tests/string.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/tests/string.h" beforeDir="false" afterPath="$PROJECT_DIR$/libs/tests/string.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/penultimate_labe/lab_19.h" beforeDir="false" afterPath="$PROJECT_DIR$/libs/data_structures/penultimate_labe/lab_19.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,10 +72,11 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/study/op/work/BasicOfProgrammingCourse/CMakeLists.txt&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/study/op/work7/BasicOfProgrammingCourse&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -79,6 +92,11 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BasicsOfProgrammingCourse" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="BasicsOfProgrammingCourse" TARGET_NAME="BasicsOfProgrammingCourse" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="BasicsOfProgrammingCourse" RUN_TARGET_NAME="BasicsOfProgrammingCourse">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -125,6 +143,22 @@
       <workItem from="1713157927445" duration="557000" />
       <workItem from="1713245917545" duration="20000" />
       <workItem from="1713246433780" duration="51000" />
+      <workItem from="1716150453731" duration="115000" />
+      <workItem from="1716154648752" duration="2000" />
+      <workItem from="1716154795649" duration="1000" />
+      <workItem from="1716181389196" duration="25000" />
+      <workItem from="1716181425774" duration="386000" />
+      <workItem from="1716181823472" duration="17000" />
+      <workItem from="1716182104055" duration="37000" />
+      <workItem from="1716182265707" duration="39000" />
+      <workItem from="1716185493559" duration="487000" />
+      <workItem from="1716187900367" duration="4000" />
+      <workItem from="1716190224257" duration="737000" />
+      <workItem from="1716326633229" duration="595000" />
+      <workItem from="1716332855900" duration="226000" />
+      <workItem from="1716372260524" duration="13000" />
+      <workItem from="1716372283620" duration="475000" />
+      <workItem from="1716410371084" duration="63000" />
     </task>
     <task id="LOCAL-00001" summary="lab16_2">
       <option name="closed" value="true" />
@@ -248,6 +282,17 @@
     <isAutomaticCheckingOnLaunch value="false" />
     <isAutomaticFoundErrors value="true" />
     <isAutomaticReloadCMake value="true" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="lab16_2" />

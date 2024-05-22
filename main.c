@@ -11,6 +11,8 @@ int main(){
     task_separatePositiveNegativeInFile();
     test_replaceMatrixSymmetricTheTransposed();
     test_lab19_team();
+    test_lab19_10();
+
     return 0;
 }
 

@@ -22,6 +22,8 @@ set (files
         libs/data_structures/polynom/polynominals.h
         libs/data_structures/data/data.c
         libs/data_structures/data/data.h
+        libs/data_structures/lab20/lab20-.c
+        libs/data_structures/lab20/lab20-.h
 
 
 )
