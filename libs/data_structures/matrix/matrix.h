@@ -95,4 +95,12 @@ void inputMatrixFBin(matrix *m, FILE* f);
 matrix createMatrixSquareFBin(FILE* f);
 
 matrix* createArrayOfMatricesSquareFBin(FILE* f, int *n);
+
+void zeroMatrix(matrix m);
+
+void outputMatrixF(matrix m, FILE* f);
+
+void copy_r(int  *dst, const int  *src, size_t size);
+
+matrix copyFromMatrix(matrix dst, matrix src);
 #endif //BASICSOFPROGRAMMINGCOURSE_MATRIX_H

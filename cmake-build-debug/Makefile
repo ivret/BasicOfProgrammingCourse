@@ -512,6 +512,30 @@ olds_main/lab18.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\BasicsOfProgrammingCourse.dir\build.make CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/lab18.c.s
 .PHONY : olds_main/lab18.c.s
 
+olds_main/main_lab19.obj: olds_main/main_lab19.c.obj
+.PHONY : olds_main/main_lab19.obj
+
+# target to build an object file
+olds_main/main_lab19.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BasicsOfProgrammingCourse.dir\build.make CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/main_lab19.c.obj
+.PHONY : olds_main/main_lab19.c.obj
+
+olds_main/main_lab19.i: olds_main/main_lab19.c.i
+.PHONY : olds_main/main_lab19.i
+
+# target to preprocess a source file
+olds_main/main_lab19.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BasicsOfProgrammingCourse.dir\build.make CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/main_lab19.c.i
+.PHONY : olds_main/main_lab19.c.i
+
+olds_main/main_lab19.s: olds_main/main_lab19.c.s
+.PHONY : olds_main/main_lab19.s
+
+# target to generate assembly for a file
+olds_main/main_lab19.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BasicsOfProgrammingCourse.dir\build.make CMakeFiles/BasicsOfProgrammingCourse.dir/olds_main/main_lab19.c.s
+.PHONY : olds_main/main_lab19.c.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -569,6 +593,9 @@ help:
 	@echo ... olds_main/lab18.obj
 	@echo ... olds_main/lab18.i
 	@echo ... olds_main/lab18.s
+	@echo ... olds_main/main_lab19.obj
+	@echo ... olds_main/main_lab19.i
+	@echo ... olds_main/main_lab19.s
 .PHONY : help
 
 

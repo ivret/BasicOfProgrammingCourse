@@ -16,7 +16,7 @@ set (files
         olds_main/lab18.c
         libs/data_structures/penultimate_labe/lab_19.c
         libs/data_structures/penultimate_labe/lab_19.h
-        main.c
+        olds_main/main_lab19.c
         olds_main/lab18.c
         libs/data_structures/polynom/polynominals.c
         libs/data_structures/polynom/polynominals.h
@@ -24,6 +24,7 @@ set (files
         libs/data_structures/data/data.h
         libs/data_structures/lab20/lab20-.c
         libs/data_structures/lab20/lab20-.h
+        main.c
 
 
 )

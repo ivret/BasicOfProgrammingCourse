@@ -371,3 +371,33 @@ matrix* createArrayOfMatricesSquareFBin(FILE* f, int *n){
 
     return ms;
 }
+
+void zeroMatrix(matrix m){
+    for (int row_index = 0; row_index < m.nRows; ++row_index) {
+        memset(m.values[row_index], 0, m.nCols);
+    }
+}
+
+void outputMatrixF(matrix m, FILE* f){
+    fprintf(f, "%d %d\n", m.nRows, m.nCols);
+    for (int row_index = 0; row_index < m.nRows; ++row_index) {
+        outputArrayF(m.values[row_index], m.nCols, " ", f);
+    }
+}
+
+void copy_r(int  *dst, const int  *src, size_t size){
+    memcpy(dst, src, size * sizeof(int));
+}
+
+matrix copyFromMatrix(matrix dst, matrix src){
+    if (dst.nRows != src.nRows || dst.nCols != src.nCols){
+        freeMemMatrix(&dst);
+        dst = getMemMatrix(src.nRows, src.nCols);
+    }
+
+    for (int row_index = 0; row_index < src.nRows; ++row_index) {
+        copy(dst.values[row_index], src.values[row_index], src.nCols);
+    }
+
+    return dst;
+}

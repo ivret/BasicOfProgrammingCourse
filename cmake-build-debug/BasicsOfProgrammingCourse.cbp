@@ -156,6 +156,9 @@
 		<Unit filename="D:/study/op/work7/BasicOfProgrammingCourse/olds_main/lab18.c">
 			<Option target="BasicsOfProgrammingCourse"/>
 		</Unit>
+		<Unit filename="D:/study/op/work7/BasicOfProgrammingCourse/olds_main/main_lab19.c">
+			<Option target="BasicsOfProgrammingCourse"/>
+		</Unit>
 		<Unit filename="D:/study/op/work7/BasicOfProgrammingCourse/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
