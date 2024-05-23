@@ -27,4 +27,9 @@ void test_lab20_01();
 void lab20_task02(const char* read_file, const char* write_file);
 
 void test_lab20_02();
+void shellSortInt(int a[], int n);
+int getMedian(matrix *m, int row_index, int col_index, int *buffer);
+void processFilterWindow(matrix m, position start, position end, int *buffer);
+void lab20_task03(matrix m, int filter);
+void test_lab20_03();
 #endif //BASICSOFPROGRAMMINGCOURSE_LAB20_H

@@ -127,3 +127,89 @@ void test_lab20_02(){
 
     assert(cmpStrFile(lab20_task02_out_str, write_file));
 }
+
+void shellSortInt(int a[], int n)
+{
+    for (int gap = n / 2; gap > 0; gap /= 2)
+    {
+        for (int i = gap; i < n; i += 1)
+        {
+            //сортировка подсписков, созданных с помощью gap
+            int temp = a[i];
+
+            int j;
+            for (j = i; j >= gap && a[j - gap] > temp; j -= gap)
+                a[j] = a[j - gap];
+
+            a[j] = temp;
+        }
+    }
+}
+
+int getMedian(matrix *m, int row_index, int col_index, int *buffer){
+    row_index++;
+    col_index++;
+    int k = 0;
+    for (int i = row_index - 2; i <= row_index; ++i) {
+        for (int j = col_index - 2; j <= col_index; ++j) {
+            buffer[k++] = m->values[i][j];
+        }
+    }
+
+    shellSortInt(buffer, 9);
+
+    return buffer[4];
+}
+
+void processFilterWindow(matrix m, position start, position end, int *buffer){
+    for (int row_index = start.rowIndex + 1;
+         row_index < end.rowIndex;
+         ++row_index) {
+        for (int col_index = start.colIndex + 1;
+             col_index < end.colIndex;
+             ++col_index) {
+            m.values[row_index][col_index] =
+                    getMedian(&m, row_index, col_index, buffer);
+        }
+    }
+}
+
+void lab20_task03(matrix m, int filter){
+    int buffer[9];
+    int k = filter - 1;
+    for (int row_index = 0; row_index < m.nRows; row_index += filter) {
+        for (int col_index = 0; col_index < m.nCols; col_index += filter) {
+            processFilterWindow(
+                    m,
+                    (position) {row_index, col_index},
+                    (position) {row_index + k, col_index + k},
+                    buffer);
+        }
+    }
+}
+
+void test_lab20_03(){
+    matrix m1 = createMatrixFromArray(
+            (int[])
+                    {
+                            10, 20, 30,
+                            25, 35, 45,
+                            15, 25, 35
+                    }, 3, 3
+    );
+
+    matrix m2 = createMatrixFromArray(
+            (int[])
+                    {
+                            10, 20, 30,
+                            25, 25, 45,
+                            15, 25, 35
+                    }, 3, 3
+    );
+
+    lab20_task03(m1, 3);
+    assert(areTwoMatricesEqual(&m1, &m2));
+
+    freeMemMatrix(&m1);
+    freeMemMatrix(&m2);
+}
