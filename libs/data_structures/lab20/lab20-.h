@@ -47,4 +47,14 @@ int lab20_05(matrix m);
 void test_l05();
 void lab20_06(const char* input_str, char* output_str);
 void test_06();
+
+typedef struct IntNode{
+    int value;
+    struct IntNode* left;
+    struct IntNode* right;
+} IntNode;
+
+void deleteTreeRec(IntNode *tree);
+IntNode *createTree(int *nums, int n);
+void test_07();
 #endif //BASICSOFPROGRAMMINGCOURSE_LAB20_H

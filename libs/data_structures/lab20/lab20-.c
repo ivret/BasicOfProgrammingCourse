@@ -495,3 +495,55 @@ void test_06(){
     assert(!strcmp(processed_str2, out_str2));
     assert(!strcmp(processed_str3, out_str3));
 }
+
+
+
+void deleteTreeRec(IntNode *tree){
+    if (tree == NULL)
+        return;
+
+    deleteTreeRec(tree->left);
+    deleteTreeRec(tree->right);
+    free(tree);
+}
+
+IntNode *createTree(int *nums, int n){
+    if (n == 0)
+        return NULL;
+
+    int max = (int) findMaxUnsortedIndex(nums, n);
+    IntNode *node = (IntNode*) malloc(sizeof (IntNode));
+    node->value = nums[max];
+    node->left = createTree(nums, max);
+    max++;
+    node->right = createTree(nums + max, n - max);
+    return node;
+}
+
+void printTreeInDeep(IntNode *node, FILE *f){
+    if (node == NULL) {
+        fprintf(f, "null ");
+    } else {
+        fprintf(f, "%d ", node->value);
+        printTreeInDeep(node->left, f);
+        printTreeInDeep(node->right, f);
+    }
+}
+
+void test_07(){
+    int nums1[] = {3, 2, 1, 6, 0, 5};
+    int nums1_size = sizeof(nums1) / sizeof(int);
+    char filename[] = "20_7.txt";
+    char result[] = "6 3 null 2 null 1 null null 5 0 null null null ";
+
+    IntNode* tree = createTree(nums1, nums1_size);
+
+    FILE *f = fopen(filename, "w");
+    printTreeInDeep(tree, f);
+    fclose(f);
+
+    deleteTreeRec(tree);
+
+    assert(cmpStrFile(result, filename));
+
+}
