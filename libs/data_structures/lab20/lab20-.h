@@ -45,4 +45,6 @@ void test_04();
 int lab20_05(matrix m);
 
 void test_l05();
+void lab20_06(const char* input_str, char* output_str);
+void test_06();
 #endif //BASICSOFPROGRAMMINGCOURSE_LAB20_H

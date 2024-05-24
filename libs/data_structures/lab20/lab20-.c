@@ -420,3 +420,78 @@ void test_l05(){
     freeMemMatrix(&m1);
     freeMemMatrix(&m2);
 }
+
+void lab20_06(const char* input_str, char* output_str){
+    char digit = '1';
+
+    if (*input_str == 'I'){
+        *output_str = digit++;
+        output_str++;
+    }
+    else{
+        const char *end_ptr = input_str + 1;
+        while (*end_ptr == 'D')
+            end_ptr++;
+
+        output_str = output_str + (end_ptr - input_str);
+        char *write_ptr = output_str;
+        for (const char* cur_ptr = end_ptr + 1; cur_ptr != input_str; cur_ptr--){
+            *write_ptr = digit++;
+            write_ptr--;
+        }
+
+        input_str = end_ptr;
+        output_str++;
+    }
+
+    while (*input_str) {
+        while (*input_str == 'I') {
+            input_str++;
+            *output_str = digit++;
+            output_str++;
+        }
+
+        if (*input_str) {
+            const char *end_ptr = input_str;
+
+            output_str--;
+            digit--;
+
+            while (*end_ptr == 'D')
+                end_ptr++;
+
+            long dif = end_ptr - input_str;
+            char *write_ptr = output_str + dif;
+            for (const char *cur_ptr = end_ptr; cur_ptr >= input_str; cur_ptr--) {
+                *write_ptr = digit++;
+                write_ptr--;
+            }
+
+            input_str = end_ptr;
+            output_str += dif + 1;
+        }
+    }
+
+    *output_str = 0;
+
+}
+
+void test_06(){
+    char str1[] = "IIIDIDDD";
+    char str2[] = "DDD";
+    char str3[] = "IIDIDDII";
+    char out_str1[] = "123549876";
+    char out_str2[] = "4321";
+    char out_str3[] = "124376589";
+    char processed_str1[10];
+    char processed_str2[10];
+    char processed_str3[10];
+
+    lab20_06(str1, processed_str1);
+    lab20_06(str2, processed_str2);
+    lab20_06(str3, processed_str3);
+
+    assert(!strcmp(processed_str1, out_str1));
+    assert(!strcmp(processed_str2, out_str2));
+    assert(!strcmp(processed_str3, out_str3));
+}

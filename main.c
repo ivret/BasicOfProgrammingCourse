@@ -6,5 +6,6 @@ int main (){
 //    test_lab20_02();
 //    test_lab20_03();
 //    test_04();
-    test_l05();
+//    test_l05();
+    test_06();
 }
