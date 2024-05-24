@@ -547,3 +547,26 @@ void test_07(){
     assert(cmpStrFile(result, filename));
 
 }
+
+void lab20_08(const char* input_str, const int* array, char *output_str){
+    int size = (int) strlen(input_str);
+    for (int i = 0; i < size; ++i) {
+        output_str[i] = input_str[array[i]];
+    }
+    output_str[size] = 0;
+}
+
+void test_08(){
+    int nums1[] = {0, 3, 2, 1};
+    int nums2[] = {0, 1, 2};
+    char *input_str1 = "abap";
+    char *input_str2 = "abc";
+    char *output_str1 = "apab";
+    char *output_str2 = "abc";
+
+    char buffer[20];
+    lab20_08(input_str1, nums1, buffer);
+    assert(!strcmp(buffer, output_str1));
+    lab20_08(input_str2, nums2, buffer);
+    assert(!strcmp(buffer, output_str2));
+}

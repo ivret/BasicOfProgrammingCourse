@@ -57,4 +57,6 @@ typedef struct IntNode{
 void deleteTreeRec(IntNode *tree);
 IntNode *createTree(int *nums, int n);
 void test_07();
+void lab20_08(const char* input_str, const int* array, char *output_str);
+void test_08();
 #endif //BASICSOFPROGRAMMINGCOURSE_LAB20_H

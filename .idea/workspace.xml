@@ -20,11 +20,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c91f2b6-d7e5-463a-ad34-6b17456152d5" name="Changes" comment="test_06">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/data_structures/lab20/lab20-.c" beforeDir="false" afterPath="$PROJECT_DIR$/libs/data_structures/lab20/lab20-.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/data_structures/lab20/lab20-.h" beforeDir="false" afterPath="$PROJECT_DIR$/libs/data_structures/lab20/lab20-.h" afterDir="false" />
-    </list>
+    <list default="true" id="2c91f2b6-d7e5-463a-ad34-6b17456152d5" name="Changes" comment="test_07" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -138,7 +134,7 @@
       <workItem from="1716372283620" duration="475000" />
       <workItem from="1716410371084" duration="63000" />
       <workItem from="1716446763310" duration="8549000" />
-      <workItem from="1716547531030" duration="2888000" />
+      <workItem from="1716547531030" duration="3602000" />
     </task>
     <task id="LOCAL-00001" summary="lab16_2">
       <option name="closed" value="true" />
@@ -292,7 +288,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716570710972</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="test_07">
+      <option name="closed" value="true" />
+      <created>1716575422928</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1716575422928</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -330,7 +334,8 @@
     <MESSAGE value="test_04" />
     <MESSAGE value="test_l05" />
     <MESSAGE value="test_06" />
-    <option name="LAST_COMMIT_MESSAGE" value="test_06" />
+    <MESSAGE value="test_07" />
+    <option name="LAST_COMMIT_MESSAGE" value="test_07" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
