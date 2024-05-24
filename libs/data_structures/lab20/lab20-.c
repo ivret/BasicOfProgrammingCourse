@@ -364,3 +364,59 @@ void test_04(){
 
     assert(cmpStrFile(lab20_task04_out_str, write_file));
 }
+
+int minInt(int a, int b){
+    return a <= b ? a : b;
+}
+
+int lab20_05(matrix m){
+    int counter = 0;
+    matrix inc_m = getMemMatrix(m.nRows, m.nCols);
+    for (int row_index = 0; row_index < m.nRows; ++row_index) {
+        inc_m.values[row_index][0] = m.values[row_index][0];
+        for (int col_index = 0; col_index < m.nCols; ++col_index) {
+            if(m.values[row_index][col_index])
+                inc_m.values[row_index][col_index] =
+                        inc_m.values[row_index][col_index - 1] + 1;
+            else
+                inc_m.values[row_index][col_index] = 0;
+
+            int min = inc_m.values[row_index][col_index];
+            for (int k = row_index; k >= 0; --k) {
+                min = minInt(min, inc_m.values[k][col_index]);
+                counter += min;
+            }
+        }
+    }
+
+    freeMemMatrix(&inc_m);
+
+    return counter;
+}
+
+void test_l05(){
+    matrix m1 = createMatrixFromArray(
+            (int[])
+                    {
+                            1, 0, 1,
+                            1, 1, 0,
+                            1, 1, 0
+                    }, 3, 3
+    );
+
+    matrix m2 = createMatrixFromArray(
+            (int[])
+                    {
+                            1, 1, 0, 1,
+                            1, 1, 1, 1,
+                            1, 1, 1, 1,
+                            1, 1, 1, 1
+                    }, 4, 4
+    );
+
+    assert(lab20_05(m1) == 13);
+    assert(lab20_05(m2) == 76);
+
+    freeMemMatrix(&m1);
+    freeMemMatrix(&m2);
+}
