@@ -213,3 +213,154 @@ void test_lab20_03(){
     freeMemMatrix(&m1);
     freeMemMatrix(&m2);
 }
+
+void addDomainParseStrToVec(vectorVoid *vec,
+                            char *write_ptr,
+                            char *buffer){
+    long str_len = write_ptr - buffer + 1;
+    char *add_str = malloc(str_len);
+    memcpy(add_str, buffer, str_len);
+    pushBackV(vec, &add_str);
+}
+
+vectorVoid parseDomainStr(const char *s){
+    char buffer[256];
+    char *write_ptr = buffer;
+    vectorVoid vec = createVectorV(2, sizeof (char*));
+
+    while (*s){
+        if (*s == '.' || *s == '\n'){
+            *write_ptr = 0;
+            addDomainParseStrToVec(&vec, write_ptr, buffer);
+            write_ptr = buffer;
+        } else {
+            *write_ptr = *s;
+            write_ptr++;
+        }
+
+        s++;
+    }
+
+    return vec;
+}
+
+void lab20_04(const char* read_file, const char* write_file){
+    FILE *f = fopen(read_file, "r");
+
+    int n;
+    fscanf(f, "%d", &n);
+
+    vectorVoid domains[n];
+    int visits_amounts[n];
+    int visits_amounts_c[n];
+
+    const int buffer_size = 1024;
+    char buffer[buffer_size];
+    for (int i = 0; i < n; ++i) {
+        fscanf(f, "%d ", visits_amounts + i);
+        fgets(buffer, buffer_size, f);
+
+        domains[i] = parseDomainStr(buffer);
+    }
+
+    fclose(f);
+
+    f = fopen(write_file, "w");
+
+    char *unique_str[n];
+    int unique_visits_amounts[n];
+    char *p_str[n];
+    while(n) {
+        for (int vec_index = 0; vec_index < n;) {
+            if (!isEmptyV(&domains[vec_index])) {
+                getVectorValueV(&domains[vec_index],
+                                domains[vec_index].size - 1,
+                                p_str + vec_index);
+
+                if (domains[vec_index].size > 1){
+                    char *undo_str;
+                    getVectorValueV(&domains[vec_index],
+                                    domains[vec_index].size - 2,
+                                    &undo_str);
+
+                    strcpy(buffer, undo_str);
+                    int undo_len = strlen(undo_str);
+                    buffer[undo_len++] = '.';
+                    strcpy(buffer + undo_len, p_str[vec_index]);
+                    undo_len += strlen(p_str[vec_index]) + 1;
+                    free(undo_str);
+                    undo_str = malloc(undo_len);
+                    memcpy(undo_str, buffer, undo_len);
+
+                    setVectorValueV(&domains[vec_index],
+                                    domains[vec_index].size - 2,
+                                    &undo_str);
+                }
+                popBackV(domains + vec_index);
+                ++vec_index;
+            } else {
+                deleteVectorV(domains + vec_index);
+                domains[vec_index] = domains[--n];
+                visits_amounts[vec_index] = visits_amounts[n];
+            }
+        }
+        if (n == 0)
+            break;
+        int k = n;
+        unique_str[0] = p_str[0];
+        int unique_amount = 1;
+        unique_visits_amounts[0] = visits_amounts[0];
+        int vec_index = 1;
+        memcpy(visits_amounts_c, visits_amounts, n * sizeof (int));
+
+        while (vec_index < k) {
+            int i;
+            for (i = 0; i < unique_amount; ++i) {
+                if (!strcmp(p_str[vec_index], unique_str[i])) {
+                    break;
+                }
+            }
+
+            if (i == unique_amount) {
+                unique_visits_amounts[unique_amount] = visits_amounts_c[vec_index];
+                unique_str[unique_amount++] = p_str[vec_index++];
+            } else {
+                unique_visits_amounts[i] += visits_amounts_c[vec_index];
+                k--;
+                free(p_str[vec_index]);
+                p_str[vec_index] = p_str[k];
+                visits_amounts_c[vec_index] = visits_amounts_c[k];
+            }
+        }
+
+        for (int i = 0; i < unique_amount; ++i) {
+            fprintf(f, "%d %s\n", unique_visits_amounts[i], unique_str[i]);
+            free(unique_str[i]);
+        }
+    }
+
+    fclose(f);
+}
+
+void test_04(){
+    char lab20_task04_str[] = "4\n"
+                              "900 google.mail.com\n"
+                              "50 yahoo.com\n"
+                              "1 intel.mail.com\n"
+                              "5 wiki.org\n";
+
+    char lab20_task04_out_str[] = "901 mail.com\n"
+                                  "50 yahoo.com\n"
+                                  "900 google.mail.com\n"
+                                  "5 wiki.org\n"
+                                  "5 org\n"
+                                  "1 intel.mail.com\n"
+                                  "951 com\n";
+
+    const char read_file[] = "20_4_r.txt";
+    const char write_file[] = "20_4_w.txt";
+    write(read_file, lab20_task04_str);
+    lab20_04(read_file, write_file);
+
+    assert(cmpStrFile(lab20_task04_out_str, write_file));
+}

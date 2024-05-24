@@ -32,4 +32,11 @@ int getMedian(matrix *m, int row_index, int col_index, int *buffer);
 void processFilterWindow(matrix m, position start, position end, int *buffer);
 void lab20_task03(matrix m, int filter);
 void test_lab20_03();
+
+void addDomainParseStrToVec(vectorVoid *vec,
+                            char *write_ptr,
+                            char *buffer)
+vectorVoid parseDomainStr(const char *s);
+void lab20_04(const char* read_file, const char* write_file);
+void test_04();
 #endif //BASICSOFPROGRAMMINGCOURSE_LAB20_H

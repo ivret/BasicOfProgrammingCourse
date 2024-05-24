@@ -20,14 +20,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c91f2b6-d7e5-463a-ad34-6b17456152d5" name="Changes" comment="lab20_2">
+    <list default="true" id="2c91f2b6-d7e5-463a-ad34-6b17456152d5" name="Changes" comment="lab20_3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/BasicsOfProgrammingCourse.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/BasicsOfProgrammingCourse.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/main.c.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/data_structures/lab20/lab20-.c" beforeDir="false" afterPath="$PROJECT_DIR$/libs/data_structures/lab20/lab20-.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/data_structures/lab20/lab20-.h" beforeDir="false" afterPath="$PROJECT_DIR$/libs/data_structures/lab20/lab20-.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,11 +75,6 @@
   </component>
   <component name="RunManager">
     <configuration name="BasicsOfProgrammingCourse" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="BasicsOfProgrammingCourse" TARGET_NAME="BasicsOfProgrammingCourse" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="BasicsOfProgrammingCourse" RUN_TARGET_NAME="BasicsOfProgrammingCourse">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -146,7 +136,7 @@
       <workItem from="1716372260524" duration="13000" />
       <workItem from="1716372283620" duration="475000" />
       <workItem from="1716410371084" duration="63000" />
-      <workItem from="1716446763310" duration="5934000" />
+      <workItem from="1716446763310" duration="8549000" />
     </task>
     <task id="LOCAL-00001" summary="lab16_2">
       <option name="closed" value="true" />
@@ -268,7 +258,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716451329276</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="lab20_3">
+      <option name="closed" value="true" />
+      <created>1716456375722</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1716456375722</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -302,7 +300,8 @@
     <MESSAGE value="lab17_copyIfReverse" />
     <MESSAGE value="lab17_lesult" />
     <MESSAGE value="lab20_2" />
-    <option name="LAST_COMMIT_MESSAGE" value="lab20_2" />
+    <MESSAGE value="lab20_3" />
+    <option name="LAST_COMMIT_MESSAGE" value="lab20_3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
