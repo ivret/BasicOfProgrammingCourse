@@ -570,3 +570,39 @@ void test_08(){
     lab20_08(input_str2, nums2, buffer);
     assert(!strcmp(buffer, output_str2));
 }
+
+void lab20_09(const char* read_filename,
+              const char *write_filename,
+              int n){
+    FILE *rf = fopen(read_filename, "r");
+    FILE *wf = fopen(write_filename, "w");
+
+    int value;
+    while(fscanf(rf, "%d", &value) != EOF){
+        if (value < n)
+            fprintf(wf, "%d ", value);
+    }
+
+    fclose(rf);
+    fclose(wf);
+}
+
+void test_09(){
+    char str[] = "1 0 -12 6 -7 223 -422 857 -1214 84209 -1234 5 10 15 -16";
+
+    const char available_file[] = "20_9_r.txt";
+    write(available_file, str);
+
+    char read_file[100];
+    char write_file[100];
+    int n;
+
+    printf("Введите имя файла для чтения (рекомендуется 20_9_r.txt):");
+    scanf("%s", read_file);
+    printf("Введите имя файла для записи:");
+    scanf("%s", write_file);
+    printf("Введите число, большее всех чисел в файле для записи:");
+    scanf("%d", &n);
+
+    lab20_09(read_file, write_file, n);
+}
