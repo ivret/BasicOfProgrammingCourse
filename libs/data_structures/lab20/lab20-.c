@@ -6,6 +6,7 @@
 #include <assert.h>
 #include <string.h>
 #include <signal.h>
+#include <curses.h>
 
 
 void lab20_task01(const char* read_file, const char* write_file){
@@ -606,3 +607,70 @@ void test_09(){
 
     lab20_09(read_file, write_file, n);
 }
+
+
+bool processing;
+
+void handler(int signal){
+    if (signal == SIGINT) {
+        exit(0);
+        keypad(stdscr, FALSE);
+        nocbreak();
+        endwin();
+    }
+}
+
+bool printNextNLines(FILE *f, int n, char *buffer, int buf_size){
+    clear();
+    for (int i = 0; i < n; ++i) {
+        if (fgets(buffer, buf_size, f) == NULL)
+            return false;
+
+        addstr(buffer);
+    }
+
+    refresh();
+    return true;
+}
+
+void lab20_10(const char* filename, int n){
+    initscr();
+    cbreak();
+    keypad(stdscr, TRUE);
+    signal(SIGINT, handler);
+
+    FILE *f = fopen(filename, "r");
+
+    processing = true;
+
+    const int buf_size = 1000;
+    char buffer[buf_size];
+    while (true){
+        int c = getch();
+
+        if (c == KEY_DOWN) {
+            if (!printNextNLines(f, n, buffer, buf_size)) {
+                addstr("\nEnd of file\nEnter 'q' for exit");
+                while (getch() != 'q');
+                break;
+            }
+        }
+    }
+
+    keypad(stdscr, FALSE);
+    nocbreak();
+    endwin();
+}
+
+void test_10(){
+    char read_file[100];
+    int n;
+
+    printf("Введите имя файла для чтения: ");
+    scanf("%s", read_file);
+    printf("Введите число просматриваемых строк: ");
+    scanf("%d", &n);
+
+    lab20_10(read_file, n);
+}
+

@@ -64,4 +64,12 @@ void lab20_09(const char* read_filename,
               const char *write_filename,
               int n);
 void test_09();
+
+void handler(int signal);
+
+bool printNextNLines(FILE *f, int n, char *buffer, int buf_size);
+
+void lab20_10(const char* filename, int n);
+
+void test_10();
 #endif //BASICSOFPROGRAMMINGCOURSE_LAB20_H
