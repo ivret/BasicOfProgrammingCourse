@@ -12,4 +12,5 @@ int main (){
     test_08();
     test_09();
     test_10();
+    test_for_task_11()
 }

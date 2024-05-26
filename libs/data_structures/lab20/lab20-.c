@@ -674,3 +674,39 @@ void test_10(){
     lab20_10(read_file, n);
 }
 
+void task_11(char **dict, char **requests, int *num_in_req, int n, int q) {
+    int temp_is = 0;
+    int temp_is2 = 0;
+    for (int i = 0; i < q; ++i) {
+        for (int j = 0; j < n; ++j) {
+            if (strstr(dict[j], requests[i]) != NULL) {
+                temp_is++;
+                temp_is2++;
+            } else
+                temp_is++;
+            if (temp_is2 == num_in_req[i]) {
+                printf("%d\n", temp_is);
+                break;
+            }
+        }
+        if (num_in_req[i] > temp_is2) {
+            printf("-1\n");
+            temp_is = 0;
+            temp_is2 = 0;
+        } else {
+            temp_is = 0;
+            temp_is2 = 0;
+        }
+    }
+}
+
+void test_for_task_11() {
+    int n = 10;
+    int q = 3;
+    char *dict[100] = {"aa", "aaa", "aab", "ab", "abc", "ac",
+                       "ba", "daa", "dab", "dadba"};
+    char *requests[100] = {"a", "da", "da"};
+    int num_in_req[3] = {4, 2, 4};
+    task_11(dict, requests, num_in_req, n, q);
+}
+

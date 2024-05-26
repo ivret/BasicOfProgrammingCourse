@@ -20,12 +20,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c91f2b6-d7e5-463a-ad34-6b17456152d5" name="Changes" comment="test_09">
+    <list default="true" id="2c91f2b6-d7e5-463a-ad34-6b17456152d5" name="Changes" comment="test_10">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BasicsOfProgrammingCourse.dir/main.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/data_structures/lab20/lab20-.c" beforeDir="false" afterPath="$PROJECT_DIR$/libs/data_structures/lab20/lab20-.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/data_structures/lab20/lab20-.h" beforeDir="false" afterPath="$PROJECT_DIR$/libs/data_structures/lab20/lab20-.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +138,8 @@
       <workItem from="1716410371084" duration="63000" />
       <workItem from="1716446763310" duration="8549000" />
       <workItem from="1716547531030" duration="3793000" />
-      <workItem from="1716634667315" duration="2441000" />
+      <workItem from="1716634667315" duration="3713000" />
+      <workItem from="1716741027090" duration="736000" />
     </task>
     <task id="LOCAL-00001" summary="lab16_2">
       <option name="closed" value="true" />
@@ -319,7 +317,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716634925080</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="test_10">
+      <option name="closed" value="true" />
+      <created>1716646252234</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1716646252234</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -360,7 +366,8 @@
     <MESSAGE value="test_07" />
     <MESSAGE value="test_08" />
     <MESSAGE value="test_09" />
-    <option name="LAST_COMMIT_MESSAGE" value="test_09" />
+    <MESSAGE value="test_10" />
+    <option name="LAST_COMMIT_MESSAGE" value="test_10" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -72,4 +72,9 @@ bool printNextNLines(FILE *f, int n, char *buffer, int buf_size);
 void lab20_10(const char* filename, int n);
 
 void test_10();
+
+
+void task_11(char **dict, char **requests, int *num_in_req, int n, int q);
+
+void test_for_task_11();
 #endif //BASICSOFPROGRAMMINGCOURSE_LAB20_H
